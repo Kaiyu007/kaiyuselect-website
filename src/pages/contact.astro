@@ -81,6 +81,26 @@ import BaseLayout from '../components/BaseLayout.astro';
       `Message: ${details.message}`,
     ].join('\n');
 
+    const buildClipboardText = (details: ReturnType<typeof getEnquiryDetails>) => [
+      'To: contact@kaiyuselect.com.au',
+      '',
+      `Subject: ${details.subject}`,
+      '',
+      'Hello Kaiyu Select,',
+      '',
+      'I would like to make an enquiry.',
+      '',
+      `Name: ${details.name}`,
+      `Email: ${details.email}`,
+      `Enquiry type: ${details.enquiryType}`,
+      '',
+      'Message:',
+      details.message,
+      '',
+      'Kind regards,',
+      details.name,
+    ].join('\n');
+
     const copyText = async (text: string) => {
       if (navigator.clipboard && window.isSecureContext) {
         await navigator.clipboard.writeText(text);
@@ -114,25 +134,7 @@ import BaseLayout from '../components/BaseLayout.astro';
       if (!form?.reportValidity()) return;
 
       const details = getEnquiryDetails();
-      const clipboardText = [
-        'To: contact@kaiyuselect.com.au',
-        '',
-        `Subject: ${details.subject}`,
-        '',
-        'Hello Kaiyu Select,',
-        '',
-        'I would like to make an enquiry.',
-        '',
-        `Name: ${details.name}`,
-        `Email: ${details.email}`,
-        `Enquiry type: ${details.enquiryType}`,
-        '',
-        'Message:',
-        details.message,
-        '',
-        'Kind regards,',
-        details.name,
-      ].join('\n');
+      const clipboardText = buildClipboardText(details);
 
       try {
         await copyText(clipboardText);
