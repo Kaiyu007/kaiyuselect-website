@@ -116,7 +116,22 @@ import BaseLayout from '../components/BaseLayout.astro';
       const details = getEnquiryDetails();
       const clipboardText = [
         'To: contact@kaiyuselect.com.au',
-        buildEnquiryBody(details),
+        '',
+        `Subject: ${details.subject}`,
+        '',
+        'Hello Kaiyu Select,',
+        '',
+        'I would like to make an enquiry.',
+        '',
+        `Name: ${details.name}`,
+        `Email: ${details.email}`,
+        `Enquiry type: ${details.enquiryType}`,
+        '',
+        'Message:',
+        details.message,
+        '',
+        'Kind regards,',
+        details.name,
       ].join('\n');
 
       try {
