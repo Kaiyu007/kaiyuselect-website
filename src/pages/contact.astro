@@ -35,7 +35,11 @@ import BaseLayout from '../components/BaseLayout.astro';
         <div class="field"><label for="enquiry-type">Enquiry type</label><select id="enquiry-type" name="enquiry-type" required><option value="">Select an option</option><option>Engineering service</option><option>Project consultation</option><option>Product availability</option><option>Local markets</option><option>General enquiry</option></select></div>
         <div class="field"><label for="subject">Subject</label><input id="subject" name="subject" type="text" required /></div>
         <div class="field"><label for="message">How can we help?</label><textarea id="message" name="message" required placeholder="For engineering enquiries, include the project stage, required outcome and any timeline. For products, tell us which category or item interests you."></textarea></div>
-        <button class="button" type="submit" aria-describedby="email-fallback">Prepare email <span aria-hidden="true">↗</span></button>
+        <div class="form-actions">
+          <button class="button" type="submit" aria-describedby="email-fallback">Prepare email <span aria-hidden="true">↗</span></button>
+          <button id="copy-enquiry" class="button button-outline" type="button">Copy enquiry details</button>
+        </div>
+        <p id="copy-status" class="form-note copy-status" role="status" aria-live="polite" hidden>Enquiry details copied. Paste them into your preferred email app and send to contact@kaiyuselect.com.au.</p>
         <p id="email-fallback" class="form-note">If the email app does not open, please email <a href="mailto:contact@kaiyuselect.com.au">contact@kaiyuselect.com.au</a> directly.</p>
         <p class="form-note">This form does not store your information or submit to a database. It opens your default email application.</p>
       </form>
@@ -44,6 +48,8 @@ import BaseLayout from '../components/BaseLayout.astro';
 
   <script>
     const form = document.querySelector<HTMLFormElement>('#contact-form');
+    const copyButton = document.querySelector<HTMLButtonElement>('#copy-enquiry');
+    const copyStatus = document.querySelector<HTMLElement>('#copy-status');
 
     const getFieldValue = (id: string) => {
       const field = document.getElementById(id);
@@ -59,25 +65,73 @@ import BaseLayout from '../components/BaseLayout.astro';
       return '';
     };
 
+    const getEnquiryDetails = () => ({
+      name: getFieldValue('name'),
+      email: getFieldValue('email'),
+      enquiryType: getFieldValue('enquiry-type'),
+      subject: getFieldValue('subject'),
+      message: getFieldValue('message'),
+    });
+
+    const buildEnquiryBody = (details: ReturnType<typeof getEnquiryDetails>) => [
+      `Name: ${details.name}`,
+      `Email: ${details.email}`,
+      `Enquiry type: ${details.enquiryType}`,
+      `Subject: ${details.subject}`,
+      `Message: ${details.message}`,
+    ].join('\n');
+
+    const copyText = async (text: string) => {
+      if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(text);
+        return;
+      }
+
+      const textarea = document.createElement('textarea');
+      textarea.value = text;
+      textarea.setAttribute('readonly', '');
+      textarea.style.position = 'fixed';
+      textarea.style.opacity = '0';
+      document.body.appendChild(textarea);
+      textarea.select();
+      const copied = document.execCommand('copy');
+      textarea.remove();
+
+      if (!copied) throw new Error('Clipboard copy was not available.');
+    };
+
     form?.addEventListener('submit', (event) => {
       event.preventDefault();
 
-      const name = getFieldValue('name');
-      const email = getFieldValue('email');
-      const enquiryType = getFieldValue('enquiry-type');
-      const subject = getFieldValue('subject');
-      const message = getFieldValue('message');
+      const details = getEnquiryDetails();
+      const body = buildEnquiryBody(details);
 
-      const body = [
-        `Name: ${name}`,
-        `Email: ${email}`,
-        `Enquiry type: ${enquiryType}`,
-        `Subject: ${subject}`,
-        `Message: ${message}`,
+      const mailtoUrl = `mailto:contact@kaiyuselect.com.au?subject=${encodeURIComponent(details.subject)}&body=${encodeURIComponent(body)}`;
+      window.location.href = mailtoUrl;
+    });
+
+    copyButton?.addEventListener('click', async () => {
+      if (!form?.reportValidity()) return;
+
+      const details = getEnquiryDetails();
+      const clipboardText = [
+        'To: contact@kaiyuselect.com.au',
+        buildEnquiryBody(details),
       ].join('\n');
 
-      const mailtoUrl = `mailto:contact@kaiyuselect.com.au?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-      window.location.href = mailtoUrl;
+      try {
+        await copyText(clipboardText);
+        if (copyStatus) copyStatus.hidden = false;
+      } catch {
+        if (copyStatus) {
+          copyStatus.textContent = 'Copying was not available. Please email contact@kaiyuselect.com.au directly.';
+          copyStatus.hidden = false;
+        }
+      }
+    });
+
+    form?.addEventListener('input', () => {
+      if (copyStatus) copyStatus.hidden = true;
     });
   </script>
 </BaseLayout>
