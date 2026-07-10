@@ -1,0 +1,25 @@
+---
+import BaseLayout from '../components/BaseLayout.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import ContactCta from '../components/ContactCta.astro';
+import { projects } from '../data/site';
+---
+
+<BaseLayout title="Engineering Projects | Kaiyu Select" description="Explore representative Kaiyu Select project capabilities across product design, mechanical CAD, enclosure design and manufacturing drawings.">
+  <header class="page-hero">
+    <div class="shell page-hero-grid">
+      <div><p class="eyebrow"><span></span>Engineering projects</p><h1>Design work with<br />a practical purpose.</h1></div>
+      <div class="page-hero-copy"><p>Representative project types showing how engineering ideas can be developed, communicated and prepared for their next stage.</p></div>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="shell">
+      <SectionHeading eyebrow="Selected capabilities" heading="From functional concepts to clear documentation." intro="These placeholder studies describe the kinds of project outcomes Kaiyu Select can support. Detailed case studies will be added as the portfolio grows." align="split" />
+      <div class="project-list">{projects.map((project) => <ProjectCard {...project} />)}</div>
+    </div>
+  </section>
+
+  <ContactCta eyebrow="Your project" heading="What are you trying to make or improve?" text="Tell us about the problem, the current stage and what a useful result would look like." />
+</BaseLayout>

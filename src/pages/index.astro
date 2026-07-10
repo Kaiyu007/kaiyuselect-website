@@ -1,0 +1,66 @@
+---
+import BaseLayout from '../components/BaseLayout.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import ProductCard from '../components/ProductCard.astro';
+import ContactCta from '../components/ContactCta.astro';
+import { services, products } from '../data/site';
+---
+
+<BaseLayout title="Kaiyu Select | Engineering Ideas. Selected Products." description="Kaiyu Select provides practical engineering design services and carefully selected products for everyday use in Australia.">
+  <section class="hero">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow"><span></span>Engineering + everyday utility</p>
+        <h1>Engineering Ideas.<br /><em>Selected Products.</em></h1>
+        <p class="hero-description">Kaiyu Select provides practical engineering design services and carefully selected products for everyday use.</p>
+        <div class="hero-actions">
+          <a class="button" href="/engineering">Explore engineering <span aria-hidden="true">↗</span></a>
+          <a class="button button-outline" href="/products">View selected products</a>
+        </div>
+      </div>
+      <div class="hero-graphic" aria-hidden="true">
+        <span class="graphic-label label-one">Design / Select / Refine</span>
+        <div class="tech-orbit"><i class="axis-x"></i><i class="axis-y"></i><i class="node n1"></i><i class="node n2"></i><i class="node n3"></i></div>
+        <span class="graphic-label label-two">Brisbane · Australia<br />27.4705° S / 153.0260° E</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="division-strip" aria-label="Our divisions">
+    <div class="shell division-grid">
+      <a class="division-card" href="/engineering">
+        <span class="number">01</span>
+        <div><h2>Engineering Services</h2><p>Practical design support from first concept through to clear CAD models and manufacturing drawings.</p></div>
+        <span class="arrow" aria-hidden="true">↗</span>
+      </a>
+      <a class="division-card" href="/products">
+        <span class="number">02</span>
+        <div><h2>Selected Products</h2><p>A considered range of useful mobile, automotive and everyday technology accessories.</p></div>
+        <span class="arrow" aria-hidden="true">↗</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell">
+      <SectionHeading eyebrow="Engineering services" heading="From an initial idea to practical design detail." intro="Flexible engineering support for individuals, start-ups, small businesses and product developers." align="split" />
+      <div class="services-grid">
+        {services.slice(0, 4).map((service) => <ServiceCard {...service} />)}
+      </div>
+      <div class="section-action"><a class="text-link" href="/engineering">Explore all services <span aria-hidden="true">→</span></a></div>
+    </div>
+  </section>
+
+  <section class="section section-white">
+    <div class="shell">
+      <SectionHeading eyebrow="Selected products" heading="Useful by design. Chosen with purpose." intro="A growing selection focused on everyday function—not passing trends." align="split" />
+      <div class="products-grid">
+        {products.slice(0, 2).map((product) => <ProductCard {...product} />)}
+      </div>
+      <div class="section-action"><a class="text-link" href="/products">View product categories <span aria-hidden="true">→</span></a></div>
+    </div>
+  </section>
+
+  <ContactCta />
+</BaseLayout>

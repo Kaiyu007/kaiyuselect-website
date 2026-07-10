@@ -1,0 +1,33 @@
+---
+import BaseLayout from '../components/BaseLayout.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import ProductCard from '../components/ProductCard.astro';
+import ContactCta from '../components/ContactCta.astro';
+import { products } from '../data/site';
+---
+
+<BaseLayout title="Selected Products | Kaiyu Select" description="Explore Kaiyu Select phone cases, MagSafe accessories, car accessories and everyday electronics. Enquiries welcome; online checkout coming later.">
+  <header class="page-hero">
+    <div class="shell page-hero-grid">
+      <div><p class="eyebrow"><span></span>Division 02 · Products</p><h1>Selected for<br />everyday utility.</h1></div>
+      <div class="page-hero-copy"><p>A considered, evolving product range focused on useful details, straightforward function and good everyday value.</p></div>
+    </div>
+  </header>
+
+  <section class="section section-white">
+    <div class="shell">
+      <div class="notice"><p><strong>Our online shop is being prepared.</strong> Product availability may vary while the range is introduced.</p><a class="text-link" href="/contact?type=product">Ask about a product →</a></div>
+      <SectionHeading eyebrow="Product categories" heading="A focused range, growing carefully." intro="No endless catalogue—just product categories selected around practical everyday needs." align="split" />
+      <div class="products-grid">{products.map((product) => <ProductCard {...product} />)}</div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell story-grid">
+      <h2>What “selected” means to us.</h2>
+      <div class="story-copy"><p class="lead">Products should earn their place through usefulness.</p><p>We look for clear function, sensible design and relevance to everyday life. Availability is intentionally limited while we learn what works best for our customers and local markets.</p><p>Online checkout is not available yet. For current availability, send a product enquiry and we will respond directly.</p></div>
+    </div>
+  </section>
+
+  <ContactCta eyebrow="Product enquiries" heading="Looking for something in our range?" text="Ask about current availability, upcoming products or where to find Kaiyu Select at selected local markets." />
+</BaseLayout>

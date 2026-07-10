@@ -1,0 +1,17 @@
+---
+interface Props { number: string; type: string; title: string; description: string; tags: string[]; }
+const { number, type, title, description, tags } = Astro.props;
+---
+<article class="project-card">
+  <div class="project-visual" aria-hidden="true">
+    <span class="project-index">{number}</span>
+    <div class="draft-object"><i></i><i></i><i></i></div>
+    <span class="measure top"></span><span class="measure side"></span>
+  </div>
+  <div class="project-copy">
+    <p class="project-type">{type}</p>
+    <h2>{title}</h2>
+    <p>{description}</p>
+    <ul aria-label="Project capabilities">{tags.map((tag) => <li>{tag}</li>)}</ul>
+  </div>
+</article>

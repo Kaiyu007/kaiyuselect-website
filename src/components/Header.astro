@@ -1,0 +1,39 @@
+---
+const currentPath = Astro.url.pathname;
+const links = [
+  ['/', 'Home'],
+  ['/engineering', 'Engineering'],
+  ['/products', 'Products'],
+  ['/projects', 'Projects'],
+  ['/about', 'About'],
+  ['/contact', 'Contact'],
+];
+
+const isCurrent = (href: string) => href === '/' ? currentPath === '/' : currentPath.startsWith(href);
+---
+
+<header class="site-header">
+  <div class="header-inner shell">
+    <a class="brand" href="/" aria-label="Kaiyu Select home">
+      <span class="brand-mark" aria-hidden="true"><i></i><i></i></span>
+      <span>Kaiyu <strong>Select</strong></span>
+    </a>
+
+    <nav class="desktop-nav" aria-label="Primary navigation">
+      {links.map(([href, label]) => (
+        <a href={href} aria-current={isCurrent(href) ? 'page' : undefined}>{label}</a>
+      ))}
+    </nav>
+
+    <a class="header-cta" href="/contact">Start an enquiry <span aria-hidden="true">↗</span></a>
+
+    <details class="mobile-menu">
+      <summary aria-label="Open navigation"><span></span><span></span></summary>
+      <nav aria-label="Mobile navigation">
+        {links.map(([href, label]) => (
+          <a href={href} aria-current={isCurrent(href) ? 'page' : undefined}>{label}</a>
+        ))}
+      </nav>
+    </details>
+  </div>
+</header>

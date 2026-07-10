@@ -1,0 +1,52 @@
+---
+import BaseLayout from '../components/BaseLayout.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import ContactCta from '../components/ContactCta.astro';
+import { services } from '../data/site';
+const audiences = ['Individuals', 'Start-ups', 'Small businesses', 'Product developers'];
+---
+
+<BaseLayout title="Engineering Services | Kaiyu Select" description="Practical CAD drafting, 3D modelling, product design, manufacturing drawings, reverse engineering and design consultation.">
+  <header class="page-hero">
+    <div class="shell page-hero-grid">
+      <div><p class="eyebrow"><span></span>Division 01 · Engineering</p><h1>Practical design,<br />clearly resolved.</h1></div>
+      <div class="page-hero-copy"><p>Engineering design support shaped around your problem, your stage of development and the practical next step.</p></div>
+    </div>
+  </header>
+
+  <section class="section section-white">
+    <div class="shell">
+      <SectionHeading eyebrow="Capabilities" heading="Engineering services that move ideas forward." intro="Choose focused support for a single task or a coordinated path from concept to documentation." align="split" />
+      <div class="services-grid">{services.map((service) => <ServiceCard {...service} />)}</div>
+      <div class="section-action"><a class="button" href="/contact?type=engineering">Start a project enquiry <span aria-hidden="true">↗</span></a></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell audience-grid">
+      <div class="audience-copy">
+        <p class="eyebrow"><span></span>Who we work with</p>
+        <h2>Right-sized support for real projects.</h2>
+        <p>Whether you are exploring a first idea or refining an established product, the scope can be matched to what you need now.</p>
+      </div>
+      <div class="audience-list">
+        {audiences.map((audience, index) => <div class="audience-item"><span>0{index + 1}</span><h3>{audience}</h3></div>)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-dark">
+    <div class="shell">
+      <SectionHeading eyebrow="A straightforward process" heading="Clear steps. Useful outcomes." />
+      <div class="process-grid">
+        <div class="process-step"><span>01</span><h3>Understand</h3><p>Define the problem, requirements and intended outcome.</p></div>
+        <div class="process-step"><span>02</span><h3>Explore</h3><p>Develop and compare practical design directions.</p></div>
+        <div class="process-step"><span>03</span><h3>Refine</h3><p>Resolve geometry, details and key constraints.</p></div>
+        <div class="process-step"><span>04</span><h3>Deliver</h3><p>Prepare agreed models, visuals or drawings.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <ContactCta eyebrow="Discuss your project" heading="Need a clearer path from idea to design?" text="Share a little about your project, timeline and desired outcome. We will help identify the most useful next step." />
+</BaseLayout>

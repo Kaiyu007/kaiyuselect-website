@@ -1,0 +1,13 @@
+---
+interface Props { category: string; title: string; description: string; status: string; motif: string; }
+const { category, title, description, status, motif } = Astro.props;
+---
+<article class="product-card">
+  <div class:list={['product-visual', `motif-${motif}`]} aria-hidden="true"><span></span><i></i></div>
+  <div class="product-info">
+    <p class="product-category">{category}</p>
+    <h3>{title}</h3>
+    <p>{description}</p>
+    <span class="status"><i></i>{status}</span>
+  </div>
+</article>

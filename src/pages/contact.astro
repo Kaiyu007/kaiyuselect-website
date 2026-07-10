@@ -1,0 +1,43 @@
+---
+import BaseLayout from '../components/BaseLayout.astro';
+---
+
+<BaseLayout title="Contact Kaiyu Select | Engineering and Product Enquiries" description="Contact Kaiyu Select about engineering design services, project requirements or selected product availability.">
+  <header class="page-hero">
+    <div class="shell page-hero-grid">
+      <div><p class="eyebrow"><span></span>Contact</p><h1>Tell us what<br />you have in mind.</h1></div>
+      <div class="page-hero-copy"><p>Whether it is an engineering project or a product question, a few useful details will help us point you in the right direction.</p></div>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="shell contact-grid">
+      <aside class="contact-details">
+        <p class="eyebrow"><span></span>Get in touch</p>
+        <h2>A direct, straightforward conversation.</h2>
+        <p>Kaiyu Select is a small business, so your enquiry is read and answered directly. Please allow a reasonable response time.</p>
+        <div class="contact-method"><span>Email</span><a href="mailto:contact@kaiyuselect.com.au">contact@kaiyuselect.com.au</a></div>
+        <ul class="enquiry-list">
+          <li>Engineering service enquiries</li>
+          <li>Project scope and consultation</li>
+          <li>Product availability enquiries</li>
+          <li>Local market information</li>
+        </ul>
+      </aside>
+
+      <form class="contact-form" action="mailto:contact@kaiyuselect.com.au" method="post" enctype="text/plain">
+        <h2>Send an enquiry</h2>
+        <p>Complete the form and your email application will prepare the message.</p>
+        <div class="form-row">
+          <div class="field"><label for="name">Name</label><input id="name" name="name" type="text" autocomplete="name" required /></div>
+          <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required /></div>
+        </div>
+        <div class="field"><label for="enquiry-type">Enquiry type</label><select id="enquiry-type" name="enquiry-type" required><option value="">Select an option</option><option>Engineering service</option><option>Project consultation</option><option>Product availability</option><option>Local markets</option><option>General enquiry</option></select></div>
+        <div class="field"><label for="subject">Subject</label><input id="subject" name="subject" type="text" required /></div>
+        <div class="field"><label for="message">How can we help?</label><textarea id="message" name="message" required placeholder="For engineering enquiries, include the project stage, required outcome and any timeline. For products, tell us which category or item interests you."></textarea></div>
+        <button class="button" type="submit">Prepare email <span aria-hidden="true">↗</span></button>
+        <p class="form-note">This form does not store your information or submit to a database. It opens your default email application.</p>
+      </form>
+    </div>
+  </section>
+</BaseLayout>

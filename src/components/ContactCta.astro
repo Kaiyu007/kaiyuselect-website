@@ -1,0 +1,24 @@
+---
+interface Props {
+  eyebrow?: string;
+  heading?: string;
+  text?: string;
+}
+const {
+  eyebrow = 'Start a conversation',
+  heading = 'Have a project or product question?',
+  text = 'Tell us what you are working on. We will respond with a practical next step.',
+} = Astro.props;
+---
+<section class="contact-cta">
+  <div class="shell contact-cta-inner">
+    <div>
+      <p class="eyebrow light"><span></span>{eyebrow}</p>
+      <h2>{heading}</h2>
+    </div>
+    <div>
+      <p>{text}</p>
+      <a class="button button-light" href="/contact">Contact Kaiyu Select <span aria-hidden="true">↗</span></a>
+    </div>
+  </div>
+</section>

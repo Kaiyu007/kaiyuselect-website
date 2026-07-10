@@ -1,0 +1,46 @@
+---
+import BaseLayout from '../components/BaseLayout.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import ContactCta from '../components/ContactCta.astro';
+---
+
+<BaseLayout title="About Kaiyu Select | Engineering and Selected Products" description="Kaiyu Select is an Australian-owned small business combining practical engineering capability with considered product selection.">
+  <header class="page-hero">
+    <div class="shell page-hero-grid">
+      <div><p class="eyebrow"><span></span>About Kaiyu Select</p><h1>One brand.<br />Two practical paths.</h1></div>
+      <div class="page-hero-copy"><p>Kaiyu Select brings engineering design services and carefully selected consumer products together under one Australian small-business brand.</p></div>
+    </div>
+  </header>
+
+  <section class="section section-white">
+    <div class="shell story-grid">
+      <h2>Built around practical thinking.</h2>
+      <div class="story-copy">
+        <p class="lead">The connection is simple: understand what people need, then look for a useful way to meet it.</p>
+        <p>On the engineering side, that means helping turn ideas and requirements into clear models, drawings and design decisions.</p>
+        <p>On the product side, it means choosing everyday items with a focus on function, sensible design and genuine usefulness.</p>
+        <p>Kaiyu Select is a small, developing business. We value clear communication, manageable scope and honest expectations. The aim is not to be everything to everyone, but to do focused work thoughtfully.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-dark">
+    <div class="shell">
+      <SectionHeading eyebrow="How we work" heading="A grounded approach to design and selection." />
+      <div class="principles-grid">
+        <article class="principle"><span>01</span><h3>Practical first</h3><p>Function, constraints and the real use case guide decisions.</p></article>
+        <article class="principle"><span>02</span><h3>Clear communication</h3><p>Plain language, visible progress and realistic expectations.</p></article>
+        <article class="principle"><span>03</span><h3>Considered choices</h3><p>Focused services and products selected with a clear reason.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell section-heading split">
+      <div><p class="eyebrow"><span></span>Based in Australia</p><h2>Local perspective.<br />Flexible support.</h2></div>
+      <p class="section-intro">Kaiyu Select is Australian-owned and works with individuals, start-ups, small businesses and product developers. Product availability is currently focused on selected local markets and direct enquiries.</p>
+    </div>
+  </section>
+
+  <ContactCta />
+</BaseLayout>
