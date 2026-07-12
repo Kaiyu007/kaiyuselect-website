@@ -122,6 +122,20 @@ export const featuredProducts = [
   },
 ];
 
+export const featuredProject = {
+  category: 'Academic Group Project',
+  title: 'Electric Postie Bike CAD Development',
+  shortDescription: 'A collaborative SolidWorks project exploring the development of an electric postie bike through component modelling, assembly integration, virtual prototyping and preliminary engineering analysis.',
+  tags: ['SolidWorks', 'Mechanical Design', 'Preliminary FEA'],
+  image: '/images/projects/postie-bike-full-assembly-render.jpg',
+  imageAlt: 'Rendered SolidWorks assembly of an electric postie bike concept',
+  imageFit: 'contain',
+  imagePosition: 'center',
+  projectUrl: '/projects/electric-postie-bike',
+  linkLabel: 'View Case Study',
+  status: 'Completed academic project',
+};
+
 export const projects = [
   {
     number: '01',

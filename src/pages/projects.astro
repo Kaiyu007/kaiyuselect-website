@@ -2,7 +2,7 @@
 import BaseLayout from '../components/BaseLayout.astro';
 import SectionHeading from '../components/SectionHeading.astro';
 import ProjectCard from '../components/ProjectCard.astro';
-import { projects } from '../data/site';
+import { featuredProject, projects } from '../data/site';
 
 const caseStudySteps = [
   { number: '01', title: 'Brief', description: 'The objective, constraints and available reference information.' },
@@ -31,9 +31,13 @@ const caseStudySteps = [
 
   <section class="section section-white projects-portfolio-section" id="project-grid">
     <div class="shell">
-      <SectionHeading eyebrow="Project Portfolio" heading="Practical design work, documented clearly." intro="This page is being prepared to present selected engineering projects, design processes and final deliverables. Current entries describe the types of work that will be documented as portfolio material becomes available." align="split" />
+      <SectionHeading eyebrow="Project Portfolio" heading="Practical design work, documented clearly." intro="This page presents selected engineering projects, design processes and final deliverables. The featured academic case study is documented below, alongside project areas being prepared for future case studies." align="split" />
 
       <p class="portfolio-note">Portfolio development is ongoing. No entry should be interpreted as a completed client case study unless it is clearly identified as one.</p>
+
+      <div class="featured-project">
+        <ProjectCard {...featuredProject} />
+      </div>
 
       <div class="project-grid">
         {projects.map((project) => <ProjectCard {...project} />)}

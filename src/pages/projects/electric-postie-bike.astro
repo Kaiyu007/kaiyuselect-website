@@ -1,0 +1,139 @@
+---
+import BaseLayout from '../../components/BaseLayout.astro';
+import SectionHeading from '../../components/SectionHeading.astro';
+
+const projectFacts = [
+  { label: 'Project type', value: 'Academic group project' },
+  { label: 'Software', value: 'SolidWorks' },
+  { label: 'Project focus', value: 'Mechanical CAD, assembly integration, material selection and preliminary FEA' },
+  { label: 'Contribution', value: 'Handlebar, front suspension and hand-brake components' },
+];
+
+const caseStudySections = [
+  {
+    number: '01',
+    eyebrow: 'Project Concept',
+    heading: 'Early Team Concept',
+    text: 'The early concept established the overall vehicle arrangement, storage position, rider layout and major component locations before detailed CAD development.',
+    image: '/images/projects/postie-bike-early-team-concept.jpg',
+    imageAlt: 'Early team concept sketch of an electric postie bike',
+    imageWidth: 1004,
+    imageHeight: 664,
+    caption: 'Early team concept sketch used to explore the overall vehicle layout.',
+  },
+  {
+    number: '02',
+    eyebrow: 'CAD Assembly',
+    heading: 'Full Assembly Development',
+    text: 'Individual parts and subassemblies were developed in SolidWorks and combined into a complete virtual prototype to review the overall form, component positioning and assembly relationships.',
+    image: '/images/projects/postie-bike-full-assembly-render.jpg',
+    imageAlt: 'Full rendered CAD assembly of the electric postie bike',
+    imageWidth: 990,
+    imageHeight: 900,
+    caption: 'Final collaborative SolidWorks assembly and virtual prototype.',
+    compact: true,
+  },
+  {
+    number: '03',
+    eyebrow: 'Preliminary Engineering Analysis',
+    heading: 'Handlebar and Front-Tube Stress Review',
+    text: 'A preliminary SolidWorks Simulation study was used to review the stress distribution of the handlebar and front-tube design under an assumed loading condition.',
+    image: '/images/projects/postie-bike-handlebar-fea-stress.jpg',
+    imageAlt: 'Preliminary SolidWorks stress analysis of the postie bike handlebar and front tube',
+    imageWidth: 1142,
+    imageHeight: 650,
+    caption: 'Preliminary stress distribution study for the handlebar and front-tube assembly.',
+    note: 'This analysis was completed for academic design development and does not constitute statutory certification or independent engineering verification.',
+  },
+  {
+    number: '04',
+    eyebrow: 'Material and Environmental Review',
+    heading: 'Material and Environmental Considerations',
+    text: 'Material selection was also reviewed using estimated carbon footprint, energy consumption, air acidification, water eutrophication and material cost indicators.',
+    image: '/images/projects/postie-bike-material-environmental-impact.jpg',
+    imageAlt: 'Material environmental impact assessment for the postie bike handlebar components',
+    imageWidth: 1450,
+    imageHeight: 868,
+    caption: 'SolidWorks sustainability indicators used during the academic material review.',
+    secondary: true,
+  },
+];
+---
+
+<BaseLayout title="Electric Postie Bike CAD Project | Kaiyu Select" description="A collaborative SolidWorks academic project involving electric postie bike component modelling, assembly integration, virtual prototyping, material review and preliminary finite element analysis.">
+  <header class="case-study-hero">
+    <div class="shell">
+      <div class="case-study-hero-grid">
+        <div>
+          <p class="eyebrow"><span></span>Academic Group Project</p>
+          <h1>Electric Postie Bike CAD Development</h1>
+        </div>
+        <p class="case-study-intro">A collaborative university CAD project developing an electric postie bike concept through mechanical component modelling, assembly integration, virtual prototyping and preliminary engineering analysis.</p>
+      </div>
+
+      <div class="case-study-hero-media">
+        <img src="/images/projects/postie-bike-full-assembly-render.jpg" alt="Rendered SolidWorks assembly of an electric postie bike concept" width="990" height="900" loading="eager" decoding="async" />
+      </div>
+    </div>
+  </header>
+
+  <section class="section section-white case-study-summary">
+    <div class="shell">
+      <SectionHeading eyebrow="Project Summary" heading="Collaborative development with a defined individual contribution." intro="The project combined team-based vehicle development with focused responsibility for selected front-end mechanical components." align="split" />
+
+      <dl class="case-study-facts">
+        {projectFacts.map((fact) => (
+          <div>
+            <dt>{fact.label}</dt>
+            <dd>{fact.value}</dd>
+          </div>
+        ))}
+      </dl>
+
+      <div class="case-study-contribution">
+        <p>My contribution focused on the handlebar, front suspension and hand-brake components, including CAD modelling, assembly integration, material selection and preliminary finite element analysis.</p>
+        <p class="case-study-collaboration-note">The complete vehicle was developed collaboratively as a university group project. Only the individual contribution described above should be interpreted as personal project work.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="case-study-body">
+    <div class="shell">
+      {caseStudySections.map((section) => (
+        <section class:list={['case-study-section', section.compact && 'compact-media', section.secondary && 'secondary-section']} aria-labelledby={`case-study-section-${section.number}`}>
+          <figure class="case-study-media">
+            <img src={section.image} alt={section.imageAlt} width={section.imageWidth} height={section.imageHeight} loading="lazy" decoding="async" />
+            <figcaption>{section.caption}</figcaption>
+          </figure>
+          <div class="case-study-copy">
+            <p class="eyebrow"><span></span>{section.number} · {section.eyebrow}</p>
+            <h2 id={`case-study-section-${section.number}`}>{section.heading}</h2>
+            <p>{section.text}</p>
+            {section.note && <p class="case-study-analysis-note">{section.note}</p>}
+          </div>
+        </section>
+      ))}
+    </div>
+  </div>
+
+  <section class="section section-white case-study-outcome" aria-labelledby="project-outcome-heading">
+    <div class="shell case-study-outcome-inner">
+      <p class="eyebrow"><span></span>Final Project Summary</p>
+      <h2 id="project-outcome-heading">Project Outcome</h2>
+      <p>The project produced a complete virtual vehicle assembly and supported the development of individual mechanical components through CAD modelling, assembly integration, material comparison and preliminary simulation.</p>
+    </div>
+  </section>
+
+  <section class="contact-cta" aria-labelledby="postie-cta-heading">
+    <div class="shell contact-cta-inner">
+      <div>
+        <p class="eyebrow light"><span></span>Discuss Your Project</p>
+        <h2 id="postie-cta-heading">Need help developing a mechanical concept or CAD assembly?</h2>
+      </div>
+      <div>
+        <p>Share your available sketches, dimensions, existing files and intended outcome to receive a practical next step.</p>
+        <a class="button button-light" href="/contact">Request an Engineering Quote <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
