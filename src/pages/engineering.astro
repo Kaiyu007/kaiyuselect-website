@@ -164,7 +164,10 @@ const workflow = [
 
             <details class="engineering-service-details">
               <summary>
-                <span>View details</span>
+                <span class="engineering-details-label">
+                  <span class="engineering-details-label-closed">View details</span>
+                  <span class="engineering-details-label-open">Hide details</span>
+                </span>
                 <span class="engineering-enquiry-toggle" aria-hidden="true"></span>
               </summary>
               <div class="engineering-service-details-content">
@@ -208,7 +211,13 @@ const workflow = [
       <details class="engineering-project-details">
         <summary>
           <span>Project-specific information</span>
-          <span class="engineering-enquiry-toggle" aria-hidden="true"></span>
+          <span class="engineering-details-action">
+            <span class="engineering-details-label">
+              <span class="engineering-details-label-closed">View details</span>
+              <span class="engineering-details-label-open">Hide details</span>
+            </span>
+            <span class="engineering-enquiry-toggle" aria-hidden="true"></span>
+          </span>
         </summary>
         <div class="engineering-project-details-content">
           {projectSpecificGroups.map((group) => (
@@ -251,4 +260,20 @@ const workflow = [
       </div>
     </div>
   </section>
+
+  <script>
+    document
+      .querySelectorAll<HTMLElement>('.engineering-service-details > summary, .engineering-project-details > summary')
+      .forEach((summary) => {
+        summary.addEventListener('keydown', (event) => {
+          if (event.key !== 'Enter' && event.key !== ' ') return;
+
+          const details = summary.parentElement;
+          if (!(details instanceof HTMLDetailsElement)) return;
+
+          event.preventDefault();
+          details.open = !details.open;
+        });
+      });
+  </script>
 </BaseLayout>

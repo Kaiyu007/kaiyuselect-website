@@ -35,6 +35,7 @@ import BaseLayout from '../components/BaseLayout.astro';
           <button class="button" type="submit" aria-describedby="email-fallback">Prepare email <span aria-hidden="true">↗</span></button>
           <button id="copy-enquiry" class="button button-outline" type="button">Copy enquiry details</button>
         </div>
+        <p class="form-note">After your email app opens, attach any sketches, photos, CAD files or reference documents before sending.</p>
         <p id="copy-status" class="form-note copy-status" role="status" aria-live="polite" hidden>Enquiry details copied. Paste them into your preferred email app and send to contact@kaiyuselect.com.au.</p>
         <p id="email-fallback" class="form-note">If the email app does not open, please email <a href="mailto:contact@kaiyuselect.com.au">contact@kaiyuselect.com.au</a> directly.</p>
         <p class="form-note">This form does not store your information or submit to a database. It opens your default email application.</p>
@@ -46,6 +47,31 @@ import BaseLayout from '../components/BaseLayout.astro';
     const form = document.querySelector<HTMLFormElement>('#contact-form');
     const copyButton = document.querySelector<HTMLButtonElement>('#copy-enquiry');
     const copyStatus = document.querySelector<HTMLElement>('#copy-status');
+    const enquiryTypeField = document.querySelector<HTMLSelectElement>('#enquiry-type');
+    const subjectField = document.querySelector<HTMLInputElement>('#subject');
+
+    const enquiryTypeMap: Record<string, string> = {
+      engineering: 'Engineering service',
+      project: 'Project consultation',
+      product: 'Product availability',
+    };
+
+    const searchParams = new URLSearchParams(window.location.search);
+    const requestedType = searchParams.get('type');
+    const requestedSubject = searchParams.get('subject');
+
+    if (requestedType && enquiryTypeField && enquiryTypeMap[requestedType]) {
+      enquiryTypeField.value = enquiryTypeMap[requestedType];
+    }
+
+    if (requestedSubject && subjectField) {
+      const safeSubject = requestedSubject
+        .replace(/[\u0000-\u001f\u007f]/g, ' ')
+        .trim()
+        .slice(0, 200);
+
+      if (safeSubject) subjectField.value = safeSubject;
+    }
 
     const getFieldValue = (id: string) => {
       const field = document.getElementById(id);

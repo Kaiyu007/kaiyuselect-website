@@ -163,6 +163,10 @@ h3 { font-size: 1.3rem; font-weight: 650; }
 .engineering-service-details summary, .engineering-project-details summary { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 17px 34px; list-style: none; color: var(--ink); cursor: pointer; font-size: 12px; font-weight: 750; }
 .engineering-service-details summary::-webkit-details-marker, .engineering-project-details summary::-webkit-details-marker { display: none; }
 .engineering-service-details summary:focus-visible, .engineering-project-details summary:focus-visible { outline: 2px solid var(--teal); outline-offset: -2px; }
+.engineering-details-label-open { display: none; }
+.engineering-service-details[open] .engineering-details-label-closed, .engineering-project-details[open] .engineering-details-label-closed { display: none; }
+.engineering-service-details[open] .engineering-details-label-open, .engineering-project-details[open] .engineering-details-label-open { display: inline; }
+.engineering-details-action { display: inline-flex; align-items: center; gap: 12px; }
 .engineering-service-details-content { padding: 28px 34px 34px; background: var(--white); border-top: 1px solid var(--line); }
 .engineering-service-groups { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 28px 38px; }
 .engineering-service-group h4 { margin: 0 0 16px; color: var(--teal); font-size: 11px; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
@@ -191,6 +195,9 @@ h3 { font-size: 1.3rem; font-weight: 650; }
 .engineering-project-details-content h3 { margin-bottom: 13px; font-size: 18px; }
 .engineering-project-details-content li { position: relative; padding: 5px 0 5px 16px; color: var(--muted); font-size: 13px; }
 .engineering-project-details-content li::before { content: '—'; position: absolute; left: 0; color: var(--teal); }
+@media (min-width: 721px) {
+  .engineering-service-list:has(.engineering-service-details[open]) { align-items: start; }
+}
 .engineering-workflow-section .section-heading { margin-bottom: 48px; }
 .engineering-process-grid .process-step { min-height: 180px; }
 .engineering-process-grid .process-step h3 { min-height: 48px; margin-top: 30px; }
