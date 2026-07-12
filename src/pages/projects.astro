@@ -6,20 +6,21 @@ import ContactCta from '../components/ContactCta.astro';
 import { projects } from '../data/site';
 ---
 
-<BaseLayout title="Engineering Projects | Kaiyu Select" description="Explore representative Kaiyu Select project capabilities across product design, mechanical CAD, enclosure design and manufacturing drawings.">
+<BaseLayout title="Engineering Design Capabilities | Kaiyu Select Australia" description="Explore example Kaiyu Select capabilities in product design, CAD modelling, enclosure design and manufacturing-ready drawings.">
   <header class="page-hero">
     <div class="shell page-hero-grid">
-      <div><p class="eyebrow"><span></span>Engineering projects</p><h1>Design work with<br />a practical purpose.</h1></div>
-      <div class="page-hero-copy"><p>Representative project types showing how engineering ideas can be developed, communicated and prepared for their next stage.</p></div>
+      <div><p class="eyebrow"><span></span>Engineering capabilities</p><h1>Practical project<br />areas and outcomes.</h1></div>
+      <div class="page-hero-copy"><p>Example service areas showing the types of engineering design work Kaiyu Select can support. They are capability examples, not claimed client case studies.</p></div>
     </div>
   </header>
 
   <section class="section">
     <div class="shell">
-      <SectionHeading eyebrow="Selected capabilities" heading="From functional concepts to clear documentation." intro="These placeholder studies describe the kinds of project outcomes Kaiyu Select can support. Detailed case studies will be added as the portfolio grows." align="split" />
+      <SectionHeading eyebrow="Example project areas" heading="From functional concepts to clear documentation." intro="These categories explain available service types and possible project outcomes without presenting them as completed client work." align="split" />
+      <div class="notice"><p><strong>Portfolio development is ongoing.</strong> Real case studies will be added gradually when suitable work can be shared clearly and responsibly.</p></div>
       <div class="project-list">{projects.map((project) => <ProjectCard {...project} />)}</div>
     </div>
   </section>
 
-  <ContactCta eyebrow="Your project" heading="What are you trying to make or improve?" text="Tell us about the problem, the current stage and what a useful result would look like." />
+  <ContactCta eyebrow="Your project" heading="What are you trying to make or improve?" text="Tell us about the project area, current stage, available reference information and the outcome you need." />
 </BaseLayout>

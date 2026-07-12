@@ -4,20 +4,20 @@ import SectionHeading from '../components/SectionHeading.astro';
 import ServiceCard from '../components/ServiceCard.astro';
 import ContactCta from '../components/ContactCta.astro';
 import { services } from '../data/site';
-const audiences = ['Individuals', 'Start-ups', 'Small businesses', 'Product developers'];
+const audiences = ['Individuals', 'Students', 'Start-ups', 'Small businesses', 'Makers', 'Product developers'];
 ---
 
-<BaseLayout title="Engineering Services | Kaiyu Select" description="Practical CAD drafting, 3D modelling, product design, manufacturing drawings, reverse engineering and design consultation.">
+<BaseLayout title="Engineering Design & CAD Modelling Australia | Kaiyu Select" description="Practical CAD modelling, 3D product design, manufacturing-ready drawings and project consultation from Kaiyu Select in Australia.">
   <header class="page-hero">
     <div class="shell page-hero-grid">
       <div><p class="eyebrow"><span></span>Division 01 · Engineering</p><h1>Practical design,<br />clearly resolved.</h1></div>
-      <div class="page-hero-copy"><p>Engineering design support shaped around your problem, your stage of development and the practical next step.</p></div>
+      <div class="page-hero-copy"><p>Practical engineering design and CAD support matched to your project stage, available information and required deliverables.</p></div>
     </div>
   </header>
 
   <section class="section section-white">
     <div class="shell">
-      <SectionHeading eyebrow="Capabilities" heading="Engineering services that move ideas forward." intro="Choose focused support for a single task or a coordinated path from concept to documentation." align="split" />
+      <SectionHeading eyebrow="Service areas" heading="Focused engineering support for real project needs." intro="Engage Kaiyu Select for a specific CAD or drawing task, or for practical support across several stages of product development." align="split" />
       <div class="services-grid">{services.map((service) => <ServiceCard {...service} />)}</div>
       <div class="section-action"><a class="button" href="/contact?type=engineering">Start a project enquiry <span aria-hidden="true">↗</span></a></div>
     </div>
@@ -28,10 +28,31 @@ const audiences = ['Individuals', 'Start-ups', 'Small businesses', 'Product deve
       <div class="audience-copy">
         <p class="eyebrow"><span></span>Who we work with</p>
         <h2>Right-sized support for real projects.</h2>
-        <p>Whether you are exploring a first idea or refining an established product, the scope can be matched to what you need now.</p>
+        <p>Support is available for early ideas, study and maker projects, start-up concepts, small-business needs and ongoing product development. Scope is agreed around what is useful at the current stage.</p>
       </div>
       <div class="audience-list">
         {audiences.map((audience, index) => <div class="audience-item"><span>0{index + 1}</span><h3>{audience}</h3></div>)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-white">
+    <div class="shell story-grid">
+      <div>
+        <p class="eyebrow"><span></span>Before you enquire</p>
+        <h2>Useful information helps define the work.</h2>
+      </div>
+      <div class="story-copy">
+        <p class="lead">Send what you already have—early information does not need to be polished.</p>
+        <p>Helpful project information can include:</p>
+        <ul class="enquiry-list">
+          <li>Sketches or written requirements</li>
+          <li>Key dimensions and measurement units</li>
+          <li>Reference images or examples</li>
+          <li>Existing CAD files or technical documents</li>
+          <li>Required file format and deliverables</li>
+          <li>Preferred timeline and intended use</li>
+        </ul>
       </div>
     </div>
   </section>
@@ -48,5 +69,5 @@ const audiences = ['Individuals', 'Start-ups', 'Small businesses', 'Product deve
     </div>
   </section>
 
-  <ContactCta eyebrow="Discuss your project" heading="Need a clearer path from idea to design?" text="Share a little about your project, timeline and desired outcome. We will help identify the most useful next step." />
+  <ContactCta eyebrow="Discuss your project" heading="Need a clearer path from idea to design?" text="Share your project type, available references, timeline and required deliverables. We will respond with a practical next step." />
 </BaseLayout>

@@ -7,16 +7,16 @@ import ContactCta from '../components/ContactCta.astro';
 import { services, products } from '../data/site';
 ---
 
-<BaseLayout title="Kaiyu Select | Engineering Ideas. Selected Products." description="Kaiyu Select provides practical engineering design services and carefully selected products for everyday use in Australia.">
+<BaseLayout title="Kaiyu Select | Engineering Design & Selected Products Australia" description="Kaiyu Select is an Australian small business offering practical engineering design, CAD modelling, product design support and selected everyday products.">
   <section class="hero">
     <div class="hero-grid">
       <div class="hero-copy">
         <p class="eyebrow"><span></span>Engineering + everyday utility</p>
         <h1>Engineering Ideas.<br /><em>Selected Products.</em></h1>
-        <p class="hero-description">Kaiyu Select provides practical engineering design services and carefully selected products for everyday use.</p>
+        <p class="hero-description">Kaiyu Select is an Australian small business bringing practical engineering design services and carefully selected everyday products together under one brand.</p>
         <div class="hero-actions">
-          <a class="button" href="/engineering">Explore engineering <span aria-hidden="true">↗</span></a>
-          <a class="button button-outline" href="/products">View selected products</a>
+          <a class="button" href="/contact?type=engineering">Discuss an Engineering Project <span aria-hidden="true">↗</span></a>
+          <a class="button button-outline" href="/products">Explore Product Categories</a>
         </div>
       </div>
       <div class="hero-graphic" aria-hidden="true">
@@ -31,12 +31,12 @@ import { services, products } from '../data/site';
     <div class="shell division-grid">
       <a class="division-card" href="/engineering">
         <span class="number">01</span>
-        <div><h2>Engineering Services</h2><p>Practical design support from first concept through to clear CAD models and manufacturing drawings.</p></div>
+        <div><h2>Engineering Services</h2><p>CAD modelling, product design support, manufacturing-ready drawings and practical project consultation.</p></div>
         <span class="arrow" aria-hidden="true">↗</span>
       </a>
       <a class="division-card" href="/products">
         <span class="number">02</span>
-        <div><h2>Selected Products</h2><p>A considered range of useful mobile, automotive and everyday technology accessories.</p></div>
+        <div><h2>Selected Products</h2><p>Phone accessories, MagSafe accessories, car accessories and everyday tech products being prepared for gradual release.</p></div>
         <span class="arrow" aria-hidden="true">↗</span>
       </a>
     </div>
@@ -44,7 +44,7 @@ import { services, products } from '../data/site';
 
   <section class="section">
     <div class="shell">
-      <SectionHeading eyebrow="Engineering services" heading="From an initial idea to practical design detail." intro="Flexible engineering support for individuals, start-ups, small businesses and product developers." align="split" />
+      <SectionHeading eyebrow="Engineering services" heading="Practical support from idea to usable design detail." intro="Flexible CAD modelling, product design, drawing and consultation support for individuals and small organisations." align="split" />
       <div class="services-grid">
         {services.slice(0, 4).map((service) => <ServiceCard {...service} />)}
       </div>
@@ -54,7 +54,7 @@ import { services, products } from '../data/site';
 
   <section class="section section-white">
     <div class="shell">
-      <SectionHeading eyebrow="Selected products" heading="Useful by design. Chosen with purpose." intro="A growing selection focused on everyday function—not passing trends." align="split" />
+      <SectionHeading eyebrow="Product range in preparation" heading="Useful by design. Selected with purpose." intro="Selected items will be introduced gradually, with an initial focus on phone accessories, MagSafe accessories, car accessories and everyday electronics." align="split" />
       <div class="products-grid">
         {products.slice(0, 2).map((product) => <ProductCard {...product} />)}
       </div>
