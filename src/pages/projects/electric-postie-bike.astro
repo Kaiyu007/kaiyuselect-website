@@ -4,6 +4,7 @@ import SectionHeading from '../../components/SectionHeading.astro';
 
 const projectFacts = [
   { label: 'Project type', value: 'Academic group project' },
+  { label: 'Project year', value: '2021' },
   { label: 'Software', value: 'SolidWorks' },
   { label: 'Project focus', value: 'Mechanical CAD, assembly integration, material selection and preliminary FEA' },
   { label: 'Contribution', value: 'Handlebar, front suspension and hand-brake components' },
@@ -26,12 +27,6 @@ const caseStudySections = [
     eyebrow: 'CAD Assembly',
     heading: 'Full Assembly Development',
     text: 'Individual parts and subassemblies were developed in SolidWorks and combined into a complete virtual prototype to review the overall form, component positioning and assembly relationships.',
-    image: '/images/projects/postie-bike-full-assembly-render.jpg',
-    imageAlt: 'Full rendered CAD assembly of the electric postie bike',
-    imageWidth: 990,
-    imageHeight: 900,
-    caption: 'Final collaborative SolidWorks assembly and virtual prototype.',
-    compact: true,
   },
   {
     number: '03',
@@ -44,6 +39,7 @@ const caseStudySections = [
     imageHeight: 650,
     caption: 'Preliminary stress distribution study for the handlebar and front-tube assembly.',
     note: 'This analysis was completed for academic design development and does not constitute statutory certification or independent engineering verification.',
+    expandable: true,
   },
   {
     number: '04',
@@ -56,6 +52,7 @@ const caseStudySections = [
     imageHeight: 868,
     caption: 'SolidWorks sustainability indicators used during the academic material review.',
     secondary: true,
+    expandable: true,
   },
 ];
 ---
@@ -100,11 +97,22 @@ const caseStudySections = [
   <div class="case-study-body">
     <div class="shell">
       {caseStudySections.map((section) => (
-        <section class:list={['case-study-section', section.compact && 'compact-media', section.secondary && 'secondary-section']} aria-labelledby={`case-study-section-${section.number}`}>
-          <figure class="case-study-media">
-            <img src={section.image} alt={section.imageAlt} width={section.imageWidth} height={section.imageHeight} loading="lazy" decoding="async" />
-            <figcaption>{section.caption}</figcaption>
-          </figure>
+        <section class:list={['case-study-section', !section.image && 'no-media', section.secondary && 'secondary-section']} aria-labelledby={`case-study-section-${section.number}`}>
+          {section.image && (
+            <figure class:list={['case-study-media', section.expandable && 'technical-media']}>
+              {section.expandable ? (
+                <a class="case-study-image-link" href={section.image} target="_blank" rel="noopener noreferrer" aria-label={`Open full-resolution image: ${section.imageAlt}`}>
+                  <img src={section.image} alt={section.imageAlt} width={section.imageWidth} height={section.imageHeight} loading="lazy" decoding="async" />
+                </a>
+              ) : (
+                <img src={section.image} alt={section.imageAlt} width={section.imageWidth} height={section.imageHeight} loading="lazy" decoding="async" />
+              )}
+              <figcaption>
+                <span>{section.caption}</span>
+                {section.expandable && <span class="case-study-resolution-hint">Open full resolution ↗</span>}
+              </figcaption>
+            </figure>
+          )}
           <div class="case-study-copy">
             <p class="eyebrow"><span></span>{section.number} · {section.eyebrow}</p>
             <h2 id={`case-study-section-${section.number}`}>{section.heading}</h2>
