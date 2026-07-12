@@ -2,25 +2,70 @@
 import BaseLayout from '../components/BaseLayout.astro';
 import SectionHeading from '../components/SectionHeading.astro';
 import ProjectCard from '../components/ProjectCard.astro';
-import ContactCta from '../components/ContactCta.astro';
 import { projects } from '../data/site';
+
+const caseStudySteps = [
+  { number: '01', title: 'Brief', description: 'The objective, constraints and available reference information.' },
+  { number: '02', title: 'Development', description: 'The modelling, design decisions and revision process.' },
+  { number: '03', title: 'Technical Output', description: 'The drawings, CAD files, analysis or prototype preparation completed.' },
+  { number: '04', title: 'Outcome', description: 'The final agreed design direction and supplied deliverables.' },
+];
 ---
 
-<BaseLayout title="Engineering Design Capabilities | Kaiyu Select Australia" description="Explore example Kaiyu Select capabilities in product design, CAD modelling, enclosure design and manufacturing-ready drawings.">
-  <header class="page-hero">
-    <div class="shell page-hero-grid">
-      <div><p class="eyebrow"><span></span>Engineering capabilities</p><h1>Practical project<br />areas and outcomes.</h1></div>
-      <div class="page-hero-copy"><p>Example service areas showing the types of engineering design work Kaiyu Select can support. They are capability examples, not claimed client case studies.</p></div>
+<BaseLayout title="Engineering Projects & CAD Portfolio | Kaiyu Select" description="Explore the developing Kaiyu Select portfolio of CAD modelling, product design, technical drawings and prototype preparation projects in Australia.">
+  <header class="page-hero engineering-hero projects-hero">
+    <div class="shell page-hero-grid engineering-hero-grid">
+      <div>
+        <p class="eyebrow"><span></span>Division 02 · Projects</p>
+        <h1>Selected Engineering Projects</h1>
+      </div>
+      <div class="page-hero-copy engineering-hero-copy">
+        <p>A developing portfolio of CAD, product design, technical documentation and prototyping work. Selected projects will be added as they can be shared clearly and responsibly.</p>
+        <div class="engineering-hero-actions">
+          <a class="button" href="#project-grid">Explore Projects <span aria-hidden="true">↓</span></a>
+          <a class="button button-outline" href="/contact">Discuss a Project <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
     </div>
   </header>
 
-  <section class="section">
+  <section class="section section-white projects-portfolio-section" id="project-grid">
     <div class="shell">
-      <SectionHeading eyebrow="Example project areas" heading="From functional concepts to clear documentation." intro="These categories explain available service types and possible project outcomes without presenting them as completed client work." align="split" />
-      <div class="notice"><p><strong>Portfolio development is ongoing.</strong> Real case studies will be added gradually when suitable work can be shared clearly and responsibly.</p></div>
-      <div class="project-list">{projects.map((project) => <ProjectCard {...project} />)}</div>
+      <SectionHeading eyebrow="Project Portfolio" heading="Practical design work, documented clearly." intro="This page is being prepared to present selected engineering projects, design processes and final deliverables. Current entries describe the types of work that will be documented as portfolio material becomes available." align="split" />
+
+      <p class="portfolio-note">Portfolio development is ongoing. No entry should be interpreted as a completed client case study unless it is clearly identified as one.</p>
+
+      <div class="project-grid">
+        {projects.map((project) => <ProjectCard {...project} />)}
+      </div>
     </div>
   </section>
 
-  <ContactCta eyebrow="Your project" heading="What are you trying to make or improve?" text="Tell us about the project area, current stage, available reference information and the outcome you need." />
+  <section class="section section-dark projects-process-section" aria-labelledby="projects-process-heading">
+    <div class="shell">
+      <SectionHeading eyebrow="What Each Case Study Will Show" heading="From requirements to final deliverables." />
+      <div class="process-grid projects-process-grid">
+        {caseStudySteps.map((step) => (
+          <article class="process-step">
+            <span>{step.number}</span>
+            <h3>{step.title}</h3>
+            <p>{step.description}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-cta" aria-labelledby="projects-cta-heading">
+    <div class="shell contact-cta-inner">
+      <div>
+        <p class="eyebrow light"><span></span>Your Project</p>
+        <h2 id="projects-cta-heading">Have a design problem or project idea?</h2>
+      </div>
+      <div>
+        <p>Share the current stage, available files and intended outcome to receive a practical next step.</p>
+        <a class="button button-light" href="/contact">Discuss Your Project <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+  </section>
 </BaseLayout>

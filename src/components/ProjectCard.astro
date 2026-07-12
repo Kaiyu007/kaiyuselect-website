@@ -1,17 +1,61 @@
 ---
-interface Props { number: string; type: string; title: string; description: string; tags: string[]; }
-const { number, type, title, description, tags } = Astro.props;
+interface Props {
+  number: string;
+  category: string;
+  title: string;
+  shortDescription: string;
+  tags: string[];
+  image?: string;
+  imageAlt?: string;
+  projectUrl?: string;
+  status?: string;
+  imageFit?: 'cover' | 'contain';
+  imagePosition?: string;
+}
+
+const {
+  number,
+  category,
+  title,
+  shortDescription,
+  tags,
+  image,
+  imageAlt = '',
+  projectUrl,
+  status = 'Case study in preparation',
+  imageFit = 'cover',
+  imagePosition = 'center',
+} = Astro.props;
 ---
-<article class="project-card">
-  <div class="project-visual" aria-hidden="true">
-    <span class="project-index">{number}</span>
-    <div class="draft-object"><i></i><i></i><i></i></div>
-    <span class="measure top"></span><span class="measure side"></span>
-  </div>
+
+<article class:list={['project-card', image && 'has-image']}>
+  {image && (
+    <div class:list={['project-media', `fit-${imageFit}`]}>
+      <img src={image} alt={imageAlt} loading="lazy" decoding="async" style={`object-position: ${imagePosition};`} />
+    </div>
+  )}
+
   <div class="project-copy">
-    <p class="project-type">{type}</p>
-    <h2>{title}</h2>
-    <p>{description}</p>
-    <ul aria-label="Project capabilities">{tags.map((tag) => <li>{tag}</li>)}</ul>
+    <header class="project-card-header">
+      <span class="project-card-number">{number}</span>
+      <div>
+        <p class="project-type">{category}</p>
+        <h3>{title}</h3>
+      </div>
+    </header>
+
+    <p class="project-description">{shortDescription}</p>
+
+    <ul class="project-tags" aria-label={`${title} capabilities`}>
+      {tags.map((tag) => <li>{tag}</li>)}
+    </ul>
+
+    <footer class="project-card-footer">
+      {projectUrl ? (
+        <a class="text-link" href={projectUrl}>View Project <span aria-hidden="true">↗</span></a>
+      ) : (
+        <span class="project-status"><i aria-hidden="true"></i>{status}</span>
+      )}
+    </footer>
   </div>
 </article>
