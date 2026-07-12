@@ -19,6 +19,7 @@ import { products } from '../data/site';
       <div class="notice"><p><strong>Product range in preparation.</strong> Selected items will be introduced gradually, and availability may vary by product and local market.</p><a class="text-link" href="/contact?type=product">Enquire for availability →</a></div>
       <SectionHeading eyebrow="Product categories" heading="A focused range, prepared carefully." intro="The aim is a manageable selection of useful everyday products—not an oversized or generic catalogue." align="split" />
       <div class="products-grid">{products.map((product) => <ProductCard {...product} />)}</div>
+      <div class="section-action"><a class="button" href="/contact/">Ask about product availability <span aria-hidden="true">↗</span></a></div>
     </div>
   </section>
 
