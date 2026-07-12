@@ -1,73 +1,251 @@
 ---
 import BaseLayout from '../components/BaseLayout.astro';
 import SectionHeading from '../components/SectionHeading.astro';
-import ServiceCard from '../components/ServiceCard.astro';
-import ContactCta from '../components/ContactCta.astro';
-import { services } from '../data/site';
+
 const audiences = ['Individuals', 'Students', 'Start-ups', 'Small businesses', 'Makers', 'Product developers'];
+
+const engineeringServices = [
+  {
+    number: '01',
+    title: '3D CAD Modelling',
+    description: 'Accurate three-dimensional models created from sketches, measurements, reference images, existing components or written design requirements.',
+    groups: [
+      {
+        title: 'Examples may include',
+        items: ['Product parts and components', 'Enclosures and housings', 'Brackets, mounts and fixtures', 'Replacement parts', 'Mechanical assemblies', 'Hinges, clips and simple mechanisms', 'Prototype geometry', 'Parts recreated from physical measurements'],
+      },
+      {
+        title: 'Deliverables may include',
+        items: ['SolidWorks part and assembly files', 'STEP', 'IGES', 'Parasolid', 'STL', 'Other agreed CAD formats'],
+      },
+    ],
+    note: 'SolidWorks parts and assemblies can also be converted into clear 2D technical drawing views, including front, top, side, isometric, section and detail views.',
+  },
+  {
+    number: '02',
+    title: '2D CAD & Layout Drawings',
+    description: 'Clear two-dimensional drafting for layouts, plans, profiles, general arrangements and technical documentation.',
+    groups: [
+      {
+        title: 'Examples may include',
+        items: ['Equipment and machinery layouts', 'Workshop or workspace layouts', 'Site and space layouts', 'General arrangement drawings', 'Dimensioned component drawings', 'Fabrication profiles', 'Flat cutting profiles', 'Existing drawing revisions', 'Marked-up plan conversion', 'Simple schematic or assembly layouts'],
+      },
+      {
+        title: 'Deliverables may include',
+        items: ['DWG', 'DXF', 'PDF drawing sets', 'Print-ready sheets', 'Other agreed 2D formats'],
+      },
+    ],
+    note: 'Work can begin from an existing PDF, hand sketch, marked-up image, measurement set or CAD file. These services are not certified architectural, civil or structural drawings.',
+  },
+  {
+    number: '03',
+    title: 'Product Design & Development',
+    description: 'Functional products and components developed around their intended purpose, users, dimensions, mechanisms and manufacturing constraints.',
+    groups: [
+      {
+        title: 'Examples may include',
+        items: ['New product concepts', 'Product enclosures and cases', 'Clips, hinges, lids and locking features', 'Component interfaces', 'Internal layouts', 'Assembly design', 'Ergonomic and usability considerations', 'Design refinement', 'Design for prototyping', 'Design for manufacturing', 'Modification of an existing concept or product'],
+      },
+      {
+        title: 'The service can start from',
+        items: ['A written idea', 'A hand sketch', 'Reference products', 'An existing prototype', 'An incomplete CAD model', 'A functional requirement'],
+      },
+      {
+        title: 'Possible deliverables may include',
+        items: ['Concept models', 'Design alternatives', 'Functional CAD assemblies', 'Revision models', 'Prototype-ready files', 'Manufacturing drawings', 'Final agreed CAD files'],
+      },
+    ],
+  },
+  {
+    number: '04',
+    title: '3D Printing & CNC Support',
+    description: 'Design preparation and prototyping support for components intended for additive manufacturing or CNC cutting.',
+    groups: [
+      {
+        title: '3D printing support may include',
+        items: ['Print-ready STL or 3MF files', 'Geometry repair and file checking', 'Wall thickness review', 'Clearance and tolerance planning', 'Splitting large models into printable parts', 'Assembly and joining features', 'Prototype design adjustments', 'Preparation for common FDM or resin printing processes'],
+      },
+      {
+        title: 'CNC support may include',
+        items: ['DXF or DWG cutting profiles', 'Flat component geometry', 'CNC-ready outlines', 'Hole and slot layouts', 'Panel and sheet component preparation', 'Basic nesting preparation where appropriate', 'Design adjustment for available tools, cutters or material thickness'],
+      },
+    ],
+    note: 'Physical 3D printing or CNC cutting may be available or arranged depending on the material, dimensions, quantity, finish and machine availability. Production requirements are reviewed and quoted separately.',
+  },
+  {
+    number: '05',
+    title: 'Technical Drawings, Visualisation & Engineering Analysis',
+    description: 'Technical documentation, visual communication and preliminary engineering analysis to support design review, supplier communication, prototyping and further development.',
+    groups: [
+      {
+        title: 'Services may include',
+        items: ['Dimensioned part drawings', 'Assembly drawings', 'Orthographic views', 'Section and detail views', 'Exploded views', 'General arrangement drawings', 'Drawing notes and specifications', 'Basic tolerances', 'Bills of materials', 'Technical illustrations', 'Product renderings', 'Design presentation images', 'Preliminary finite element analysis', 'Design comparison and geometry refinement'],
+      },
+    ],
+    note: 'Preliminary finite element analysis may be used to compare design options, identify potential high-stress or high-deformation areas and support design development. The analysis scope, loads, restraints, materials and assumptions must be agreed before work begins.',
+    disclaimer: 'Engineering analysis is provided only within the agreed project scope. Preliminary analysis does not constitute statutory certification, structural approval or independent engineering verification unless this is specifically agreed and completed by an appropriately qualified professional.',
+  },
+];
+
+const enquiryGroups = [
+  {
+    title: 'General project information',
+    intro: 'Useful for every engineering enquiry.',
+    items: ['A short explanation of the project and intended outcome', 'Intended use of the design', 'Preferred completion date', 'Required deliverables', 'Preferred file formats', 'Available budget range, if known', 'Any relevant supplier, manufacturer or machine requirements', 'Whether the work is for concept development, prototyping or final manufacture'],
+  },
+  {
+    title: 'For 3D CAD modelling',
+    intro: 'For new models, assemblies and parts recreated from measurements.',
+    items: ['Sketches, reference images or existing files', 'Main dimensions and measurement units', 'Photos from several angles when recreating an existing part', 'Information about connected or mating components', 'Required clearances or tolerances, if known', 'Required CAD and export formats', 'Whether a 2D technical drawing is also required'],
+  },
+  {
+    title: 'For 2D CAD and layout work',
+    intro: 'For plans, layouts, profiles and drawing revisions.',
+    items: ['Existing PDF, CAD file, image or hand sketch', 'Overall dimensions and scale information', 'Required sheet size or drawing format', 'Areas or items that must be included', 'Required dimensions, labels and notes', 'Preferred DWG, DXF or PDF output', 'Whether the drawing is for planning, quoting, cutting, fabrication or presentation'],
+  },
+  {
+    title: 'For product design',
+    intro: 'For concepts, functional products and design refinement.',
+    items: ['The problem the product should solve', 'Intended user and operating environment', 'Required functions and features', 'Target size and weight', 'Expected loads or operating conditions', 'Existing components that must be incorporated', 'Preferred materials', 'Intended manufacturing method', 'Prototype or production quantity', 'Target cost or budget, if known', 'Reference products, sketches or early concepts'],
+  },
+  {
+    title: 'For 3D printing or CNC work',
+    intro: 'For file preparation, prototype review or physical manufacture enquiries.',
+    items: ['Existing CAD model or source file, if available', 'Overall dimensions', 'Required material', 'Required quantity', 'Surface finish or appearance requirements', 'Critical dimensions and tolerances', 'Printer, CNC machine or supplier limitations, if known', 'Material or sheet thickness', 'Whether physical manufacture is required or only file preparation', 'Required production date'],
+  },
+  {
+    title: 'For technical drawings or FEA',
+    intro: 'For documentation, preliminary analysis and supplier communication.',
+    items: ['Existing CAD models and drawings', 'Drawing standards or supplier requirements, if applicable', 'Critical dimensions and tolerances', 'Material information', 'Expected forces, pressures, temperatures or other load conditions', 'Supports, restraints and connection conditions', 'Contact conditions between components', 'Required outputs or results', 'Whether the analysis is for preliminary comparison or formal verification', 'Any regulatory, certification or professional sign-off requirements'],
+  },
+];
+
+const workflow = [
+  { number: '01', title: 'Send Requirements', description: 'Share the project objective, available sketches, measurements, reference files, required deliverables and preferred timeline.' },
+  { number: '02', title: 'Review and Quote', description: 'The available information is reviewed, missing requirements are clarified, and the scope, price, timeline, revisions and deliverables are agreed.' },
+  { number: '03', title: 'Design and Revision', description: 'The model, drawing or design is developed and shared for review. Agreed revisions are completed before final approval.' },
+  { number: '04', title: 'Final File Delivery', description: 'Approved CAD models, drawings, visualisations or manufacturing files are supplied in the agreed formats.' },
+];
 ---
 
-<BaseLayout title="Engineering Design & CAD Modelling Australia | Kaiyu Select" description="Practical CAD modelling, 3D product design, manufacturing-ready drawings and project consultation from Kaiyu Select in Australia.">
-  <header class="page-hero">
-    <div class="shell page-hero-grid">
-      <div><p class="eyebrow"><span></span>Division 01 · Engineering</p><h1>Practical design,<br />clearly resolved.</h1></div>
-      <div class="page-hero-copy"><p>Practical engineering design and CAD support matched to your project stage, available information and required deliverables.</p></div>
+<BaseLayout title="Engineering Design & CAD Services Australia | Kaiyu Select" description="2D and 3D CAD modelling, product design, technical drawings, 3D printing and CNC preparation, visualisation and engineering analysis support in Australia.">
+  <header class="page-hero engineering-hero">
+    <div class="shell page-hero-grid engineering-hero-grid">
+      <div>
+        <p class="eyebrow"><span></span>Division 01 · Engineering</p>
+        <h1>Engineering Design &amp; CAD Services</h1>
+      </div>
+      <div class="page-hero-copy engineering-hero-copy">
+        <p>Practical 2D and 3D CAD modelling, product development and manufacturing-ready design support for ideas, prototypes and real-world projects.</p>
+        <div class="engineering-hero-actions">
+          <a class="button" href="#services">View Services <span aria-hidden="true">↓</span></a>
+          <a class="button button-outline" href="/contact">Request a Quote <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
     </div>
   </header>
 
-  <section class="section section-white">
+  <section class="section section-white engineering-services-section" id="services">
     <div class="shell">
-      <SectionHeading eyebrow="Service areas" heading="Focused engineering support for real project needs." intro="Engage Kaiyu Select for a specific CAD or drawing task, or for practical support across several stages of product development." align="split" />
-      <div class="services-grid">{services.map((service) => <ServiceCard {...service} />)}</div>
-      <div class="section-action"><a class="button" href="/contact/">Request a design quote <span aria-hidden="true">↗</span></a></div>
+      <SectionHeading eyebrow="Engineering Services" heading="Practical support from initial idea to usable design files." intro="Kaiyu Select provides focused CAD, product design, technical documentation and prototyping support. Services can be provided for a single defined task or across several stages of product development." align="split" />
+
+      <div class="engineering-service-list">
+        {engineeringServices.map((service) => (
+          <article class="engineering-service-card">
+            <header class="engineering-service-header">
+              <span class="engineering-service-number">{service.number}</span>
+              <div>
+                <h3>{service.title}</h3>
+                <p>{service.description}</p>
+              </div>
+            </header>
+
+            <div class:list={['engineering-service-groups', service.groups.length === 1 && 'single-group']}>
+              {service.groups.map((group) => (
+                <div class="engineering-service-group">
+                  <h4>{group.title}</h4>
+                  <ul>
+                    {group.items.map((item) => <li>{item}</li>)}
+                  </ul>
+                </div>
+              ))}
+            </div>
+
+            {service.note && <p class="engineering-service-note">{service.note}</p>}
+            {service.disclaimer && <p class="engineering-disclaimer">{service.disclaimer}</p>}
+          </article>
+        ))}
+      </div>
+
+      <p class="engineering-deliverables-note">File formats, drawing content and other deliverables are agreed for each project. Not every format or output listed above is automatically included.</p>
     </div>
   </section>
 
-  <section class="section">
-    <div class="shell audience-grid">
-      <div class="audience-copy">
-        <p class="eyebrow"><span></span>Who we work with</p>
-        <h2>Right-sized support for real projects.</h2>
-        <p>Support is available for early ideas, study and maker projects, start-up concepts, small-business needs and ongoing product development. Scope is agreed around what is useful at the current stage.</p>
-      </div>
-      <div class="audience-list">
-        {audiences.map((audience, index) => <div class="audience-item"><span>0{index + 1}</span><h3>{audience}</h3></div>)}
-      </div>
-    </div>
-  </section>
-
-  <section class="section section-white">
-    <div class="shell story-grid">
+  <section class="section engineering-audience-section" aria-labelledby="audience-heading">
+    <div class="shell engineering-audience">
       <div>
-        <p class="eyebrow"><span></span>Before you enquire</p>
-        <h2>Useful information helps define the work.</h2>
+        <p class="eyebrow"><span></span>Who we work with</p>
+        <h2 id="audience-heading">Right-sized support for real projects.</h2>
       </div>
-      <div class="story-copy">
-        <p class="lead">Send what you already have—early information does not need to be polished.</p>
-        <p>Helpful project information can include:</p>
-        <ul class="enquiry-list">
-          <li>Sketches or written requirements</li>
-          <li>Key dimensions and measurement units</li>
-          <li>Reference images or examples</li>
-          <li>Existing CAD files or technical documents</li>
-          <li>Required file format and deliverables</li>
-          <li>Preferred timeline and intended use</li>
+      <div>
+        <p class="engineering-audience-intro">Focused support for people and small organisations moving an idea, component or product towards a useful next stage.</p>
+        <ul class="engineering-audience-list">
+          {audiences.map((audience) => <li>{audience}</li>)}
         </ul>
       </div>
     </div>
   </section>
 
-  <section class="section section-dark">
+  <section class="section section-white engineering-enquiry-section" aria-labelledby="enquiry-heading">
     <div class="shell">
-      <SectionHeading eyebrow="A straightforward process" heading="Clear steps. Useful outcomes." />
-      <div class="process-grid">
-        <div class="process-step"><span>01</span><h3>Understand</h3><p>Define the problem, requirements and intended outcome.</p></div>
-        <div class="process-step"><span>02</span><h3>Explore</h3><p>Develop and compare practical design directions.</p></div>
-        <div class="process-step"><span>03</span><h3>Refine</h3><p>Resolve geometry, details and key constraints.</p></div>
-        <div class="process-step"><span>04</span><h3>Deliver</h3><p>Prepare agreed models, visuals or drawings.</p></div>
+      <SectionHeading eyebrow="Before You Enquire" heading="What to provide for an accurate quote." intro="You do not need to prepare a formal design brief. Send the information currently available, and missing requirements can be clarified before the work begins." align="split" />
+      <div class="engineering-enquiry-list">
+        {enquiryGroups.map((group, index) => (
+          <details class="engineering-enquiry-item" open={index === 0}>
+            <summary>
+              <span class="engineering-enquiry-index">0{index + 1}</span>
+              <span class="engineering-enquiry-title">
+                <strong>{group.title}</strong>
+                <small>{group.intro}</small>
+              </span>
+              <span class="engineering-enquiry-toggle" aria-hidden="true"></span>
+            </summary>
+            <div class="engineering-enquiry-content">
+              <ul>
+                {group.items.map((item) => <li>{item}</li>)}
+              </ul>
+            </div>
+          </details>
+        ))}
       </div>
     </div>
   </section>
 
-  <ContactCta eyebrow="Discuss your project" heading="Need a clearer path from idea to design?" text="Share your project type, available references, timeline and required deliverables. We will respond with a practical next step." />
+  <section class="section section-dark engineering-workflow-section" aria-labelledby="workflow-heading">
+    <div class="shell">
+      <SectionHeading eyebrow="How It Works" heading="A straightforward design process." />
+      <div class="process-grid engineering-process-grid">
+        {workflow.map((step) => (
+          <article class="process-step">
+            <span>{step.number}</span>
+            <h3>{step.title}</h3>
+            <p>{step.description}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-cta" aria-labelledby="engineering-cta-heading">
+    <div class="shell contact-cta-inner">
+      <div>
+        <p class="eyebrow light"><span></span>Discuss Your Project</p>
+        <h2 id="engineering-cta-heading">Need help turning an idea, sketch or existing part into usable design files?</h2>
+      </div>
+      <div>
+        <p>Share your project type, available information, required deliverables and preferred timeline. Kaiyu Select will review the requirements and respond with a practical next step.</p>
+        <a class="button button-light" href="/contact">Request an Engineering Quote <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+  </section>
 </BaseLayout>
