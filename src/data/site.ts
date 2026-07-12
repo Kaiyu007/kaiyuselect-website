@@ -67,6 +67,61 @@ export const products = [
   },
 ];
 
+export const featuredProducts = [
+  {
+    category: 'Phone cases',
+    title: 'Pink ripple case',
+    description: 'A soft pink case with a raised ripple texture, protective camera surround and comfortable everyday handling.',
+    status: 'Enquire for Availability',
+    image: '/images/products/pink-ripple-case-in-hand.jpg',
+    alt: 'Pink ripple-pattern phone case held in a hand',
+    imageWidth: 912,
+    imageHeight: 996,
+    imageFit: 'contain',
+    imageScale: 1.04,
+    objectPosition: 'center',
+  },
+  {
+    category: 'Phone cases',
+    title: 'Taupe ripple case',
+    description: 'A neutral taupe case showing the concentric back texture and raised camera protection in close detail.',
+    status: 'Enquire for Availability',
+    image: '/images/products/taupe-ripple-case-detail.jpg',
+    alt: 'Close-up of a taupe ripple-pattern phone case held in a hand',
+    imageWidth: 1280,
+    imageHeight: 1630,
+    imageFit: 'contain',
+    imageScale: 1.04,
+    objectPosition: 'center',
+  },
+  {
+    category: 'Phone cases',
+    title: 'Yellow ripple case',
+    description: 'A bright yellow ripple case selected for visible colour, practical grip and everyday phone protection.',
+    status: 'Enquire for Availability',
+    image: '/images/products/yellow-ripple-case-in-hand.jpg',
+    alt: 'Yellow ripple-pattern phone case held in a hand',
+    imageWidth: 2292,
+    imageHeight: 3356,
+    imageFit: 'contain',
+    imageScale: 1.12,
+    objectPosition: 'center',
+  },
+  {
+    category: 'Phone accessories',
+    title: 'Blue ring-stand case',
+    description: 'A blue phone case with an integrated circular ring designed to support grip and hands-free positioning.',
+    status: 'Enquire for Availability',
+    image: '/images/products/blue-ring-stand-in-hand.jpg',
+    alt: 'Blue phone case with integrated circular ring stand held in a hand',
+    imageWidth: 1280,
+    imageHeight: 1785,
+    imageFit: 'contain',
+    imageScale: 1.12,
+    objectPosition: 'center',
+  },
+];
+
 export const projects = [
   {
     number: '01',

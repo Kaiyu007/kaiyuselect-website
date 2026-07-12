@@ -1,9 +1,28 @@
 ---
-interface Props { category: string; title: string; description: string; status: string; motif: string; }
-const { category, title, description, status, motif } = Astro.props;
+interface Props {
+  category: string;
+  title: string;
+  description: string;
+  status: string;
+  motif?: string;
+  image?: string;
+  alt?: string;
+  imageWidth?: number;
+  imageHeight?: number;
+  imageFit?: 'cover' | 'contain';
+  imageScale?: number;
+  objectPosition?: string;
+}
+const { category, title, description, status, motif, image, alt = '', imageWidth, imageHeight, imageFit = 'cover', imageScale = 1, objectPosition = 'center' } = Astro.props;
 ---
 <article class="product-card">
-  <div class:list={['product-visual', `motif-${motif}`]} aria-hidden="true"><span></span><i></i></div>
+  <div class:list={['product-visual', image && 'has-image', image && `fit-${imageFit}`, motif && `motif-${motif}`]}>
+    {image ? (
+      <img src={image} alt={alt} width={imageWidth} height={imageHeight} loading="lazy" decoding="async" style={`object-position: ${objectPosition}; --image-scale: ${imageScale};`} />
+    ) : (
+      <div class="product-placeholder" aria-hidden="true"><span></span><i></i></div>
+    )}
+  </div>
   <div class="product-info">
     <p class="product-category">{category}</p>
     <h3>{title}</h3>

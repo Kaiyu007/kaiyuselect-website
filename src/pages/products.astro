@@ -3,7 +3,7 @@ import BaseLayout from '../components/BaseLayout.astro';
 import SectionHeading from '../components/SectionHeading.astro';
 import ProductCard from '../components/ProductCard.astro';
 import ContactCta from '../components/ContactCta.astro';
-import { products } from '../data/site';
+import { featuredProducts } from '../data/site';
 ---
 
 <BaseLayout title="Selected Products & Phone Accessories Australia | Kaiyu Select" description="Kaiyu Select is preparing a practical range of phone cases, MagSafe accessories, car accessories and everyday electronics for Australia.">
@@ -17,13 +17,28 @@ import { products } from '../data/site';
   <section class="section section-white">
     <div class="shell">
       <div class="notice"><p><strong>Product range in preparation.</strong> Selected items will be introduced gradually, and availability may vary by product and local market.</p><a class="text-link" href="/contact?type=product">Enquire for availability →</a></div>
-      <SectionHeading eyebrow="Product categories" heading="A focused range, prepared carefully." intro="The aim is a manageable selection of useful everyday products—not an oversized or generic catalogue." align="split" />
-      <div class="products-grid">{products.map((product) => <ProductCard {...product} />)}</div>
+      <SectionHeading eyebrow="Selected product examples" heading="A first look at the range." intro="These edited product images show phone cases and ring-stand accessories currently being considered. Colours and availability may vary." align="split" />
+      <div class="products-grid">{featuredProducts.map((product) => <ProductCard {...product} />)}</div>
       <div class="section-action"><a class="button" href="/contact/">Ask about product availability <span aria-hidden="true">↗</span></a></div>
     </div>
   </section>
 
   <section class="section">
+    <div class="shell product-detail">
+      <div class="product-detail-media">
+        <img src="/images/products/purple-ring-stand-open.jpg" alt="Purple phone case standing upright with its circular ring stand open" width="928" height="1408" loading="lazy" decoding="async" />
+      </div>
+      <div class="product-detail-copy">
+        <p class="eyebrow"><span></span>Functional detail</p>
+        <h2>Built-in support when you need it.</h2>
+        <p class="lead">The integrated ring opens to support hands-free viewing and folds back into the case when not in use.</p>
+        <p>This is the kind of practical detail Kaiyu Select looks for: a simple feature with a clear everyday purpose. Enquire for current availability.</p>
+        <a class="text-link" href="/contact/">Ask about ring-stand cases <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-white">
     <div class="shell story-grid">
       <h2>What “selected” means to us.</h2>
       <div class="story-copy"><p class="lead">Products should earn their place through everyday usefulness.</p><p>Selection is guided by practical function, sensible design, handling and relevance to daily routines. Items will be introduced gradually while Kaiyu Select develops the range and learns what is useful in local markets.</p><p>This is not a fully launched online store, and online checkout is not available. For a category, quantity or availability question, send a product enquiry for a direct response.</p></div>
