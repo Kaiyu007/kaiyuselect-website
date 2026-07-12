@@ -1,23 +1,23 @@
 export const services = [
   {
     number: '01',
-    title: 'CAD modelling',
-    description: 'Accurate 2D and 3D CAD models for parts, assemblies, concepts and design development.',
+    title: '3D CAD Modelling',
+    description: 'Accurate parts and assemblies created from sketches, measurements, reference images or existing components.',
   },
   {
     number: '02',
-    title: '3D product design',
-    description: 'Product geometry developed around intended use, key dimensions, components and practical constraints.',
+    title: '2D CAD & Technical Drawings',
+    description: 'Layouts, profiles and dimensioned drawings prepared for review, quoting, fabrication or manufacturing.',
   },
   {
     number: '03',
-    title: 'Functional product design support',
-    description: 'Practical support to improve function, fit, usability and readiness for prototyping or further development.',
+    title: 'Product Design & Development',
+    description: 'Functional products and components developed around intended use, mechanisms, dimensions and manufacturing requirements.',
   },
   {
     number: '04',
-    title: 'Manufacturing-ready drawings',
-    description: 'Clear drawings with agreed dimensions, notes and specifications for supplier review, quoting or manufacture.',
+    title: 'Prototyping & Engineering Support',
+    description: 'Preparation for 3D printing, CNC cutting, visualisation and preliminary engineering analysis.',
   },
   {
     number: '05',

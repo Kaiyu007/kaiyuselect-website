@@ -43,11 +43,14 @@ import { services } from '../data/site';
 
   <section class="section">
     <div class="shell">
-      <SectionHeading eyebrow="Engineering services" heading="Practical support from idea to usable design detail." intro="Flexible CAD modelling, product design, drawing and consultation support for individuals and small organisations." align="split" />
+      <SectionHeading eyebrow="Engineering services" heading="Practical engineering support from idea to usable design files." intro="2D and 3D CAD, product development, technical drawings and prototyping support for individuals and small organisations." align="split" />
       <div class="services-grid">
         {services.slice(0, 4).map((service) => <ServiceCard {...service} />)}
       </div>
-      <div class="section-action"><a class="text-link" href="/engineering">Explore all services <span aria-hidden="true">→</span></a></div>
+      <div class="section-action home-service-links">
+        <a class="text-link" href="/engineering">Explore all services <span aria-hidden="true">→</span></a>
+        <a class="text-link home-service-secondary-link" href="/projects">View Projects <span aria-hidden="true">→</span></a>
+      </div>
     </div>
   </section>
 
