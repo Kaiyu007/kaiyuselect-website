@@ -1,0 +1,254 @@
+{
+  "/images/products/blue-ring-stand-in-hand.jpg": {
+    "width": 1280,
+    "height": 1785,
+    "variants": [
+      {
+        "src": "/images/products/optimised/blue-ring-stand-in-hand-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/images/products/optimised/blue-ring-stand-in-hand-800.webp",
+        "width": 800
+      },
+      {
+        "src": "/images/products/optimised/blue-ring-stand-in-hand-1200.webp",
+        "width": 1200
+      }
+    ]
+  },
+  "/images/products/pastel-ripple-case-lifestyle.jpg": {
+    "width": 1256,
+    "height": 1668,
+    "variants": [
+      {
+        "src": "/images/products/optimised/pastel-ripple-case-lifestyle-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/images/products/optimised/pastel-ripple-case-lifestyle-800.webp",
+        "width": 800
+      },
+      {
+        "src": "/images/products/optimised/pastel-ripple-case-lifestyle-1200.webp",
+        "width": 1200
+      }
+    ]
+  },
+  "/images/products/pink-ripple-case-in-hand.jpg": {
+    "width": 912,
+    "height": 996,
+    "variants": [
+      {
+        "src": "/images/products/optimised/pink-ripple-case-in-hand-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/images/products/optimised/pink-ripple-case-in-hand-800.webp",
+        "width": 800
+      },
+      {
+        "src": "/images/products/optimised/pink-ripple-case-in-hand-912.webp",
+        "width": 912
+      }
+    ]
+  },
+  "/images/products/purple-ring-stand-open.jpg": {
+    "width": 928,
+    "height": 1408,
+    "variants": [
+      {
+        "src": "/images/products/optimised/purple-ring-stand-open-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/images/products/optimised/purple-ring-stand-open-800.webp",
+        "width": 800
+      },
+      {
+        "src": "/images/products/optimised/purple-ring-stand-open-928.webp",
+        "width": 928
+      }
+    ]
+  },
+  "/images/products/taupe-ripple-case-detail.jpg": {
+    "width": 1280,
+    "height": 1630,
+    "variants": [
+      {
+        "src": "/images/products/optimised/taupe-ripple-case-detail-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/images/products/optimised/taupe-ripple-case-detail-800.webp",
+        "width": 800
+      },
+      {
+        "src": "/images/products/optimised/taupe-ripple-case-detail-1200.webp",
+        "width": 1200
+      }
+    ]
+  },
+  "/images/products/yellow-ripple-case-in-hand.jpg": {
+    "width": 2292,
+    "height": 3356,
+    "variants": [
+      {
+        "src": "/images/products/optimised/yellow-ripple-case-in-hand-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/images/products/optimised/yellow-ripple-case-in-hand-800.webp",
+        "width": 800
+      },
+      {
+        "src": "/images/products/optimised/yellow-ripple-case-in-hand-1200.webp",
+        "width": 1200
+      }
+    ]
+  },
+  "/images/projects/linear-stage-exploded-view.jpg": {
+    "width": 1260,
+    "height": 1142,
+    "variants": [
+      {
+        "src": "/images/projects/optimised/linear-stage-exploded-view-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/images/projects/optimised/linear-stage-exploded-view-800.webp",
+        "width": 800
+      },
+      {
+        "src": "/images/projects/optimised/linear-stage-exploded-view-1200.webp",
+        "width": 1200
+      }
+    ]
+  },
+  "/images/projects/mechanical-assembly-design.jpg": {
+    "width": 1156,
+    "height": 820,
+    "variants": [
+      {
+        "src": "/images/projects/optimised/mechanical-assembly-design-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/images/projects/optimised/mechanical-assembly-design-800.webp",
+        "width": 800
+      },
+      {
+        "src": "/images/projects/optimised/mechanical-assembly-design-1156.webp",
+        "width": 1156
+      }
+    ]
+  },
+  "/images/projects/postie-bike-early-team-concept.jpg": {
+    "width": 1004,
+    "height": 664,
+    "variants": [
+      {
+        "src": "/images/projects/optimised/postie-bike-early-team-concept-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/images/projects/optimised/postie-bike-early-team-concept-800.webp",
+        "width": 800
+      },
+      {
+        "src": "/images/projects/optimised/postie-bike-early-team-concept-1004.webp",
+        "width": 1004
+      }
+    ]
+  },
+  "/images/projects/postie-bike-full-assembly-render.jpg": {
+    "width": 990,
+    "height": 900,
+    "variants": [
+      {
+        "src": "/images/projects/optimised/postie-bike-full-assembly-render-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/images/projects/optimised/postie-bike-full-assembly-render-800.webp",
+        "width": 800
+      },
+      {
+        "src": "/images/projects/optimised/postie-bike-full-assembly-render-990.webp",
+        "width": 990
+      }
+    ]
+  },
+  "/images/projects/postie-bike-handlebar-fea-stress.jpg": {
+    "width": 1142,
+    "height": 650,
+    "variants": [
+      {
+        "src": "/images/projects/optimised/postie-bike-handlebar-fea-stress-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/images/projects/optimised/postie-bike-handlebar-fea-stress-800.webp",
+        "width": 800
+      },
+      {
+        "src": "/images/projects/optimised/postie-bike-handlebar-fea-stress-1142.webp",
+        "width": 1142
+      }
+    ]
+  },
+  "/images/projects/postie-bike-material-environmental-impact.jpg": {
+    "width": 1450,
+    "height": 868,
+    "variants": [
+      {
+        "src": "/images/projects/optimised/postie-bike-material-environmental-impact-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/images/projects/optimised/postie-bike-material-environmental-impact-800.webp",
+        "width": 800
+      },
+      {
+        "src": "/images/projects/optimised/postie-bike-material-environmental-impact-1200.webp",
+        "width": 1200
+      }
+    ]
+  },
+  "/images/projects/robotic-platform-design.jpg": {
+    "width": 1129,
+    "height": 1167,
+    "variants": [
+      {
+        "src": "/images/projects/optimised/robotic-platform-design-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/images/projects/optimised/robotic-platform-design-800.webp",
+        "width": 800
+      },
+      {
+        "src": "/images/projects/optimised/robotic-platform-design-1129.webp",
+        "width": 1129
+      }
+    ]
+  },
+  "/images/projects/structural-frame-fea.jpg": {
+    "width": 1260,
+    "height": 636,
+    "variants": [
+      {
+        "src": "/images/projects/optimised/structural-frame-fea-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/images/projects/optimised/structural-frame-fea-800.webp",
+        "width": 800
+      },
+      {
+        "src": "/images/projects/optimised/structural-frame-fea-1200.webp",
+        "width": 1200
+      }
+    ]
+  }
+}

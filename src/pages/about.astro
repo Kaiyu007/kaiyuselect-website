@@ -2,45 +2,42 @@
 import BaseLayout from '../components/BaseLayout.astro';
 import SectionHeading from '../components/SectionHeading.astro';
 import ContactCta from '../components/ContactCta.astro';
+import { founderBackground } from '../data/business';
 ---
-
-<BaseLayout title="About Kaiyu Select | Australian Engineering & Selected Products" description="Kaiyu Select is a founder-led Australian small business combining engineering design capability with practical everyday product selection.">
+<BaseLayout title="About Kaiyu Select | Founder-led Business in Townsville" description="Meet Kaiyu Select, a founder-led small business in Townsville, Queensland, offering practical CAD and engineering design support alongside selected phone accessories.">
   <header class="page-hero">
     <div class="shell page-hero-grid">
-      <div><p class="eyebrow"><span></span>About Kaiyu Select</p><h1>One brand.<br />Two practical paths.</h1></div>
-      <div class="page-hero-copy"><p>Kaiyu Select is a founder-led Australian small business combining practical engineering capability with carefully considered everyday products.</p></div>
+      <div><p class="eyebrow"><span></span>About Kaiyu Select</p><h1>Practical thinking.<br />Personal attention.</h1></div>
+      <div class="page-hero-copy"><p>A founder-led Australian small business operating in Townsville, Queensland. Engineering design support and selected everyday products, approached with care and clear communication.</p></div>
     </div>
   </header>
-
   <section class="section section-white">
     <div class="shell story-grid">
-      <h2>Built gradually around practical thinking.</h2>
+      <div><p class="eyebrow"><span></span>One business, two directions</p><h2>Useful design, from CAD to everyday choices.</h2></div>
       <div class="story-copy">
-        <p class="lead">The idea behind Kaiyu Select is simple: apply practical thinking to both design work and everyday product choices.</p>
-        <p>Engineering services focus on helping people turn requirements, sketches and early ideas into useful CAD models, practical product designs and clear technical drawings.</p>
-        <p>The selected-products direction focuses on items with sensible function and genuine everyday relevance. That range is still being prepared and will develop gradually.</p>
-        <p>Kaiyu Select is an early-stage, founder-led business—not a large company. Work is approached with clear communication, manageable scope, honest expectations and continuous improvement as the business develops.</p>
+        <p class="lead">Kaiyu Select brings a practical approach to both engineering work and product selection.</p>
+        <p>Engineering services help individuals, makers, students, start-ups and small businesses turn sketches, measurements and requirements into CAD models, product designs and clear technical drawings.</p>
+        <p>The retail side focuses on selected phone accessories. Local market sales of phone cases in Townsville have already begun; current styles, fit and availability are confirmed directly.</p>
+        <p>As a small, founder-led business, the focus is on manageable project scopes, direct communication and realistic expectations.</p>
       </div>
     </div>
   </section>
-
+  <section class="section">
+    <div class="shell about-directions">
+      <article><p class="eyebrow"><span></span>Engineering capability</p><h2>Clear files. Defined scope.</h2><p>3D CAD modelling, technical drawings, product development and prototyping support. The portfolio includes a documented academic group project, with the individual contribution clearly identified.</p><a class="text-link" href="/projects">Explore engineering work <span aria-hidden="true">→</span></a></article>
+      <article><p class="eyebrow"><span></span>Local product business</p><h2>Everyday function. Considered choices.</h2><p>Phone cases and ring-stand accessories for individual customers, with product and bulk-purchase enquiries welcome from local Australian retailers and small businesses.</p><a class="text-link" href="/products">View selected products <span aria-hidden="true">→</span></a></article>
+    </div>
+  </section>
+  {founderBackground.approved && founderBackground.text && <section class="section section-white"><div class="shell story-grid"><h2>{founderBackground.heading}</h2><div class="story-copy"><p>{founderBackground.text}</p></div></div></section>}
   <section class="section section-dark">
     <div class="shell">
-      <SectionHeading eyebrow="Working principles" heading="A grounded approach to design, selection and development." />
+      <SectionHeading eyebrow="Working principles" heading="Small business. Clear commitments." />
       <div class="principles-grid">
         <article class="principle"><span>01</span><h3>Practical first</h3><p>Function, constraints and the real use case guide decisions.</p></article>
-        <article class="principle"><span>02</span><h3>Clear communication</h3><p>Plain language, agreed scope and realistic expectations from a small business.</p></article>
-        <article class="principle"><span>03</span><h3>Continuous development</h3><p>Services and product selection are refined gradually through useful feedback and experience.</p></article>
+        <article class="principle"><span>02</span><h3>Clear communication</h3><p>Agree the scope and intended deliverables before engineering work begins. Confirm product details before a purchase.</p></article>
+        <article class="principle"><span>03</span><h3>Honest expectations</h3><p>Be clear about available information, current product availability and the limits of preliminary engineering analysis.</p></article>
       </div>
     </div>
   </section>
-
-  <section class="section">
-    <div class="shell section-heading split">
-      <div><p class="eyebrow"><span></span>Based in Australia</p><h2>Local perspective.<br />Flexible support.</h2></div>
-      <p class="section-intro">Kaiyu Select supports individuals, students, makers, start-ups, small businesses and product developers. Selected products are being prepared for gradual introduction through direct enquiries and local availability.</p>
-    </div>
-  </section>
-
-  <ContactCta />
+  <ContactCta eyebrow="Based in Townsville, Queensland" heading="Start with a practical conversation." text="Share your project, product question or business enquiry. Service scope and any delivery or collection arrangements are confirmed directly." />
 </BaseLayout>

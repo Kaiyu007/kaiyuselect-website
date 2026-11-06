@@ -1,6 +1,8 @@
 ---
 import BaseLayout from '../../components/BaseLayout.astro';
 import SectionHeading from '../../components/SectionHeading.astro';
+import CaseStudySection from '../../components/CaseStudySection.astro';
+import ResponsiveImage from '../../components/ResponsiveImage.astro';
 
 const projectFacts = [
   { label: 'Project type', value: 'Academic group project' },
@@ -69,7 +71,7 @@ const caseStudySections = [
       </div>
 
       <div class="case-study-hero-media">
-        <img src="/images/projects/postie-bike-full-assembly-render.jpg" alt="Rendered SolidWorks assembly of an electric postie bike concept" width="990" height="900" loading="eager" decoding="async" />
+        <ResponsiveImage src="/images/projects/postie-bike-full-assembly-render.jpg" alt="Rendered SolidWorks assembly of an electric postie bike concept" sizes="(max-width: 1248px) calc(100vw - 48px), 1200px" loading="eager" />
       </div>
     </div>
   </header>
@@ -97,29 +99,7 @@ const caseStudySections = [
   <div class="case-study-body">
     <div class="shell">
       {caseStudySections.map((section) => (
-        <section class:list={['case-study-section', !section.image && 'no-media', section.secondary && 'secondary-section']} aria-labelledby={`case-study-section-${section.number}`}>
-          {section.image && (
-            <figure class:list={['case-study-media', section.expandable && 'technical-media']}>
-              {section.expandable ? (
-                <a class="case-study-image-link" href={section.image} target="_blank" rel="noopener noreferrer" aria-label={`Open full-resolution image: ${section.imageAlt}`}>
-                  <img src={section.image} alt={section.imageAlt} width={section.imageWidth} height={section.imageHeight} loading="lazy" decoding="async" />
-                </a>
-              ) : (
-                <img src={section.image} alt={section.imageAlt} width={section.imageWidth} height={section.imageHeight} loading="lazy" decoding="async" />
-              )}
-              <figcaption>
-                <span>{section.caption}</span>
-                {section.expandable && <span class="case-study-resolution-hint">Open full resolution ↗</span>}
-              </figcaption>
-            </figure>
-          )}
-          <div class="case-study-copy">
-            <p class="eyebrow"><span></span>{section.number} · {section.eyebrow}</p>
-            <h2 id={`case-study-section-${section.number}`}>{section.heading}</h2>
-            <p>{section.text}</p>
-            {section.note && <p class="case-study-analysis-note">{section.note}</p>}
-          </div>
-        </section>
+        <CaseStudySection section={section} />
       ))}
     </div>
   </div>

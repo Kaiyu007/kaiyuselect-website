@@ -1,4 +1,5 @@
 ---
+import ResponsiveImage from './ResponsiveImage.astro';
 interface Props {
   number?: string;
   category: string;
@@ -33,7 +34,7 @@ const {
 <article class:list={['project-card', image && 'has-image', !number && 'no-number']}>
   {image && (
     <div class:list={['project-media', `fit-${imageFit}`]}>
-      <img src={image} alt={imageAlt} loading="lazy" decoding="async" style={`object-position: ${imagePosition};`} />
+      <a class="project-image-link" href={projectUrl || image} target={projectUrl ? undefined : "_blank"} rel={projectUrl ? undefined : "noopener noreferrer"} aria-label={projectUrl ? `View case study: ${title}` : `Open full-resolution image: ${title}`}><ResponsiveImage src={image} alt={imageAlt} style={`object-position: ${imagePosition};`} /></a>
     </div>
   )}
 
@@ -53,7 +54,8 @@ const {
     </ul>
 
     <footer class="project-card-footer">
-      {status && <span class="project-status"><i aria-hidden="true"></i>{status}</span>}
+      {status && <span class:list={["project-status", !projectUrl && "is-pending"]}>{status}</span>}
+      {!projectUrl && image && <a class="text-link" href={image} target="_blank" rel="noopener noreferrer" aria-label={`Open full-resolution image: ${title}`}>View technical image <span aria-hidden="true">↗</span></a>}
       {projectUrl && <a class="text-link" href={projectUrl}>{linkLabel} <span aria-hidden="true">↗</span></a>}
     </footer>
   </div>

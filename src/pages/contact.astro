@@ -1,176 +1,54 @@
 ---
 import BaseLayout from '../components/BaseLayout.astro';
+import { enquiryTypes } from '../lib/enquiry.js';
+import { onlineEnquiries, turnstileSiteKey } from '../data/contact';
 ---
-
-<BaseLayout title="Contact Kaiyu Select | Engineering & Product Enquiries Australia" description="Contact Kaiyu Select about engineering design, CAD modelling, product design projects or selected product availability in Australia.">
+<BaseLayout title="Contact & Wholesale Enquiries | Kaiyu Select Townsville" description="Contact Kaiyu Select in Townsville about engineering services, projects, phone accessories or wholesale and retail opportunities. Direct, practical enquiry support.">
   <header class="page-hero">
     <div class="shell page-hero-grid">
-      <div><p class="eyebrow"><span></span>Contact</p><h1>Tell us what<br />you have in mind.</h1></div>
-      <div class="page-hero-copy"><p>Choose the most relevant enquiry type and include the practical details available. Clear information helps us provide a more useful response.</p></div>
+      <div><p class="eyebrow"><span></span>Contact · Townsville, Queensland</p><h1>Tell us what<br />you have in mind.</h1></div>
+      <div class="page-hero-copy"><p>Engineering project, product question or business enquiry — choose the closest category and share the details you have.</p><p class="hero-supporting-copy">Enquiries are reviewed directly by a small, founder-led business.</p></div>
     </div>
   </header>
-
   <section class="section">
     <div class="shell contact-grid">
-      <form id="contact-form" class="contact-form">
-        <h2>Send an enquiry</h2>
-        <p>Complete the form, then prepare an email or copy the enquiry details into your preferred email app.</p>
+      <form id="contact-form" class="contact-form" method="post" action="/contact" data-online={onlineEnquiries ? 'true' : 'false'}>
+        <h2>Make an enquiry</h2>
+        <p>{onlineEnquiries ? 'Send your enquiry online, or use the email and copy options below.' : 'Prepare an email with the details below, then send it from your email app. You can also copy your enquiry.'}</p>
+        <p class="required-note">All fields are required.</p>
+        <div id="form-errors" class="form-error-summary" role="alert" tabindex="-1" hidden></div>
         <div class="form-row">
-          <div class="field"><label for="name">Name</label><input id="name" name="name" type="text" autocomplete="name" required /></div>
-          <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required /></div>
+          <div class="field"><label for="name">Your name</label><input id="name" name="name" autocomplete="name" maxlength="100" required aria-describedby="name-error" /><p id="name-error" class="field-error" hidden></p></div>
+          <div class="field"><label for="email">Email address</label><input id="email" name="email" type="email" inputmode="email" autocomplete="email" maxlength="254" required aria-describedby="email-error" /><p id="email-error" class="field-error" hidden></p></div>
         </div>
-        <div class="field"><label for="enquiry-type">Enquiry type</label><select id="enquiry-type" name="enquiry-type" required><option value="">Select an option</option><option>Engineering service</option><option>Project consultation</option><option>Product availability</option><option>Local markets</option><option>General enquiry</option></select></div>
-        <div class="field"><label for="subject">Subject</label><input id="subject" name="subject" type="text" required /></div>
-        <div class="field"><label for="message">How can we help?</label><textarea id="message" name="message" required placeholder="Engineering: project type, dimensions, reference files, timeline and deliverables. Products: category, quantity and availability questions."></textarea></div>
+        <div class="field"><label for="enquiry-type">What is your enquiry about?</label><select id="enquiry-type" name="type" required aria-describedby="type-error"><option value="">Choose an enquiry type</option>{Object.entries(enquiryTypes).map(([value,label]) => <option value={value}>{label}</option>)}</select><p id="type-error" class="field-error" hidden></p></div>
+        <div class="field"><label for="subject">Subject or product name</label><input id="subject" name="subject" maxlength="160" required aria-describedby="subject-error" /><p id="subject-error" class="field-error" hidden></p></div>
+        <div class="field"><label for="message">Enquiry details</label><p class="field-hint" id="message-hint">Include your question and any relevant details.</p><textarea id="message" name="message" minlength="10" maxlength="4000" rows="6" required aria-describedby="message-hint message-error"></textarea><p id="message-error" class="field-error" hidden></p></div>
+        {onlineEnquiries && <>
+          <div class="form-trap" aria-hidden="true"><label for="website">Leave this field empty</label><input id="website" name="website" autocomplete="off" tabindex="-1" /></div>
+          <div id="turnstile-widget" data-sitekey={turnstileSiteKey}></div>
+          <p class="form-note">Spam protection is provided by Cloudflare Turnstile. See our <a href="/privacy">privacy information</a>.</p>
+        </>}
         <div class="form-actions">
-          <button class="button" type="submit" aria-describedby="email-fallback">Prepare email <span aria-hidden="true">↗</span></button>
+          <button id="submit-enquiry" class="button" type="submit">{onlineEnquiries ? 'Send enquiry' : 'Prepare email'} <span aria-hidden="true">↗</span></button>
+          {onlineEnquiries && <button id="prepare-email" class="button button-outline" type="button">Prepare email instead</button>}
           <button id="copy-enquiry" class="button button-outline" type="button">Copy enquiry details</button>
         </div>
-        <p class="form-note">After your email app opens, attach any sketches, photos, CAD files or reference documents before sending.</p>
-        <p id="copy-status" class="form-note copy-status" role="status" aria-live="polite" hidden>Enquiry details copied. Paste them into your preferred email app and send to contact@kaiyuselect.com.au.</p>
-        <p id="email-fallback" class="form-note">If the email app does not open, please email <a href="mailto:contact@kaiyuselect.com.au">contact@kaiyuselect.com.au</a> directly.</p>
-        <p class="form-note">This form does not store your information or submit to a database. It opens your default email application.</p>
+        <p id="form-status" class="form-note copy-status" role="status" aria-live="polite" hidden></p>
+        <div id="manual-copy" hidden><label for="copy-text">Select and copy your enquiry</label><textarea id="copy-text" readonly rows="8"></textarea></div>
+        <p class="form-note">{onlineEnquiries ? 'For drawings, photos or CAD files, use the email option and attach them in your email app.' : 'Attach drawings, photos or CAD files in your email app before sending.'}</p>
+        <p class="form-note">Prefer to email directly? <a href="mailto:contact@kaiyuselect.com.au">contact@kaiyuselect.com.au</a></p>
+        <p class="form-note">Your details are used to respond to your enquiry. <a href="/privacy">Privacy information</a>.</p>
+        <noscript><p class="form-note">The enquiry helper needs JavaScript. Please email contact@kaiyuselect.com.au directly; this form does not submit without JavaScript.</p></noscript>
       </form>
-
       <aside class="contact-details">
-        <p class="eyebrow"><span></span>Get in touch</p>
-        <h2>Share the details that matter.</h2>
-        <p>Kaiyu Select is a small business, so enquiries are reviewed and answered directly. It is fine if your information is still at an early stage.</p>
-        <div class="contact-method"><span>Email</span><a href="mailto:contact@kaiyuselect.com.au">contact@kaiyuselect.com.au</a></div>
-        <div class="contact-method"><span>Engineering enquiries</span><p>Include the project type, key dimensions, reference files, intended use, timeline and required deliverables or file formats.</p></div>
-        <div class="contact-method"><span>Product enquiries</span><p>Include the product category, expected quantity and any specific availability or local-market questions.</p></div>
+        <p class="eyebrow"><span></span>Useful details to include</p><h2>A clearer brief.<br />A useful next step.</h2>
+        <div class="contact-method"><span>Engineering &amp; projects</span><p>The part or system, key dimensions, existing files, intended use, timeline and required outputs. Preliminary analysis is discussed within an agreed scope.</p></div>
+        <div class="contact-method"><span>Products</span><p>Your exact phone model, the product name or colour, and any quantity or availability questions.</p></div>
+        <div class="contact-method"><span>Wholesale &amp; retail</span><p>Your business name, location, product categories and indicative quantities. Supply options are discussed individually.</p></div>
+        <div class="contact-location"><p class="eyebrow"><span></span>Townsville, Queensland</p><p>Service scope and any delivery or collection arrangements are confirmed directly. No walk-in address or opening hours are listed.</p></div>
       </aside>
     </div>
   </section>
-
-  <script>
-    const form = document.querySelector<HTMLFormElement>('#contact-form');
-    const copyButton = document.querySelector<HTMLButtonElement>('#copy-enquiry');
-    const copyStatus = document.querySelector<HTMLElement>('#copy-status');
-    const enquiryTypeField = document.querySelector<HTMLSelectElement>('#enquiry-type');
-    const subjectField = document.querySelector<HTMLInputElement>('#subject');
-
-    const enquiryTypeMap: Record<string, string> = {
-      engineering: 'Engineering service',
-      project: 'Project consultation',
-      product: 'Product availability',
-    };
-
-    const searchParams = new URLSearchParams(window.location.search);
-    const requestedType = searchParams.get('type');
-    const requestedSubject = searchParams.get('subject');
-
-    if (requestedType && enquiryTypeField && enquiryTypeMap[requestedType]) {
-      enquiryTypeField.value = enquiryTypeMap[requestedType];
-    }
-
-    if (requestedSubject && subjectField) {
-      const safeSubject = requestedSubject
-        .replace(/[\u0000-\u001f\u007f]/g, ' ')
-        .trim()
-        .slice(0, 200);
-
-      if (safeSubject) subjectField.value = safeSubject;
-    }
-
-    const getFieldValue = (id: string) => {
-      const field = document.getElementById(id);
-
-      if (
-        field instanceof HTMLInputElement ||
-        field instanceof HTMLTextAreaElement ||
-        field instanceof HTMLSelectElement
-      ) {
-        return field.value.trim();
-      }
-
-      return '';
-    };
-
-    const getEnquiryDetails = () => ({
-      name: getFieldValue('name'),
-      email: getFieldValue('email'),
-      enquiryType: getFieldValue('enquiry-type'),
-      subject: getFieldValue('subject'),
-      message: getFieldValue('message'),
-    });
-
-    const buildEnquiryBody = (details: ReturnType<typeof getEnquiryDetails>) => [
-      `Name: ${details.name}`,
-      `Email: ${details.email}`,
-      `Enquiry type: ${details.enquiryType}`,
-      `Subject: ${details.subject}`,
-      `Message: ${details.message}`,
-    ].join('\n');
-
-    const buildClipboardText = (details: ReturnType<typeof getEnquiryDetails>) => [
-      'To: contact@kaiyuselect.com.au',
-      '',
-      `Subject: ${details.subject}`,
-      '',
-      'Hello Kaiyu Select,',
-      '',
-      'I would like to make an enquiry.',
-      '',
-      `Name: ${details.name}`,
-      `Email: ${details.email}`,
-      `Enquiry type: ${details.enquiryType}`,
-      '',
-      'Message:',
-      details.message,
-      '',
-      'Kind regards,',
-      details.name,
-    ].join('\n');
-
-    const copyText = async (text: string) => {
-      if (navigator.clipboard && window.isSecureContext) {
-        await navigator.clipboard.writeText(text);
-        return;
-      }
-
-      const textarea = document.createElement('textarea');
-      textarea.value = text;
-      textarea.setAttribute('readonly', '');
-      textarea.style.position = 'fixed';
-      textarea.style.opacity = '0';
-      document.body.appendChild(textarea);
-      textarea.select();
-      const copied = document.execCommand('copy');
-      textarea.remove();
-
-      if (!copied) throw new Error('Clipboard copy was not available.');
-    };
-
-    form?.addEventListener('submit', (event) => {
-      event.preventDefault();
-
-      const details = getEnquiryDetails();
-      const body = buildEnquiryBody(details);
-
-      const mailtoUrl = `mailto:contact@kaiyuselect.com.au?subject=${encodeURIComponent(details.subject)}&body=${encodeURIComponent(body)}`;
-      window.location.href = mailtoUrl;
-    });
-
-    copyButton?.addEventListener('click', async () => {
-      if (!form?.reportValidity()) return;
-
-      const details = getEnquiryDetails();
-      const clipboardText = buildClipboardText(details);
-
-      try {
-        await copyText(clipboardText);
-        if (copyStatus) copyStatus.hidden = false;
-      } catch {
-        if (copyStatus) {
-          copyStatus.textContent = 'Copying was not available. Please email contact@kaiyuselect.com.au directly.';
-          copyStatus.hidden = false;
-        }
-      }
-    });
-
-    form?.addEventListener('input', () => {
-      if (copyStatus) copyStatus.hidden = true;
-    });
-  </script>
+  <script>import '../scripts/contact';</script>
 </BaseLayout>

@@ -1,32 +1,23 @@
 ---
-interface Props {
-  category: string;
-  title: string;
-  description: string;
-  status: string;
-  motif?: string;
-  image?: string;
-  alt?: string;
-  imageWidth?: number;
-  imageHeight?: number;
-  imageFit?: 'cover' | 'contain';
-  imageScale?: number;
-  objectPosition?: string;
-}
-const { category, title, description, status, motif, image, alt = '', imageWidth, imageHeight, imageFit = 'cover', imageScale = 1, objectPosition = 'center' } = Astro.props;
+import ResponsiveImage from './ResponsiveImage.astro';
+import type { Product } from '../data/site';
+interface Props extends Product {}
+const { id, category, title, description, colour, compatibility, status, image, alt } = Astro.props;
+const enquiryUrl = `/contact?${new URLSearchParams({ type: 'product', subject: title, product: id })}`;
 ---
-<article class="product-card">
-  <div class:list={['product-visual', image && 'has-image', image && `fit-${imageFit}`, motif && `motif-${motif}`]}>
-    {image ? (
-      <img src={image} alt={alt} width={imageWidth} height={imageHeight} loading="lazy" decoding="async" style={`object-position: ${objectPosition}; --image-scale: ${imageScale};`} />
-    ) : (
-      <div class="product-placeholder" aria-hidden="true"><span></span><i></i></div>
-    )}
-  </div>
+<article class="product-card" id={id}>
+  <div class="product-visual fit-contain"><ResponsiveImage src={image} alt={alt} /></div>
   <div class="product-info">
     <p class="product-category">{category}</p>
     <h3>{title}</h3>
     <p>{description}</p>
-    <span class="status"><i></i>{status}</span>
+    <dl class="product-specs">
+      <div><dt>Colour shown</dt><dd>{colour}</dd></div>
+      <div><dt>Phone fit</dt><dd>{compatibility || 'Confirm your phone model when enquiring.'}</dd></div>
+    </dl>
+    <div class="product-card-action">
+      <span class="availability-label">{status}</span>
+      <a class="text-link" href={enquiryUrl} aria-label={`Enquire about ${title}`}>Enquire about this style <span aria-hidden="true">→</span></a>
+    </div>
   </div>
 </article>

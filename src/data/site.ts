@@ -36,89 +36,68 @@ export const services = [
   },
 ];
 
-export const products = [
-  {
-    category: 'Mobile',
-    title: 'Phone cases',
-    description: 'Everyday phone protection considered for fit, handling, useful details and straightforward value.',
-    status: 'Range in Preparation',
-    motif: 'case',
-  },
-  {
-    category: 'Mobile',
-    title: 'MagSafe accessories',
-    description: 'Practical magnetic accessories being considered for charging, mounting and everyday use.',
-    status: 'Enquire for Availability',
-    motif: 'ring',
-  },
-  {
-    category: 'Automotive',
-    title: 'Car accessories',
-    description: 'Useful accessories selected to support simple organisation, mounting and day-to-day driving needs.',
-    status: 'Enquire for Availability',
-    motif: 'car',
-  },
-  {
-    category: 'Everyday tech',
-    title: 'Everyday electronics',
-    description: 'Straightforward electronics considered for genuine usefulness rather than novelty alone.',
-    status: 'Range in Preparation',
-    motif: 'tech',
-  },
+export const consideredCategories = [
+  { title: 'MagSafe accessories', description: 'Magnetic accessories for everyday phone use.' },
+  { title: 'Car accessories', description: 'Practical mounting and organisation accessories.' },
+  { title: 'Everyday electronics', description: 'Small electronics selected for useful everyday functions.' },
 ];
 
-export const featuredProducts = [
+export interface Product {
+  id: string;
+  category: string;
+  title: string;
+  description: string;
+  colour: string;
+  compatibility: string | null;
+  status: 'Enquire for availability' | 'Coming soon';
+  image: string;
+  alt: string;
+}
+
+export const featuredProducts: Product[] = [
   {
     category: 'Phone cases',
+    id: 'pink-ripple',
     title: 'Pink ripple case',
+    colour: 'Pink',
+    compatibility: null,
     description: 'A soft pink case with a raised ripple texture, protective camera surround and comfortable everyday handling.',
-    status: 'Enquire for Availability',
+    status: 'Enquire for availability',
     image: '/images/products/pink-ripple-case-in-hand.jpg',
     alt: 'Pink ripple-pattern phone case held in a hand',
-    imageWidth: 912,
-    imageHeight: 996,
-    imageFit: 'contain',
-    imageScale: 1.04,
-    objectPosition: 'center',
   },
   {
     category: 'Phone cases',
+    id: 'taupe-ripple',
     title: 'Taupe ripple case',
+    colour: 'Taupe',
+    compatibility: null,
     description: 'A neutral taupe case showing the concentric back texture and raised camera protection in close detail.',
-    status: 'Enquire for Availability',
+    status: 'Enquire for availability',
     image: '/images/products/taupe-ripple-case-detail.jpg',
     alt: 'Close-up of a taupe ripple-pattern phone case held in a hand',
-    imageWidth: 1280,
-    imageHeight: 1630,
-    imageFit: 'contain',
-    imageScale: 1.04,
-    objectPosition: 'center',
   },
   {
     category: 'Phone cases',
+    id: 'yellow-ripple',
     title: 'Yellow ripple case',
+    colour: 'Yellow',
+    compatibility: null,
     description: 'A bright yellow ripple case selected for visible colour, practical grip and everyday phone protection.',
-    status: 'Enquire for Availability',
+    status: 'Enquire for availability',
     image: '/images/products/yellow-ripple-case-in-hand.jpg',
     alt: 'Yellow ripple-pattern phone case held in a hand',
-    imageWidth: 2292,
-    imageHeight: 3356,
-    imageFit: 'contain',
-    imageScale: 1.12,
-    objectPosition: 'center',
   },
   {
     category: 'Phone accessories',
+    id: 'blue-ring-stand',
     title: 'Blue ring-stand case',
+    colour: 'Blue',
+    compatibility: null,
     description: 'A blue phone case with an integrated circular ring designed to support grip and hands-free positioning.',
-    status: 'Enquire for Availability',
+    status: 'Enquire for availability',
     image: '/images/products/blue-ring-stand-in-hand.jpg',
     alt: 'Blue phone case with integrated circular ring stand held in a hand',
-    imageWidth: 1280,
-    imageHeight: 1785,
-    imageFit: 'contain',
-    imageScale: 1.12,
-    objectPosition: 'center',
   },
 ];
 
@@ -141,7 +120,7 @@ export const projects = [
     number: '01',
     category: 'Mechanical Design',
     title: 'Mechanical Assembly Design',
-    shortDescription: 'Precision mechanical assemblies, housings and motion systems developed as fully editable SolidWorks models.',
+    shortDescription: 'A SolidWorks assembly showing rotating components, a housing and a supporting structure.',
     tags: ['SolidWorks', 'Mechanical assemblies', 'Motion systems'],
     image: '/images/projects/mechanical-assembly-design.jpg',
     imageAlt: 'SolidWorks mechanical assembly design with rotating components and support structure.',
@@ -153,7 +132,7 @@ export const projects = [
     number: '02',
     category: 'Robotic Systems',
     title: 'Robotic System Development',
-    shortDescription: 'Mechanical design and integration of mobile robotic platforms, articulated mechanisms and supporting components.',
+    shortDescription: 'A CAD view of a mobile robotic platform and its articulated mechanism.',
     tags: ['Robotic platforms', 'Mechanisms', 'Integration'],
     image: '/images/projects/robotic-platform-design.jpg',
     imageAlt: 'SolidWorks model of a mobile robotic platform with an articulated mechanism.',
@@ -165,7 +144,7 @@ export const projects = [
     number: '03',
     category: 'Technical Documentation',
     title: 'Exploded Views & Documentation',
-    shortDescription: 'Exploded assembly views created to clearly communicate component relationships, assembly sequence and manufacturing intent.',
+    shortDescription: 'An exploded linear-stage assembly showing the relationship between its component parts.',
     tags: ['Exploded views', 'Assembly sequence', 'Documentation'],
     image: '/images/projects/linear-stage-exploded-view.jpg',
     imageAlt: 'Exploded SolidWorks assembly view of a precision linear motion stage.',
@@ -177,8 +156,8 @@ export const projects = [
     number: '04',
     category: 'Engineering Analysis',
     title: 'Structural Analysis',
-    shortDescription: 'Finite element analysis used to assess displacement, structural behaviour and opportunities for design improvement.',
-    tags: ['Finite element analysis', 'Displacement', 'Design review'],
+    shortDescription: 'A preliminary displacement analysis visual for a structural frame. Loading assumptions and validation are not documented in this gallery.',
+    tags: ['Preliminary FEA', 'Displacement', 'Design review'],
     image: '/images/projects/structural-frame-fea.jpg',
     imageAlt: 'Finite element displacement analysis of a large structural frame.',
     imageFit: 'contain',

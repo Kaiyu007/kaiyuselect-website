@@ -1,0 +1,15 @@
+---
+import images from '../data/image-manifest.json';
+interface Props {
+  src: string;
+  alt: string;
+  sizes?: string;
+  loading?: 'lazy' | 'eager';
+  style?: string;
+  class?: string;
+}
+const { src, alt, sizes = '(max-width: 720px) calc(100vw - 32px), (max-width: 1248px) 50vw, 600px', loading = 'lazy', style, class: className } = Astro.props;
+const asset = images[src as keyof typeof images];
+const variants = asset?.variants;
+---
+<img src={variants?.[variants.length - 1]?.src || src} srcset={variants?.map(v => `${v.src} ${v.width}w`).join(', ')} sizes={variants ? sizes : undefined} width={asset?.width} height={asset?.height} alt={alt} loading={loading} decoding="async" style={style} class={className} />

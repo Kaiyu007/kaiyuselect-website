@@ -3,3 +3,11 @@ dist/
 .astro/
 .pnpm-store/
 .DS_Store
+
+# Local credentials and development bindings
+.env
+.env.*
+!.env.example
+.dev.vars
+.dev.vars.*
+.wrangler/

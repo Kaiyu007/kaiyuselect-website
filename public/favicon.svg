@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40">
+  <title>Kaiyu Select</title>
+  <g transform="translate(20 20) rotate(45) translate(-12 -12)">
+    <path fill="#f4f2ec" stroke="#13201f" stroke-width="2" d="M1 1h22v22H1z"/>
+    <path fill="#24746e" stroke="#13201f" stroke-width="2" d="M16 1h7v7h-7z"/>
+    <path fill="none" stroke="#13201f" d="M5 12h7v7H5z"/>
+  </g>
+</svg>

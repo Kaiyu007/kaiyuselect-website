@@ -1,0 +1,34 @@
+---
+import ResponsiveImage from './ResponsiveImage.astro';
+interface Props {
+  section: {
+    number: string; eyebrow: string; heading: string; text: string;
+    image?: string; imageAlt?: string; caption?: string; note?: string;
+    expandable?: boolean; secondary?: boolean;
+  };
+}
+const { section } = Astro.props;
+---
+<section class:list={['case-study-section', !section.image && 'no-media', section.secondary && 'secondary-section']} aria-labelledby={`case-study-section-${section.number}`}>
+          {section.image && (
+            <figure class:list={['case-study-media', section.expandable && 'technical-media']}>
+              {section.expandable ? (
+                <a class="case-study-image-link" href={section.image} target="_blank" rel="noopener noreferrer" aria-label={`Open full-resolution image: ${section.imageAlt}`}>
+                  <ResponsiveImage src={section.image} alt={section.imageAlt || ""} />
+                </a>
+              ) : (
+                <ResponsiveImage src={section.image} alt={section.imageAlt || ""} />
+              )}
+              <figcaption>
+                <span>{section.caption}</span>
+                {section.expandable && <span class="case-study-resolution-hint">Open full resolution ↗</span>}
+              </figcaption>
+            </figure>
+          )}
+          <div class="case-study-copy">
+            <p class="eyebrow"><span></span>{section.number} · {section.eyebrow}</p>
+            <h2 id={`case-study-section-${section.number}`}>{section.heading}</h2>
+            <p>{section.text}</p>
+            {section.note && <p class="case-study-analysis-note">{section.note}</p>}
+          </div>
+        </section>
