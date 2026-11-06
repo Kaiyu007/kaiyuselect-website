@@ -4,6 +4,7 @@ import SectionHeading from '../components/SectionHeading.astro';
 import ServiceCard from '../components/ServiceCard.astro';
 import ContactCta from '../components/ContactCta.astro';
 import { services } from '../data/site';
+
 ---
 
 <BaseLayout title="Kaiyu Select | Engineering Design & Selected Products Australia" description="Kaiyu Select is an Australian small business offering practical engineering design, CAD modelling, product design support and selected everyday products.">
@@ -77,23 +78,3 @@ import { services } from '../data/site';
 
   <ContactCta />
 </BaseLayout>
-
-<style>
-  .label-two {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: flex-end;
-    gap: 2px;
-    white-space: nowrap;
-    transform: translateX(30px);
-  }
-
-  @media (max-width: 980px) {
-    .label-two {
-      right: 50%;
-      align-items: center;
-      transform: translate(50%, 108px);
-    }
-  }
-</style>

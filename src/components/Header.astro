@@ -28,7 +28,7 @@ const isCurrent = (href: string) => href === '/' ? currentPath === '/' : current
     <a class="header-cta" href="/contact">Start an enquiry <span aria-hidden="true">↗</span></a>
 
     <details class="mobile-menu">
-      <summary aria-label="Open navigation"><span></span><span></span></summary>
+      <summary aria-label="Navigation menu"><span></span><span></span></summary>
       <nav aria-label="Mobile navigation">
         {links.map(([href, label]) => (
           <a href={href} aria-current={isCurrent(href) ? 'page' : undefined}>{label}</a>

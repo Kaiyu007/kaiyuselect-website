@@ -201,7 +201,7 @@ const workflow = [
 
   <section class="section section-white engineering-enquiry-section" aria-labelledby="enquiry-heading">
     <div class="shell">
-      <SectionHeading eyebrow="Before You Enquire" heading="What to send for a quote" intro="Send the information currently available. Missing technical requirements can be clarified before work begins." align="split" />
+      <SectionHeading id="enquiry-heading" eyebrow="Before You Enquire" heading="What to send for a quote" intro="Send the information currently available. Missing technical requirements can be clarified before work begins." align="split" />
 
       <ul class="engineering-quote-checklist">
         {quoteChecklist.map((item) => <li>{item}</li>)}
@@ -235,7 +235,7 @@ const workflow = [
 
   <section class="section section-dark engineering-workflow-section" aria-labelledby="workflow-heading">
     <div class="shell">
-      <SectionHeading eyebrow="How It Works" heading="A straightforward design process." />
+      <SectionHeading id="workflow-heading" eyebrow="How It Works" heading="A straightforward design process." />
       <div class="process-grid engineering-process-grid">
         {workflow.map((step) => (
           <article class="process-step">

@@ -1,0 +1,38 @@
+---
+interface Props { number: string; }
+const { number } = Astro.props;
+---
+
+<!-- Original 64-unit technical family: 2-unit strokes, open linework and shared optical bounds. -->
+<svg class="service-visual" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+  {number === '01' && <>
+    <!-- Isometric machined block with a circular bore on its top face. -->
+    <path d="m8 22 24-14 24 14-24 14Z" />
+    <path d="M8 22v22l24 14 24-14V22M32 36v22" />
+    <ellipse cx="32" cy="22" rx="8" ry="4.5" />
+  </>}
+  {number === '02' && <>
+    <!-- Orthographic plate and bore, with separate extension and dimension lines. -->
+    <rect x="22" y="24" width="32" height="28" rx="1" />
+    <circle cx="38" cy="38" r="7" />
+    <path d="M22 8v10M54 8v10M22 13h32m-28-3-4 3 4 3m24-6 4 3-4 3M8 24h9M8 52h9M12 24v28m-3-24 3-4 3 4m-6 20 3 4 3-4" />
+  </>}
+  {number === '03' && <>
+    <!-- The same enclosure progresses from a dashed concept to a defined product. -->
+    <rect x="8" y="10" width="16" height="44" rx="4" stroke-dasharray="4 4" />
+    <path d="M13 20h6" stroke-dasharray="3 3" />
+    <path d="M28 33h8m-4-4 4 4-4 4" />
+    <rect x="40" y="10" width="16" height="44" rx="4" />
+    <path d="M45 20h6M45 46h6" />
+  </>}
+  {number === '04' && <>
+    <!-- Printing nozzle and three parallel deposited layers. -->
+    <path d="M24 8h16v12l-8 8-8-8ZM32 28v4" />
+    <path d="m8 40 24-8 24 8-24 8ZM8 46l24 8 24-8M8 52l24 8 24-8" />
+  </>}
+</svg>
+
+<style>
+  /* Align the visible artwork at x=8 with the heading, not the empty viewBox edge. */
+  .service-visual { display: block; flex: 0 0 auto; width: 56px; height: 56px; margin-left: -7px; color: var(--teal); }
+</style>
