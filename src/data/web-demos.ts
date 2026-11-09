@@ -9,4 +9,4 @@ export const demos = [
   { slug: 'residential-real-estate', theme: 'property', number: '08', title: 'Residential Real Estate Agency', brand: 'STILL HOUSE', strap: 'Considered places to call home', headline: 'A place for your next chapter.', summary: 'An elegant property concept with combined search filters, fictional architectural imagery, image views and inspection enquiries.', features: ['Property search', 'Listing details', 'Inspection preview'], art: 'property-hero', nav: [['Find a home','listings'],['Neighbourhoods','neighbourhoods'],['People','people'],['Inspect','inspection']] },
 ] as const;
 export const demoHref = (slug: string) => `/web-design/demos/${slug}/`;
-export const websiteEnquiry = (title: string) => `/contact/?type=general&subject=${encodeURIComponent(`Website project — ${title}`)}`;
+export const websiteEnquiry = (title: string) => `/contact/?type=webdesign&subject=${encodeURIComponent(`Website project — ${title}`)}`;

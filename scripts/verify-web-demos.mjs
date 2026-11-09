@@ -11,7 +11,7 @@ for(const route of routes){
   assert.match(html,/Demo Website Concept — Fictional Business/);
   assert.match(html,/Back to Web Design Portfolio/);assert.match(html,/Request a Similar Website/);
   assert.ok(!/<form\b|<iframe\b|data-online=|data-sitekey=|action=|\/api\/enquiry|mailto:|tel:/.test(html),`Demo must not contain an external submission surface: ${route}`);
-  assert.match(html,/\/contact\/\?type=general(?:&amp;|&)subject=Website%20project/);
+  assert.match(html,/\/contact\/\?type=webdesign(?:&amp;|&)subject=Website%20project/);
   const scripts=[...html.matchAll(/<script[^>]+src="([^"]+)"/g)].map(m=>m[1]);
   for(const script of scripts){
     assert.ok(script.startsWith('/_astro/'),'No third-party demo scripts');

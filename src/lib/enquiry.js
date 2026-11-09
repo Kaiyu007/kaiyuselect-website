@@ -3,6 +3,7 @@ export const enquiryTypes = {
   project: 'Project Enquiries',
   product: 'Product Enquiries',
   wholesale: 'Wholesale & Retail Enquiries',
+  webdesign: 'Website Design Enquiries',
   general: 'General Enquiries',
 };
 export const enquiryHints = {
@@ -10,12 +11,21 @@ export const enquiryHints = {
   project: 'Tell us the project stage, design question, available information and intended outcome.',
   product: 'Include your exact phone model, preferred style or colour, and any availability questions.',
   wholesale: 'Include your business name, location, product categories, indicative quantities and preferred timing.',
+  webdesign: 'Tell us about your business and what your website needs to do. Share what you know; the optional brief below can help.',
   general: 'Tell us what you would like to know and include any relevant details.',
 };
 export const recipient = 'contact@kaiyuselect.com.au';
 export function normaliseType(value) {
   const aliases = { 'Engineering service': 'engineering', 'Project consultation': 'project', 'Product availability': 'product', 'Local markets': 'general', market: 'general', 'General enquiry': 'general' };
   return Object.hasOwn(enquiryTypes, value) ? value : aliases[value] || 'general';
+}
+export function enquiryPrefill(search) {
+  const params = new URLSearchParams(search);
+  const requestedType = params.get('type');
+  return {
+    type: requestedType ? normaliseType(requestedType) : '',
+    subject: (params.get('subject') || '').replace(/[\x00-\x1f\x7f]/g, ' ').trim().slice(0, 160),
+  };
 }
 export function validateEnquiry(input) {
   const data = {};

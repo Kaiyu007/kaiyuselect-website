@@ -5,45 +5,40 @@ import ServiceCard from '../components/ServiceCard.astro';
 import ContactCta from '../components/ContactCta.astro';
 import ResponsiveImage from '../components/ResponsiveImage.astro';
 import { services } from '../data/site';
+import { demos, demoHref } from '../data/web-demos';
+const featuredWebsites = demos.filter(d => ['automotive-workshop', 'fine-jewellery', 'landscape-outdoor'].includes(d.slug));
 
 ---
 
-<BaseLayout title="Kaiyu Select | Engineering Design & Selected Products Australia" description="Kaiyu Select is an Australian small business offering practical engineering design, CAD modelling, product design support and selected everyday products.">
+<BaseLayout title="Kaiyu Select | Engineering, Web Design & Selected Products" description="Founder-led engineering design and CAD, website design and development, and selected phone accessories. Based in Townsville, Queensland.">
   <section class="hero">
     <div class="hero-grid">
       <div class="hero-copy">
-        <p class="eyebrow"><span></span>Engineering + everyday utility</p>
-        <h1>Engineering Ideas.<br /><em>Selected Products.</em></h1>
-        <p class="hero-description">Engineering design and CAD support, alongside selected phone accessories. A founder-led small business operating in Townsville, Queensland.</p>
+        <p class="eyebrow"><span></span>Engineering · Websites · Selected products</p>
+        <h1>Practical design.<br /><em>Useful possibilities.</em></h1>
+        <p class="hero-description">Engineering design and CAD, websites for small businesses, and selected phone accessories. Three practical directions, one founder-led business in Townsville, Queensland.</p>
         <div class="hero-actions">
           <a class="button" href="/engineering">Explore Engineering Services <span aria-hidden="true">↗</span></a>
           <a class="button button-outline" href="/products">Browse Selected Products</a>
         </div>
-        <div class="hero-secondary-links"><a class="text-link" href="/projects">View engineering projects <span aria-hidden="true">→</span></a><a class="text-link" href="/contact">Make an enquiry <span aria-hidden="true">→</span></a></div>
+        <div class="hero-secondary-links"><a class="text-link" href="/projects">View engineering projects <span aria-hidden="true">→</span></a><a class="text-link" href="/web-design/">Explore Web Design <span aria-hidden="true">→</span></a></div>
       </div>
       <div class="hero-graphic" aria-hidden="true">
         <span class="graphic-label label-one">Design / Select / Refine</span>
         <div class="tech-orbit"><i class="axis-x"></i><i class="axis-y"></i><i class="node n1"></i><i class="node n2"></i><i class="node n3"></i></div>
         <span class="graphic-label label-two">
           <span>Based in Townsville, Queensland</span>
-          <span>Engineering services + selected products</span>
+          <span>Engineering / Web design / Products</span>
         </span>
       </div>
     </div>
   </section>
 
-  <section class="division-strip" aria-label="Our divisions">
-    <div class="shell division-grid">
-      <a class="division-card" href="/engineering">
-        <span class="number">01</span>
-        <div><h2>Engineering Services</h2><p>CAD modelling, product design support, manufacturing-ready drawings and practical project consultation.</p></div>
-        <span class="arrow" aria-hidden="true">↗</span>
-      </a>
-      <a class="division-card" href="/products">
-        <span class="number">02</span>
-        <div><h2>Selected Products</h2><p>Phone cases and ring-stand accessories, with local market sales in Townsville. Enquire about current options and availability.</p></div>
-        <span class="arrow" aria-hidden="true">↗</span>
-      </a>
+  <section class="division-strip" aria-label="Three business directions">
+    <div class="shell business-directions">
+      <a class="business-direction" href="/engineering"><span class="direction-number">01 / Engineering</span><h2>Engineering Design &amp; CAD</h2><p>CAD modelling, product design support, manufacturing-ready drawings and practical project consultation.</p><span class="direction-arrow" aria-hidden="true">↗</span></a>
+      <a class="business-direction" href="/web-design/"><span class="direction-number">02 / Websites</span><h2>Website Design &amp; Development</h2><p>Considered websites for small businesses, with clear content, responsive layouts and useful enquiry pathways.</p><span class="direction-arrow" aria-hidden="true">↗</span></a>
+      <a class="business-direction" href="/products"><span class="direction-number">03 / Products</span><h2>Selected Products</h2><p>Phone cases and ring-stand accessories, with local market sales in Townsville. Enquire about current options and availability.</p><span class="direction-arrow" aria-hidden="true">↗</span></a>
     </div>
   </section>
 
@@ -78,5 +73,19 @@ import { services } from '../data/site';
     </div>
   </section>
 
+  <section class="section home-web-showcase">
+    <div class="shell">
+      <SectionHeading eyebrow="Website Design & Development" heading="A clearer first impression, online." intro="Explore three of our interactive industry concepts. Each is a fictional demonstration, with actual page screenshots shown below — not commissioned client work." align="split" />
+      <div class="home-web-grid">{featuredWebsites.map(d => <a class="home-web-card" href={demoHref(d.slug)}><img src={`/images/web-design/previews/${d.slug}-800.webp`} srcset={`/images/web-design/previews/${d.slug}-480.webp 480w, /images/web-design/previews/${d.slug}-800.webp 800w, /images/web-design/previews/${d.slug}-1200.webp 1200w`} sizes="(max-width: 720px) calc(100vw - 32px), 32vw" width="1425" height="990" loading="lazy" decoding="async" alt={`Actual screenshot of the fictional ${d.title} demo`} /><div><span class="home-web-label">Industry demo concept</span><h3>{d.title}<span aria-hidden="true">↗</span></h3></div></a>)}</div>
+      <div class="section-action"><a class="text-link" href="/web-design/">Explore Web Design <span aria-hidden="true">→</span></a></div>
+    </div>
+  </section>
+
   <ContactCta />
 </BaseLayout>
+
+<style>
+.business-directions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}.business-direction{position:relative;display:flex;flex-direction:column;text-decoration:none;padding:34px 30px;min-width:0}.business-direction:first-child{padding-left:0}.business-direction:last-child{padding-right:0}.business-direction+.business-direction{border-left:1px solid var(--line)}.direction-number{color:var(--teal);font:11px ui-monospace,monospace;letter-spacing:.05em;margin-bottom:22px}.business-direction h2{font-size:clamp(1.4rem,2.2vw,1.8rem);max-width:270px;min-height:2.25em;margin-bottom:16px;line-height:1.15;text-wrap:initial}.business-direction p{color:var(--muted);font-size:14px;max-width:350px;margin-bottom:0}.direction-arrow{position:absolute;right:24px;top:29px;color:var(--teal);font-size:22px}.business-direction:hover h2{color:var(--teal)}.home-web-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}.home-web-card{display:flex;flex-direction:column;text-decoration:none;background:var(--white);border:1px solid var(--line);min-width:0}.home-web-card img{width:100%;height:auto;aspect-ratio:1425/990;object-fit:contain;border-bottom:1px solid var(--line)}.home-web-card>div{padding:22px}.home-web-label{display:block;color:var(--teal);font-size:10px;letter-spacing:.09em;text-transform:uppercase;margin-bottom:12px}.home-web-card h3{font-size:20px;display:flex;gap:12px;justify-content:space-between;margin-bottom:0}.home-web-card h3 span{font-size:17px;color:var(--teal)}.home-web-card:hover h3{color:var(--teal)}
+@media(max-width:900px){.business-directions{grid-template-columns:1fr}.business-direction,.business-direction:first-child,.business-direction:last-child{display:grid;grid-template-columns:180px minmax(0,1fr);gap:14px 28px;padding:26px 0}.business-direction+.business-direction{border-left:0;border-top:1px solid var(--line)}.direction-number{margin:0;grid-row:span 2}.business-direction h2{min-height:0;margin:0;max-width:none;padding-right:30px}.business-direction p{grid-column:2;max-width:none}.direction-arrow{right:0;top:20px}.home-web-grid{gap:16px}.home-web-card>div{padding:18px}.home-web-card h3{font-size:18px}}
+@media(max-width:720px){.business-direction,.business-direction:first-child,.business-direction:last-child{grid-template-columns:1fr;gap:12px;padding:25px 0}.direction-number{grid-row:auto;font-size:10px}.business-direction p{grid-column:auto}.business-direction h2{font-size:25px;max-width:290px}.home-web-grid{grid-template-columns:1fr}.home-web-card>div{padding:18px 20px}.home-web-card h3{font-size:22px}}
+</style>

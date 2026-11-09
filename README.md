@@ -1,8 +1,8 @@
 # Kaiyu Select website
 
-Kaiyu Select is a founder-led small business operating in Townsville, Queensland, with engineering design services and selected phone accessories. The owner has confirmed local phone-case market sales in Townsville. Inventory, compatibility, prices, delivery areas and founder qualifications must not be inferred.
+Kaiyu Select is a founder-led small business operating in Townsville, Queensland, with engineering design and CAD, website design and development, and selected phone accessories. The owner has confirmed local phone-case market sales in Townsville. Inventory, compatibility, prices, delivery areas and founder qualifications must not be inferred.
 
-Astro generates nine core public pages, a Web Design overview and eight independent fictional demo pages. The existing CSS logo, palette, typography and four small original SVG service illustrations are retained. There is no checkout, payment integration or client-side framework.
+Astro generates nine core public pages, a Web Design overview, a real self-owned website case study and eight independent fictional demo pages. The existing CSS logo, palette, typography and four small original SVG service illustrations are retained. There is no checkout, payment integration or client-side framework.
 
 ## Develop and verify
 
@@ -27,7 +27,7 @@ pnpm preview
 - Static output: `dist/`; build command `pnpm run build` (confirmed by the owner in the existing Pages settings on 6 November 2026).
 - The existing Git integration automatically deployed the approved `7a9d1b4` commit successfully. No new Pages project or domain setup is needed.
 - Build system: Version 3, confirmed by the owner; no `NODE_VERSION` override was visible in the settings. V3 supports `.node-version`. Confirm Node 24.22.1 in the first approved release build log. Local frozen installs and both build modes also pass with the documented V3 default pnpm 10.11.1.
-- The owner approved Phase 1 publication of Astro 7 and the enquiry fixes on 9 November 2026. Both production enquiry flags remain unset (disabled by default). Phase 2 activation and any real-email test require separate approval. See `docs/contact-integration.md` for the recorded previous deployment and rollback procedure.
+- Production online enquiries are enabled following the separately approved Phase 2 activation. Preserve both production feature flags as true. Historical Phase 1 instructions in `docs/contact-integration.md` describe the earlier disabled release; use `docs/business-integration-release.md` for this release's enabled rollback baseline. Any real-email test still needs separate approval.
 
 The site needs no Astro Cloudflare adapter. The optional `functions/api/enquiry.js` is a native Pages Function separate from Astro's static output. It fails closed by default. Astro preview does not emulate Functions.
 
@@ -40,7 +40,7 @@ The site needs no Astro Cloudflare adapter. The optional `functions/api/enquiry.
 - `CaseStudySection.astro`: reusable narrative/technical-figure section, used by Electric Postie Bike. See `docs/case-study-template.md` for the eight-section editorial structure and evidence requirements. Drafts do not belong under `src/pages`.
 - `src/styles/global.css`: shared tokens, layout and responsive rules. No remote font dependency.
 - `public/favicon.svg`: vector derivative of the existing geometric logo.
-- `public/sitemap.xml`: all 18 public pages, including the case study and Web Design concepts. Update when routes change. Canonical URLs exclude query strings and use the existing no-trailing-slash convention.
+- `public/sitemap.xml`: all 19 public pages, including the case study and Web Design concepts. Update when routes change. Canonical URLs exclude query strings and use the existing no-trailing-slash convention.
 
 ## Authentic images
 
@@ -56,11 +56,11 @@ It regenerates 480 / 800 / 1200px variants without enlarging smaller originals. 
 
 ## Enquiries
 
-Five types: Engineering Services, Project Enquiries, Product Enquiries, Wholesale & Retail Enquiries, General Enquiries. Existing `?type=engineering|project|product&subject=...` links still work; `type=wholesale` adds business enquiries. Product links carry a readable subject and stable product ID. User-supplied query text is sanitised and inserted as text/value, never HTML.
+Six types: Engineering Services, Project Enquiries, Product Enquiries, Wholesale & Retail Enquiries, Website Design Enquiries and General Enquiries. Existing category links remain supported; `type=webdesign` preselects website enquiries and retains the source subject. Product links carry a readable subject and stable product ID. User-supplied query text is sanitised and inserted as text/value, never HTML.
 
-Default behaviour prepares a draft in the user's email app or copies the enquiry. The form does not claim to send online. With JavaScript disabled, use the direct email link. The form uses POST as a fail-safe so personal details cannot fall into a GET URL.
+Local builds without explicit activation prepare a draft in the user's email app or copy the enquiry. Enabled production builds also provide online submission, while preserving both fallbacks. With JavaScript disabled, use the direct email link. The form uses POST as a fail-safe so personal details cannot fall into a GET URL.
 
-The optional direct-submission implementation is disabled; delivery tests are mocked. `pnpm verify --mode=disabled` checks the default build; `--mode=enabled --dir=...` explicitly checks a separate enabled test build, including controls, privacy text and public-asset secret patterns. See `docs/contact-integration.md` for local review, final release/rollback steps, Turnstile, Resend, KV and the existing active edge protection. Secrets are never stored in source control. Dependency findings and the integrated Astro 7 assessment are recorded in `docs/dependency-security-review.md`.
+Production direct submission is enabled; local delivery tests are mocked. `pnpm verify --mode=disabled` checks the default local build; `--mode=enabled --dir=...` explicitly checks a separate enabled test build, including controls, privacy text and public-asset secret patterns. See `docs/contact-integration.md` for implementation and historical activation details, and `docs/business-integration-release.md` for the current release and rollback procedure. Secrets are never stored in source control. Dependency findings and the integrated Astro 7 assessment are recorded in `docs/dependency-security-review.md`.
 
 ## Information still awaiting confirmation
 

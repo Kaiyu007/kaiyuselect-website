@@ -1,0 +1,8 @@
+---
+import images from '../data/website-case-images.json';
+interface Props { name: keyof typeof images; alt: string; sizes?: string; loading?: 'lazy' | 'eager'; }
+const { name, alt, sizes = '(max-width: 720px) calc(100vw - 32px), 65vw', loading = 'lazy' } = Astro.props;
+const asset = images[name];
+const fallback = asset.variants.find(v => v.width === 800) || asset.variants[asset.variants.length - 1];
+---
+<img src={fallback.src} srcset={asset.variants.map(v => `${v.src} ${v.width}w`).join(', ')} sizes={sizes} width={asset.width} height={asset.height} alt={alt} loading={loading} decoding="async" />

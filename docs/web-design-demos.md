@@ -45,7 +45,7 @@ Unused early SVG studies, their generator and local visual-review artefacts are 
 
 Demo request controls use a fieldset and a `type="button"` control, **not an HTML form**. Preview buttons start disabled until JavaScript loads. No demo code uses fetch, XHR, beacon, browser storage, cookies, mailto or a real API. Personal or medical information should not be entered. Data is discarded on navigation/reload.
 
-“Request a Similar Website” is the only separate route to the existing real enquiry system. It links to `/contact/?type=general&subject=Website%20project...` and does not submit automatically. The existing Contact code, security validation, Pages Function and production flags are unchanged.
+“Request a Similar Website” is the only separate route to the existing real enquiry system. It links to `/contact/?type=webdesign&subject=Website%20project...` and does not submit automatically. The dedicated Website Design Enquiries category uses the same shared validation, Pages Function and email/copy fallback as the five existing categories. The demo designs remain unchanged. Production flags, credentials and infrastructure settings are unchanged.
 
 ## Checks
 
@@ -67,8 +67,16 @@ node scripts/preview-enquiries.mjs --dir=/private/tmp/kaiyu-web-design-enabled -
 
 That review adapter mocks every outgoing provider request. It cannot deliver an email. Do not use it as a deployment server.
 
-Check all nine new pages at 1440, 1024, 768, 390, 375 and 360 pixels. Exercise each category, colour/view, slider, menu, accordion, dialog, local preview and real website CTA. Check the original pages after shared header/footer changes. `verify-web-demos.mjs` enforces the eight-demo boundary, disclosure, no network/storage/submission code, responsive photograph references, actual screenshot previews and asset budgets; the existing build verifier checks all 18 routes, metadata, links, image dimensions, API scope and public secret markers.
+Check all nine new pages at 1440, 1024, 768, 390, 375 and 360 pixels. Exercise each category, colour/view, slider, menu, accordion, dialog, local preview and real website CTA. Check the original pages after shared header/footer changes. `verify-web-demos.mjs` enforces the eight-demo boundary, disclosure, no network/storage/submission code, responsive photograph references, actual screenshot previews and asset budgets; the existing build verifier checks all 19 routes, metadata, links, image dimensions, API scope and public secret markers.
 
 ## Deliberate limits
 
 These are navigable single-page website proposals with functional local interactions. There is no commerce, booking engine, property feed, medical advice, real industry business contact or submission service inside any demo. Real integrations, verified business content and licensed client photography would need a separately agreed project scope.
+
+## Real project and business integration
+
+`/web-design/projects/kaiyu-select/` is a real, self-owned project, shown in its own portfolio section. The original eight demos remain separate fictional concepts. Dated production screenshot provenance is retained in `assets/website-case-study/`; originals are not shipped publicly. The main Home, About and footer copy now describe engineering design/CAD, website design/development and selected products.
+
+Website-specific guidance is an optional disclosure within the existing Contact form; it adds no payload fields and never requires a budget. All six enquiry categories share the existing length, email and header-injection checks. The Function imports that same category map, so the new Resend subject label requires no separate transport change.
+
+Run `node scripts/verify-business-integration.mjs` after either build mode. To exercise valid email preparation without opening an external email app, start the local mocked adapter with `--capture-email`; it replaces mailto handoffs only in its served review copy and shows a plain-text local draft. Use synthetic inputs only. Never deploy this review adapter.

@@ -1,0 +1,35 @@
+[
+  {
+    "name": "home-desktop",
+    "url": "https://kaiyuselect.com.au/",
+    "width": 1440,
+    "height": 1000,
+    "date": "2026-11-09",
+    "source": "captures/home-desktop.jpg",
+    "method": "Actual production screenshot captured in the dedicated Codex built-in Browser; no generated mockup",
+    "deployment": "4f9f8c24-ba8d-4c89-b868-de90522414ba",
+    "commit": "3b326ed3018f382424fae8b63d1b54efbfd1ab90"
+  },
+  {
+    "name": "home-mobile",
+    "url": "https://kaiyuselect.com.au/",
+    "width": 390,
+    "height": 844,
+    "date": "2026-11-09",
+    "source": "captures/home-mobile.jpg",
+    "method": "Actual production screenshot captured in the dedicated Codex built-in Browser; no generated mockup",
+    "deployment": "4f9f8c24-ba8d-4c89-b868-de90522414ba",
+    "commit": "3b326ed3018f382424fae8b63d1b54efbfd1ab90"
+  },
+  {
+    "name": "portfolio-desktop",
+    "url": "https://kaiyuselect.com.au/web-design/#concepts",
+    "width": 1440,
+    "height": 1000,
+    "date": "2026-11-09",
+    "source": "captures/portfolio-desktop.jpg",
+    "method": "Actual production screenshot captured in the dedicated Codex built-in Browser; no generated mockup",
+    "deployment": "4f9f8c24-ba8d-4c89-b868-de90522414ba",
+    "commit": "3b326ed3018f382424fae8b63d1b54efbfd1ab90"
+  }
+]

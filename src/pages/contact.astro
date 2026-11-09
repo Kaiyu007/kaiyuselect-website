@@ -3,11 +3,11 @@ import BaseLayout from '../components/BaseLayout.astro';
 import { enquiryTypes } from '../lib/enquiry.js';
 import { onlineEnquiries, turnstileSiteKey } from '../data/contact';
 ---
-<BaseLayout title="Contact & Wholesale Enquiries | Kaiyu Select Townsville" description="Contact Kaiyu Select in Townsville about engineering services, projects, phone accessories or wholesale and retail opportunities. Direct, practical enquiry support.">
+<BaseLayout title="Contact & Wholesale Enquiries | Kaiyu Select Townsville" description="Contact Kaiyu Select in Townsville about engineering, website design, projects, phone accessories or wholesale and retail opportunities. Direct, practical enquiry support.">
   <header class="page-hero">
     <div class="shell page-hero-grid">
       <div><p class="eyebrow"><span></span>Contact · Townsville, Queensland</p><h1>Tell us what<br />you have in mind.</h1></div>
-      <div class="page-hero-copy"><p>Engineering project, product question or business enquiry — choose the closest category and share the details you have.</p><p class="hero-supporting-copy">Enquiries are reviewed directly by a small, founder-led business.</p></div>
+      <div class="page-hero-copy"><p>Engineering or website project, product question or business enquiry — choose the closest category and share the details you have.</p><p class="hero-supporting-copy">Enquiries are reviewed directly by a small, founder-led business.</p></div>
     </div>
   </header>
   <section class="section">
@@ -23,7 +23,7 @@ import { onlineEnquiries, turnstileSiteKey } from '../data/contact';
         </div>
         <div class="field"><label for="enquiry-type">What is your enquiry about?</label><select id="enquiry-type" name="type" required aria-describedby="type-error"><option value="">Choose an enquiry type</option>{Object.entries(enquiryTypes).map(([value,label]) => <option value={value}>{label}</option>)}</select><p id="type-error" class="field-error" hidden></p></div>
         <div class="field"><label for="subject">Subject or product name</label><input id="subject" name="subject" maxlength="160" required aria-describedby="subject-error" /><p id="subject-error" class="field-error" hidden></p></div>
-        <div class="field"><label for="message">Enquiry details</label><p class="field-hint" id="message-hint">Include your question and any relevant details.</p><textarea id="message" name="message" minlength="10" maxlength="4000" rows="6" required aria-describedby="message-hint message-error"></textarea><p id="message-error" class="field-error" hidden></p></div>
+        <div class="field"><label for="message">Enquiry details</label><p class="field-hint" id="message-hint">Include your question and any relevant details.</p><details id="website-brief" class="website-brief" hidden><summary>Optional website brief — what to include</summary><p>Include any details you already have in your message. You do not need a finished brief.</p><ul><li>Business name and industry</li><li>Existing website, if any</li><li>Main purpose of the new website</li><li>Approximate number of pages</li><li>Desired features: galleries, booking enquiries, product catalogues or online payments</li><li>Existing domain and hosting information, if available</li><li>Preferred timeline</li><li>Indicative budget, only if you wish to share it</li></ul><p>Live bookings, payments and other integrations are discussed as part of the project scope.</p></details><textarea id="message" name="message" minlength="10" maxlength="4000" rows="6" required aria-describedby="message-hint message-error"></textarea><p id="message-error" class="field-error" hidden></p></div>
         {onlineEnquiries && <>
           <div class="form-trap" aria-hidden="true"><label for="website">Leave this field empty</label><input id="website" name="website" autocomplete="off" tabindex="-1" /></div>
           <div id="turnstile-widget" data-sitekey={turnstileSiteKey}></div>
@@ -44,6 +44,7 @@ import { onlineEnquiries, turnstileSiteKey } from '../data/contact';
       <aside class="contact-details">
         <p class="eyebrow"><span></span>Useful details to include</p><h2>A clearer brief.<br />A useful next step.</h2>
         <div class="contact-method"><span>Engineering &amp; projects</span><p>The part or system, key dimensions, existing files, intended use, timeline and required outputs. Preliminary analysis is discussed within an agreed scope.</p></div>
+        <div class="contact-method"><span>Website design</span><p>Your business, the website’s purpose, an existing site or domain, and the features you have in mind. A preferred timeline helps; sharing a budget is optional.</p></div>
         <div class="contact-method"><span>Products</span><p>Your exact phone model, the product name or colour, and any quantity or availability questions.</p></div>
         <div class="contact-method"><span>Wholesale &amp; retail</span><p>Your business name, location, product categories and indicative quantities. Supply options are discussed individually.</p></div>
         <div class="contact-location"><p class="eyebrow"><span></span>Townsville, Queensland</p><p>Service scope and any delivery or collection arrangements are confirmed directly. No walk-in address or opening hours are listed.</p></div>
@@ -52,3 +53,5 @@ import { onlineEnquiries, turnstileSiteKey } from '../data/contact';
   </section>
   <script>import '../scripts/contact';</script>
 </BaseLayout>
+
+<style>.website-brief{margin:0 0 16px;border:1px solid var(--line);background:var(--paper);padding:14px 16px;font-size:13px;color:var(--muted)}.website-brief[hidden]{display:none}.website-brief summary{font-weight:650;color:var(--teal);cursor:pointer;line-height:1.5}.website-brief p{margin:16px 0 0}.website-brief ul{padding-left:18px;margin:12px 0}.website-brief li{margin:7px 0}.website-brief summary:focus-visible{outline:2px solid var(--teal);outline-offset:5px}</style>

@@ -3,8 +3,8 @@ export function verifyEnquiryBuild({contact,privacy,scripts,mode}) {
   assert.ok(['disabled','enabled'].includes(mode),'Explicit enquiry mode required');
   const enabled=mode==='enabled';
   assert.ok(contact.includes(`data-online="${enabled}"`),'Enquiry mode does not match expected build mode');
-  for(const control of ['contact-form','name','email','enquiry-type','subject','message','submit-enquiry','copy-enquiry','form-status','form-errors','manual-copy','copy-text']) assert.ok(contact.includes(`id="${control}"`),`Missing ${control}`);
-  for(const type of ['engineering','project','product','wholesale','general']) assert.ok(contact.includes(`value="${type}"`),`Missing enquiry type ${type}`);
+  for(const control of ['contact-form','name','email','enquiry-type','subject','message','website-brief','submit-enquiry','copy-enquiry','form-status','form-errors','manual-copy','copy-text']) assert.ok(contact.includes(`id="${control}"`),`Missing ${control}`);
+  for(const type of ['engineering','project','product','wholesale','webdesign','general']) assert.ok(contact.includes(`value="${type}"`),`Missing enquiry type ${type}`);
   assert.ok(contact.includes('role="status"')&&contact.includes('aria-live="polite"'),'Accessible status missing');
   assert.ok(contact.includes('mailto:contact@kaiyuselect.com.au'),'Direct email fallback missing');
   assert.ok(contact.includes('Copy enquiry details')&&contact.includes('<noscript>'),'Copy / no-JavaScript fallback missing');

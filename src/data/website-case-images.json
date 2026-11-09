@@ -1,0 +1,74 @@
+{
+  "home-desktop": {
+    "width": 1425,
+    "height": 990,
+    "variants": [
+      {
+        "src": "/images/web-design/projects/kaiyu-select/home-desktop-480.webp",
+        "width": 480,
+        "height": 333,
+        "bytes": 12916
+      },
+      {
+        "src": "/images/web-design/projects/kaiyu-select/home-desktop-800.webp",
+        "width": 800,
+        "height": 556,
+        "bytes": 27466
+      },
+      {
+        "src": "/images/web-design/projects/kaiyu-select/home-desktop-1200.webp",
+        "width": 1200,
+        "height": 834,
+        "bytes": 45286
+      },
+      {
+        "src": "/images/web-design/projects/kaiyu-select/home-desktop-1425.webp",
+        "width": 1425,
+        "height": 990,
+        "bytes": 56868
+      }
+    ]
+  },
+  "home-mobile": {
+    "width": 375,
+    "height": 812,
+    "variants": [
+      {
+        "src": "/images/web-design/projects/kaiyu-select/home-mobile-375.webp",
+        "width": 375,
+        "height": 812,
+        "bytes": 26080
+      }
+    ]
+  },
+  "portfolio-desktop": {
+    "width": 1425,
+    "height": 990,
+    "variants": [
+      {
+        "src": "/images/web-design/projects/kaiyu-select/portfolio-desktop-480.webp",
+        "width": 480,
+        "height": 333,
+        "bytes": 19484
+      },
+      {
+        "src": "/images/web-design/projects/kaiyu-select/portfolio-desktop-800.webp",
+        "width": 800,
+        "height": 556,
+        "bytes": 40270
+      },
+      {
+        "src": "/images/web-design/projects/kaiyu-select/portfolio-desktop-1200.webp",
+        "width": 1200,
+        "height": 834,
+        "bytes": 70068
+      },
+      {
+        "src": "/images/web-design/projects/kaiyu-select/portfolio-desktop-1425.webp",
+        "width": 1425,
+        "height": 990,
+        "bytes": 86310
+      }
+    ]
+  }
+}

@@ -1,4 +1,4 @@
-import { clipboardText, emailLink, enquiryHints, normaliseType, validateEnquiry } from '../lib/enquiry.js';
+import { clipboardText, emailLink, enquiryHints, enquiryPrefill, validateEnquiry } from '../lib/enquiry.js';
 import { createSubmissionState, sendEnquiry } from '../lib/contact-state.js';
 import { createTurnstileController } from '../lib/turnstile.js';
 
@@ -15,11 +15,13 @@ if (form) {
   const status = form.querySelector<HTMLElement>('#form-status')!;
   const summary = form.querySelector<HTMLElement>('#form-errors')!;
   const submit = form.querySelector<HTMLButtonElement>('#submit-enquiry')!;
-  const params = new URLSearchParams(location.search);
-  const requestedType = params.get('type');
-  if (requestedType) select.value = normaliseType(requestedType);
-  subject.value = (params.get('subject') || '').replace(/[\x00-\x1f\x7f]/g, ' ').trim().slice(0,160);
-  const updateHint = () => { form.querySelector('#message-hint')!.textContent = enquiryHints[select.value] || 'Include your question and any relevant details.'; };
+  const prefill = enquiryPrefill(location.search);
+  select.value = prefill.type;
+  subject.value = prefill.subject;
+  const updateHint = () => {
+    form.querySelector('#message-hint')!.textContent = enquiryHints[select.value] || 'Include your question and any relevant details.';
+    form.querySelector<HTMLElement>('#website-brief')!.hidden = select.value !== 'webdesign';
+  };
   updateHint(); select.addEventListener('change', updateHint);
   const submission = createSubmissionState();
   let token = '';

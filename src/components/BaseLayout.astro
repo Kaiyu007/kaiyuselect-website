@@ -6,11 +6,12 @@ import '../styles/global.css';
 interface Props {
   title: string;
   description: string;
+  image?: { src: string; width: number; height: number; alt: string };
 }
 
-const { title, description } = Astro.props;
+const { title, description, image } = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname === '/' ? '/' : Astro.url.pathname.replace(/\/$/, ''), Astro.site);
-const socialImage = new URL('/og.jpg', Astro.site);
+const socialImage = new URL(image?.src || '/og.jpg', Astro.site);
 ---
 
 <!doctype html>
@@ -30,9 +31,9 @@ const socialImage = new URL('/og.jpg', Astro.site);
     <meta property="og:locale" content="en_AU" />
     <meta property="og:site_name" content="Kaiyu Select" />
     <meta property="og:image" content={socialImage} />
-    <meta property="og:image:width" content="1536" />
-    <meta property="og:image:height" content="1024" />
-    <meta property="og:image:alt" content="Kaiyu Select — Engineering Ideas. Selected Products." />
+    <meta property="og:image:width" content={String(image?.width || 1536)} />
+    <meta property="og:image:height" content={String(image?.height || 1024)} />
+    <meta property="og:image:alt" content={image?.alt || 'Kaiyu Select brand graphic'} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />

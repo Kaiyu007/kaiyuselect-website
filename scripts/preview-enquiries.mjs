@@ -7,6 +7,8 @@ import { onRequest } from '../functions/api/enquiry.js';
 const args=process.argv.slice(2);
 const root=path.resolve(args.find(a=>a.startsWith('--dir='))?.slice(6)||'dist');
 const port=Number(args.find(a=>a.startsWith('--port='))?.slice(7)||4392);
+// Explicit local-only switch: inspect a synthetic mail draft without opening an email app.
+const captureEmail=args.includes('--capture-email');
 const testSitekey='1x00000000000000000000AA';
 const contact=await fs.readFile(path.join(root,'contact/index.html'),'utf8');
 if(contact.includes('data-online="true"')&&!contact.includes(`data-sitekey="${testSitekey}"`))throw Error('Online local review requires the official public test sitekey. Never use a production key.');
@@ -25,6 +27,10 @@ globalThis.fetch=async(url,options)=>{
 };
 http.createServer(async(req,res)=>{try{
   const url=new URL(req.url,`http://127.0.0.1:${port}`);
+  if(captureEmail&&url.pathname.startsWith('/_review/email-draft/')){
+    res.writeHead(200,{'Content-Type':'text/plain; charset=utf-8','Cache-Control':'no-store'});
+    return res.end(`LOCAL EMAIL DRAFT CAPTURE — NOT SENT\nTo: ${decodeURIComponent(url.pathname.slice('/_review/email-draft/'.length))}\nSubject: ${url.searchParams.get('subject')||''}\n\n${url.searchParams.get('body')||''}`);
+  }
   if(url.pathname==='/_review/metrics'){res.setHeader('Content-Type','application/json');return res.end(JSON.stringify(metrics));}
   if(url.pathname==='/api/enquiry'){
     metrics.requests++;let body='';for await(const chunk of req){body+=chunk;if(body.length>22000){res.writeHead(413);return res.end();}}
@@ -35,6 +41,7 @@ http.createServer(async(req,res)=>{try{
   let file=path.resolve(root,'.'+decodeURIComponent(url.pathname));if(file!==root&&!file.startsWith(root+path.sep))throw Error('Invalid path');
   if((await fs.stat(file)).isDirectory())file=path.join(file,'index.html');
   const type=path.extname(file);let bytes=await fs.readFile(file);
+  if(captureEmail&&['.html','.js'].includes(type))bytes=Buffer.from(bytes.toString().replaceAll('mailto:',`http://127.0.0.1:${port}/_review/email-draft/`));
   if(type==='.html')bytes=Buffer.from(bytes.toString().replace(/<body([^>]*)>/,'<body$1><aside style="padding:12px 20px;background:#f4eabf;color:#172727;font:14px sans-serif">LOCAL REVIEW ONLY — all email delivery is simulated. No email is sent.</aside>'));
   res.setHeader('Content-Type',({'.html':'text/html; charset=utf-8','.css':'text/css','.js':'text/javascript','.svg':'image/svg+xml','.jpg':'image/jpeg','.png':'image/png','.webp':'image/webp','.xml':'application/xml'})[type]||'application/octet-stream');res.setHeader('Cache-Control','no-store');res.end(bytes);
 }catch{res.writeHead(404);res.end('Not found');}}).listen(port,'127.0.0.1',()=>console.log(`Isolated review: http://127.0.0.1:${port}/contact — no real email delivery.`));
