@@ -6,7 +6,7 @@ Astro generates nine static public pages. The existing CSS logo, palette, typogr
 
 ## Develop and verify
 
-Use a supported Node.js version (Node 22 or newer recommended). `pnpm-lock.yaml` is the existing dependency lockfile; preserve it and avoid introducing a second lockfile.
+Astro 7.4.7 requires Node.js >=22.23.4. `.node-version` pins the verified local release runtime to 24.22.1. `pnpm-lock.yaml` is the existing dependency lockfile; preserve it and avoid introducing a second lockfile.
 
 ```sh
 pnpm install --frozen-lockfile
@@ -24,9 +24,10 @@ pnpm preview
 - Repository: `Kaiyu007/kaiyuselect-website`, production branch `main`.
 - Existing Cloudflare Pages project: `kaiyuselect-website`.
 - Domain: https://kaiyuselect.com.au/
-- Static output: `dist/`; build command `npm run build`.
+- Static output: `dist/`; build command `pnpm run build` (confirmed by the owner in the existing Pages settings on 6 November 2026).
 - The existing Git integration automatically deployed the approved `7a9d1b4` commit successfully. No new Pages project or domain setup is needed.
-- Publish changes to main only after explicit owner approval. The second improvement round has been approved for publication; online enquiry sending remains disabled until separately configured and verified.
+- Build system: Version 3, confirmed by the owner; no `NODE_VERSION` override was visible in the settings. V3 supports `.node-version`. Confirm Node 24.22.1 in the first approved release build log. Local frozen installs and both build modes also pass with the documented V3 default pnpm 10.11.1.
+- The owner approved Phase 1 publication of Astro 7 and the enquiry fixes on 9 November 2026. Both production enquiry flags remain unset (disabled by default). Phase 2 activation and any real-email test require separate approval. See `docs/contact-integration.md` for the recorded previous deployment and rollback procedure.
 
 The site needs no Astro Cloudflare adapter. The optional `functions/api/enquiry.js` is a native Pages Function separate from Astro's static output. It fails closed by default. Astro preview does not emulate Functions.
 
@@ -59,7 +60,7 @@ Five types: Engineering Services, Project Enquiries, Product Enquiries, Wholesal
 
 Default behaviour prepares a draft in the user's email app or copies the enquiry. The form does not claim to send online. With JavaScript disabled, use the direct email link. The form uses POST as a fail-safe so personal details cannot fall into a GET URL.
 
-The optional direct-submission implementation is disabled, with mocked tests only. See `docs/contact-integration.md` for Turnstile, Resend, KV, rate-limiting, privacy and delivery-test steps. Secrets are never stored in source control. The email/copy fallback must remain until actual delivery is verified.
+The optional direct-submission implementation is disabled; delivery tests are mocked. `pnpm verify --mode=disabled` checks the default build; `--mode=enabled --dir=...` explicitly checks a separate enabled test build, including controls, privacy text and public-asset secret patterns. See `docs/contact-integration.md` for local review, final release/rollback steps, Turnstile, Resend, KV and the existing active edge protection. Secrets are never stored in source control. Dependency findings and the integrated Astro 7 assessment are recorded in `docs/dependency-security-review.md`.
 
 ## Information still awaiting confirmation
 

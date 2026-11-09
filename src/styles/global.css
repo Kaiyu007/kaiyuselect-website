@@ -523,6 +523,8 @@ section[id] { scroll-margin-top: 24px; }
 #manual-copy label { display: block; font-size: 13px; font-weight: 700; margin-bottom: 8px; }
 #copy-text { width: 100%; padding: 12px; border: 1px solid var(--line); font-size: 14px; }
 #turnstile-widget { margin-bottom: 18px; min-height: 65px; }
+#turnstile-widget[data-size="compact"] { min-height: 140px; }
+.contact-form > .form-note + .form-actions { margin-top: 16px; }
 @media (max-width: 720px) {
   .product-visual { aspect-ratio: 4 / 3; }
   .product-info { padding: 24px; }

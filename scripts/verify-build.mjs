@@ -1,7 +1,12 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
-const root=path.resolve('dist');
+import { verifyEnquiryBuild } from './verify-enquiry-build.mjs';
+const args=process.argv.slice(2);
+const mode=args.find(arg=>arg.startsWith('--mode='))?.slice(7) || 'disabled';
+assert.ok(['disabled','enabled'].includes(mode),'Use --mode=disabled or --mode=enabled');
+assert.ok(args.every(arg=>arg.startsWith('--mode=')||arg.startsWith('--dir=')),'Unknown verification argument');
+const root=path.resolve(args.find(arg=>arg.startsWith('--dir='))?.slice(6) || 'dist');
 const walk=dir=>fs.readdirSync(dir,{withFileTypes:true}).flatMap(e=>e.isDirectory()?walk(path.join(dir,e.name)):[path.join(dir,e.name)]);
 const pages=walk(root).filter(p=>p.endsWith('.html'));
 const titles=new Set(), descriptions=new Set(); let references=0;
@@ -33,6 +38,12 @@ for(const file of pages) {
 }
 assert.equal((sitemap.match(/<loc>/g)||[]).length,pages.length,'Sitemap/page count mismatch');
 const contact=fs.readFileSync(path.join(root,'contact/index.html'),'utf8');
-assert.ok(contact.includes('data-online="false"'),'This review build must leave online sending disabled');
-assert.ok(!contact.includes('cf-turnstile'),'Turnstile must not load in email-only review mode');
-console.log(`Verified ${pages.length} pages: unique metadata, canonicals, sitemap, headings, image dimensions, ${references} internal references, accurate location and disabled online sending.`);
+const privacy=fs.readFileSync(path.join(root,'privacy/index.html'),'utf8');
+const scripts=walk(path.join(root,'_astro')).filter(file=>file.endsWith('.js')).map(file=>fs.readFileSync(file,'utf8')).join('\n');
+verifyEnquiryBuild({contact,privacy,scripts,mode});
+assert.deepEqual(JSON.parse(fs.readFileSync(path.join(root,'_routes.json'),'utf8')),{version:1,include:['/api/enquiry','/api/enquiry/'],exclude:[]},'Function route scope changed');
+for(const file of walk(root).filter(file=>/\.(html|js|css|json)$/.test(file))) {
+  const text=fs.readFileSync(file,'utf8');
+  assert.ok(!/RESEND_API_KEY|TURNSTILE_SECRET_KEY|CONTACT_FROM_EMAIL|ENQUIRY_LIMITS|\bre_[A-Za-z0-9]{24,}\b|-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----/.test(text),`Possible server credential in public asset: ${file}`);
+}
+console.log(`Verified ${pages.length} pages: unique metadata, canonicals, sitemap, headings, image dimensions, ${references} internal references, accurate location, scoped API route, public-asset secret checks and ${mode} online enquiries.`);

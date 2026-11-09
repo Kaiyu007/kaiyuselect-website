@@ -1,7 +1,9 @@
 import { clipboardText, emailLink, enquiryHints, normaliseType, validateEnquiry } from '../lib/enquiry.js';
+import { createSubmissionState, sendEnquiry } from '../lib/contact-state.js';
+import { createTurnstileController } from '../lib/turnstile.js';
 
 declare global {
-  interface Window { turnstile?: { render: (target: HTMLElement, options: Record<string, unknown>) => string; reset: (id: string) => void }; }
+  interface Window { turnstile?: { render: (target: HTMLElement, options: Record<string, unknown>) => string; reset: (id: string) => void; remove: (id: string) => void }; }
 }
 const form = document.querySelector<HTMLFormElement>('#contact-form');
 if (form) {
@@ -19,10 +21,18 @@ if (form) {
   subject.value = (params.get('subject') || '').replace(/[\x00-\x1f\x7f]/g, ' ').trim().slice(0,160);
   const updateHint = () => { form.querySelector('#message-hint')!.textContent = enquiryHints[select.value] || 'Include your question and any relevant details.'; };
   updateHint(); select.addEventListener('change', updateHint);
-  let requestId = crypto.randomUUID();
-  let busy = false;
+  const submission = createSubmissionState();
   let token = '';
-  let widgetId: string | undefined;
+  let challenge: ReturnType<typeof createTurnstileController> | undefined;
+  const controls = [...form.querySelectorAll<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement | HTMLButtonElement>('input:not([type=hidden]), textarea:not([readonly]), select, .form-actions button')];
+  const updateControls = () => {
+    const pending = submission.phase === 'pending';
+    controls.forEach(control => control.disabled = pending);
+    submit.disabled = pending || submission.phase === 'sent';
+    submit.textContent = pending ? 'Sending…' : submission.phase === 'sent' ? 'Enquiry submitted' : form.dataset.online === 'true' ? 'Send enquiry ' : 'Prepare email ';
+    if (submission.phase === 'idle') { const arrow = document.createElement('span'); arrow.setAttribute('aria-hidden','true'); arrow.textContent = '↗'; submit.append(arrow); }
+    if (pending) form.setAttribute('aria-busy','true'); else form.removeAttribute('aria-busy');
+  };
   const showStatus = (message: string) => { status.textContent = message; status.hidden = false; };
   const validate = () => {
     const result = validateEnquiry(Object.fromEntries(new FormData(form)));
@@ -39,65 +49,73 @@ if (form) {
     return result;
   };
   const prepareEmail = () => {
+    if (submission.phase === 'pending') return;
     const result = validate(); if (!result.valid) return;
     showStatus('Your email draft is ready. Send it from your email app; nothing has been sent by this website. If the app does not open, use Copy enquiry details.');
     location.href = emailLink(result.data);
   };
   const widget = form.querySelector<HTMLElement>('#turnstile-widget');
   if (widget) {
+    let active = true;
+    const unavailable = () => {
+      if (active && submission.phase !== 'pending') showStatus('Spam verification is unavailable. Please use the email or copy option.');
+    };
+    const observer = new ResizeObserver(() => challenge?.resize());
+    const start = () => {
+      if (!active || !window.turnstile || challenge) return;
+      // Called only after api.js loads (or on bfcache restore); ready() rejects async scripts.
+      challenge = createTurnstileController(widget,window.turnstile,value => { token = value; },unavailable);
+      observer.observe(widget);
+      challenge.resize();
+    };
     const script = document.createElement('script');
     script.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit'; script.async = true;
-    script.onload = () => {
-      widgetId = window.turnstile?.render(widget, {
-        sitekey: widget.dataset.sitekey, action: 'enquiry', theme: 'light', size: 'flexible',
-        callback: (value: string) => { token = value; },
-        'expired-callback': () => { token = ''; },
-        'error-callback': () => { token = ''; showStatus('Spam verification is unavailable. Please use the email or copy option.'); },
-      });
-    };
-    script.onerror = () => showStatus('Spam verification could not load. Please use the email or copy option.');
-    document.head.append(script);
+    script.onload = start;
+    script.onerror = unavailable;
+    if (window.turnstile) start(); else document.head.append(script);
+    window.addEventListener('pagehide',() => { active = false; observer.disconnect(); challenge?.destroy(); challenge = undefined; });
+    window.addEventListener('pageshow',event => { if (event.persisted) { active = true; start(); } });
   }
   form.addEventListener('submit', async event => {
     event.preventDefault();
-    if (busy) return;
+    if (submission.phase === 'pending' || submission.phase === 'sent') return;
     if (form.dataset.online !== 'true') { prepareEmail(); return; }
     const result = validate(); if (!result.valid) return;
     if (!token) { showStatus('Please complete the spam verification, or use the email option.'); return; }
-    busy = true; form.querySelectorAll<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>('input:not([type=hidden]), textarea:not([readonly]), select').forEach(field => field.disabled = true); submit.disabled = true; submit.textContent = 'Sending…'; form.setAttribute('aria-busy','true');
+    // Capture the validated fields and proof before any controls are disabled.
+    const payload = submission.begin(result.data,token,(form.elements.namedItem('website') as HTMLInputElement)?.value || '');
+    updateControls();
+    if (!payload) return;
+    let accepted = false;
     try {
-      const response = await fetch('/api/enquiry', {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({...result.data, website:(form.elements.namedItem('website') as HTMLInputElement)?.value || '', token, requestId}), signal:AbortSignal.timeout(20000)});
-      const body = await response.json();
-      if (!response.ok || body.ok !== true) throw new Error(response.status === 429 ? 'Please wait a few minutes before trying again, or use the email option.' : 'Online submission could not be confirmed. Your details are still here; please use the email or copy option.');
-      showStatus('Your enquiry has been accepted for delivery. Keep a copy for your records.');
-      submit.textContent = 'Enquiry submitted';
-      // Keep the same request ID and button disabled until the customer changes their details.
-      submit.dataset.sent = 'true';
-    } catch (error) {
-      showStatus(error instanceof Error && error.name !== 'TimeoutError' && error.name !== 'TypeError' ? error.message : 'Online submission could not be confirmed. Please use the email or copy option.');
-      submit.textContent = 'Send enquiry';
+      const result = await sendEnquiry(payload);
+      showStatus(result.message);
+      summary.hidden = true; summary.textContent = '';
+      accepted = result.ok;
     } finally {
-      busy = false; form.querySelectorAll<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>('input, textarea, select').forEach(field => field.disabled = false); submit.disabled = submit.dataset.sent === 'true'; form.removeAttribute('aria-busy'); token = '';
-      if (widgetId) window.turnstile?.reset(widgetId);
+      submission.finish(accepted); updateControls(); token = '';
+      challenge?.reset();
     }
   });
   form.querySelector('#prepare-email')?.addEventListener('click',prepareEmail);
   form.querySelector('#copy-enquiry')?.addEventListener('click',async () => {
+    if (submission.phase === 'pending') return;
     const result = validate(); if (!result.valid) return;
     const text = clipboardText(result.data);
     try {
       await navigator.clipboard.writeText(text);
+      if (submission.phase === 'pending') return;
       showStatus('Enquiry copied. Paste it into your email app and send to contact@kaiyuselect.com.au.');
     } catch {
+      if (submission.phase === 'pending') return;
       form.querySelector<HTMLElement>('#manual-copy')!.hidden = false;
       const field = form.querySelector<HTMLTextAreaElement>('#copy-text')!; field.value = text; field.focus(); field.select();
       showStatus('Automatic copying is unavailable. Select and copy the text below, then paste it into your email app.');
     }
   });
   form.addEventListener('input',event => {
-    if (busy || (event.target as HTMLElement).closest('#turnstile-widget,#manual-copy')) return;
-    requestId = crypto.randomUUID(); status.hidden = true; delete submit.dataset.sent;
-    submit.disabled = false; submit.innerHTML = form.dataset.online === 'true' ? 'Send enquiry <span aria-hidden="true">↗</span>' : 'Prepare email <span aria-hidden="true">↗</span>';
+    if (submission.phase === 'pending' || (event.target as HTMLElement).closest('#turnstile-widget,#manual-copy')) return;
+    submission.edit(); status.hidden = true; updateControls();
     form.querySelector<HTMLElement>('#manual-copy')!.hidden = true;
     const field = event.target as HTMLInputElement;
     if (field.getAttribute('aria-invalid')) { field.removeAttribute('aria-invalid'); const error=form.querySelector<HTMLElement>(`#${field.name}-error`); if(error) error.hidden=true; }

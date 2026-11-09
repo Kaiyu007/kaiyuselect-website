@@ -1,9 +1,17 @@
 import { enquiryBody, enquiryTypes, recipient, validateEnquiry } from '../../src/lib/enquiry.js';
 
 const LIMIT = 20000;
-const reply = (status, message, extra = {}) => new Response(JSON.stringify({ ok: status === 200, message, ...extra }), {
-  status, headers: { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'no-store', 'X-Content-Type-Options': 'nosniff' },
+const reply = (status, message, extra = {}, headers = {}) => new Response(JSON.stringify({ ok: status === 200, message, ...extra }), {
+  status, headers: { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'no-store', 'X-Content-Type-Options': 'nosniff', ...headers },
 });
+const throttled = () => reply(429,'Please wait before trying again.',{}, {'Retry-After':'600'});
+async function readCount(store, key) {
+  const value = await store.get(key);
+  if (value === null) return 0;
+  const count = Number(value);
+  if (!Number.isSafeInteger(count) || count < 0 || value === '') throw new Error('Invalid counter');
+  return count;
+}
 async function limitedBody(request) {
   const reader = request.body?.getReader();
   if (!reader) throw new Error('empty');
@@ -31,16 +39,16 @@ export async function onRequest({ request, env }) {
   try { input = await limitedBody(request); } catch (error) { return reply(error.message === 'large' ? 413 : 400,'Invalid enquiry.'); }
   const result = validateEnquiry(input);
   if (!result.valid) return reply(400,'Check the enquiry fields.',{errors:result.errors});
-  if (typeof input.website !== 'string' || input.website || typeof input.token !== 'string' || !input.token || input.token.length > 2048 || !/^[a-f\d]{8}(-[a-f\d]{4}){3}-[a-f\d]{12}$/i.test(input.requestId)) return reply(400,'Verification required.');
+  if (typeof input.website !== 'string' || input.website || typeof input.token !== 'string' || !input.token || input.token.length > 2048 || typeof input.requestId !== 'string' || !/^[a-f\d]{8}(-[a-f\d]{4}){3}-[a-f\d]{12}$/i.test(input.requestId)) return reply(400,'Verification required.');
   const ip = request.headers.get('CF-Connecting-IP');
   if (!ip) return reply(403,'Verification required.');
   try {
     // A short-lived salted digest, never the visitor's IP or enquiry content, is stored in KV.
     const digest = await crypto.subtle.digest('SHA-256',new TextEncoder().encode(`${env.TURNSTILE_SECRET_KEY}:${ip}`));
     const key = 'enquiry:' + Array.from(new Uint8Array(digest),b=>b.toString(16).padStart(2,'0')).join('');
-    const count = Number(await env.ENQUIRY_LIMITS.get(key)) || 0;
-    if (count >= 3) return reply(429,'Please wait before trying again.');
-    await env.ENQUIRY_LIMITS.put(key,String(count+1),{expirationTtl:600});
+    // Cheap rejection for an existing block. KV is only a best-effort limiter,
+    // not an atomic counter; edge rate limiting must protect verification traffic.
+    if (await readCount(env.ENQUIRY_LIMITS,key) >= 3) return throttled();
     const verification = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
       method:'POST', headers:{'Content-Type':'application/json'},
       body:JSON.stringify({secret:env.TURNSTILE_SECRET_KEY,response:input.token,remoteip:ip}), signal:AbortSignal.timeout(8000),
@@ -48,6 +56,11 @@ export async function onRequest({ request, env }) {
     if (!verification.ok) return reply(503,'Verification unavailable.');
     const proof = await verification.json();
     if (proof.success !== true || proof.hostname !== url.hostname || proof.action !== 'enquiry') return reply(400,'Verification failed or expired. Please try again.');
+    // Failed/expired proofs never write KV or consume the verified-attempt quota.
+    // Re-read after verification to reduce races; eventual consistency still applies.
+    const count = await readCount(env.ENQUIRY_LIMITS,key);
+    if (count >= 3) return throttled();
+    await env.ENQUIRY_LIMITS.put(key,String(count+1),{expirationTtl:600});
     // Fixed recipient, plain text only, and a verified server-side sender; no autoresponder.
     const sent = await fetch('https://api.resend.com/emails', {
       method:'POST', headers:{Authorization:`Bearer ${env.RESEND_API_KEY}`,'Content-Type':'application/json','Idempotency-Key':`enquiry/${input.requestId}`},
