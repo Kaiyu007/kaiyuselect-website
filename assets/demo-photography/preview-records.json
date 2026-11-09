@@ -1,0 +1,226 @@
+[
+  {
+    "route": "/web-design/demos/automotive-workshop/",
+    "source": "assets/demo-photography/previews/automotive-workshop.jpg",
+    "method": "Actual local page screenshot captured using the existing dedicated Codex built-in Browser tab",
+    "viewport": [
+      1440,
+      1000
+    ],
+    "capturedPixels": [
+      1425,
+      990
+    ],
+    "date": "2026-11-09",
+    "variants": [
+      {
+        "path": "public/images/web-design/previews/automotive-workshop-480.webp",
+        "bytes": 19262
+      },
+      {
+        "path": "public/images/web-design/previews/automotive-workshop-800.webp",
+        "bytes": 38504
+      },
+      {
+        "path": "public/images/web-design/previews/automotive-workshop-1200.webp",
+        "bytes": 63350
+      }
+    ]
+  },
+  {
+    "route": "/web-design/demos/contemporary-fashion/",
+    "source": "assets/demo-photography/previews/contemporary-fashion.jpg",
+    "method": "Actual local page screenshot captured using the existing dedicated Codex built-in Browser tab",
+    "viewport": [
+      1440,
+      1000
+    ],
+    "capturedPixels": [
+      1425,
+      990
+    ],
+    "date": "2026-11-09",
+    "variants": [
+      {
+        "path": "public/images/web-design/previews/contemporary-fashion-480.webp",
+        "bytes": 18906
+      },
+      {
+        "path": "public/images/web-design/previews/contemporary-fashion-800.webp",
+        "bytes": 39158
+      },
+      {
+        "path": "public/images/web-design/previews/contemporary-fashion-1200.webp",
+        "bytes": 65942
+      }
+    ]
+  },
+  {
+    "route": "/web-design/demos/fine-jewellery/",
+    "source": "assets/demo-photography/previews/fine-jewellery.jpg",
+    "method": "Actual local page screenshot captured using the existing dedicated Codex built-in Browser tab",
+    "viewport": [
+      1440,
+      1000
+    ],
+    "capturedPixels": [
+      1425,
+      990
+    ],
+    "date": "2026-11-09",
+    "variants": [
+      {
+        "path": "public/images/web-design/previews/fine-jewellery-480.webp",
+        "bytes": 20048
+      },
+      {
+        "path": "public/images/web-design/previews/fine-jewellery-800.webp",
+        "bytes": 44272
+      },
+      {
+        "path": "public/images/web-design/previews/fine-jewellery-1200.webp",
+        "bytes": 75594
+      }
+    ]
+  },
+  {
+    "route": "/web-design/demos/landscape-outdoor/",
+    "source": "assets/demo-photography/previews/landscape-outdoor.jpg",
+    "method": "Actual local page screenshot captured using the existing dedicated Codex built-in Browser tab",
+    "viewport": [
+      1440,
+      1000
+    ],
+    "capturedPixels": [
+      1425,
+      990
+    ],
+    "date": "2026-11-09",
+    "variants": [
+      {
+        "path": "public/images/web-design/previews/landscape-outdoor-480.webp",
+        "bytes": 33462
+      },
+      {
+        "path": "public/images/web-design/previews/landscape-outdoor-800.webp",
+        "bytes": 78802
+      },
+      {
+        "path": "public/images/web-design/previews/landscape-outdoor-1200.webp",
+        "bytes": 147368
+      }
+    ]
+  },
+  {
+    "route": "/web-design/demos/modern-dental/",
+    "source": "assets/demo-photography/previews/modern-dental.jpg",
+    "method": "Actual local page screenshot captured using the existing dedicated Codex built-in Browser tab",
+    "viewport": [
+      1440,
+      1000
+    ],
+    "capturedPixels": [
+      1425,
+      990
+    ],
+    "date": "2026-11-09",
+    "variants": [
+      {
+        "path": "public/images/web-design/previews/modern-dental-480.webp",
+        "bytes": 13448
+      },
+      {
+        "path": "public/images/web-design/previews/modern-dental-800.webp",
+        "bytes": 27554
+      },
+      {
+        "path": "public/images/web-design/previews/modern-dental-1200.webp",
+        "bytes": 46194
+      }
+    ]
+  },
+  {
+    "route": "/web-design/demos/performance-fitness/",
+    "source": "assets/demo-photography/previews/performance-fitness.jpg",
+    "method": "Actual local page screenshot captured using the existing dedicated Codex built-in Browser tab",
+    "viewport": [
+      1440,
+      1000
+    ],
+    "capturedPixels": [
+      1425,
+      990
+    ],
+    "date": "2026-11-09",
+    "variants": [
+      {
+        "path": "public/images/web-design/previews/performance-fitness-480.webp",
+        "bytes": 18042
+      },
+      {
+        "path": "public/images/web-design/previews/performance-fitness-800.webp",
+        "bytes": 35386
+      },
+      {
+        "path": "public/images/web-design/previews/performance-fitness-1200.webp",
+        "bytes": 58828
+      }
+    ]
+  },
+  {
+    "route": "/web-design/demos/residential-real-estate/",
+    "source": "assets/demo-photography/previews/residential-real-estate.jpg",
+    "method": "Actual local page screenshot captured using the existing dedicated Codex built-in Browser tab",
+    "viewport": [
+      1440,
+      1000
+    ],
+    "capturedPixels": [
+      1425,
+      990
+    ],
+    "date": "2026-11-09",
+    "variants": [
+      {
+        "path": "public/images/web-design/previews/residential-real-estate-480.webp",
+        "bytes": 36294
+      },
+      {
+        "path": "public/images/web-design/previews/residential-real-estate-800.webp",
+        "bytes": 82538
+      },
+      {
+        "path": "public/images/web-design/previews/residential-real-estate-1200.webp",
+        "bytes": 148558
+      }
+    ]
+  },
+  {
+    "route": "/web-design/demos/specialty-cafe/",
+    "source": "assets/demo-photography/previews/specialty-cafe.jpg",
+    "method": "Actual local page screenshot captured using the existing dedicated Codex built-in Browser tab",
+    "viewport": [
+      1440,
+      1000
+    ],
+    "capturedPixels": [
+      1425,
+      990
+    ],
+    "date": "2026-11-09",
+    "variants": [
+      {
+        "path": "public/images/web-design/previews/specialty-cafe-480.webp",
+        "bytes": 18766
+      },
+      {
+        "path": "public/images/web-design/previews/specialty-cafe-800.webp",
+        "bytes": 39468
+      },
+      {
+        "path": "public/images/web-design/previews/specialty-cafe-1200.webp",
+        "bytes": 67354
+      }
+    ]
+  }
+]

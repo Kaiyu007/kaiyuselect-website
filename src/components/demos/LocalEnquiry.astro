@@ -1,0 +1,18 @@
+---
+interface Props { id: string; title: string; options: string[]; kind?: string; date?: boolean; }
+const {id,title,options,kind='enquiry',date=true} = Astro.props;
+---
+<section class="local-enquiry" id={id} aria-labelledby={`${id}-title`}>
+  <div><p class="d-kicker">Try the experience</p><h2 id={`${id}-title`}>{title}</h2><p>Explore a sample {kind} without sending anything. Use fictional details only.</p><p class="demo-note">Local demonstration only. Nothing is stored, sent or booked. For a real website project, use “Request a Similar Website”.</p></div>
+  <div data-demo-enquiry data-kind={kind}>
+    <fieldset><legend>Sample {kind} details</legend>
+      <label for={`${id}-name`}>Fictional name <span>(required)</span><input id={`${id}-name`} data-field="name" required maxlength="80" autocomplete="off" placeholder="Alex Sample" /></label>
+      <label for={`${id}-choice`}>Interested in <span>(required)</span><select id={`${id}-choice`} data-field="choice" required><option value="">Choose an option</option>{options.map(o=><option>{o}</option>)}</select></label>
+      {date && <label for={`${id}-date`}>Preferred date <span>(required)</span><input id={`${id}-date`} data-field="date" type="date" required /></label>}
+      <label for={`${id}-notes`}>Sample notes <span>(optional)</span><textarea id={`${id}-notes`} data-field="notes" maxlength="500" rows="3" placeholder="Please use fictional details; do not enter personal or medical information."></textarea></label>
+    </fieldset>
+    <button class="d-button" type="button" data-preview-request disabled>Preview {kind} →</button>
+    <noscript><p>Enable JavaScript to try this local demonstration. No submission is available.</p></noscript>
+    <p class="demo-result" role="status" aria-live="polite" data-demo-result></p>
+  </div>
+</section>

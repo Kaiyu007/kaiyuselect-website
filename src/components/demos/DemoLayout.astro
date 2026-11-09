@@ -1,0 +1,41 @@
+---
+import { demos, websiteEnquiry } from '../../data/web-demos';
+import '../../styles/demos.css';
+import '../../styles/demo-photography.css';
+const {slug} = Astro.props;
+const demo = demos.find(d => d.slug === slug)!;
+const footerHeadlines:Record<string,string> = {automotive:'Built around your workshop.',jewellery:'A finer expression of your brand.',fashion:'Your label. Your point of view.',cafe:'Make your place feel like your place.',fitness:'A stronger presence for your studio.',dental:'A clearer welcome for your patients.',landscape:'Give your work room to grow.',property:'A considered home for your collection.'};
+const canonical = new URL(Astro.url.pathname.replace(/\/$/, ''), Astro.site);
+---
+<!doctype html>
+<html lang="en-AU">
+  <head>
+    <meta charset="UTF-8" /><meta name="viewport" content="width=device-width" />
+    <title>{demo.title} — Interactive Demo | Kaiyu Select</title>
+    <meta name="description" content={demo.summary + ' An original fictional website concept by Kaiyu Select.'} />
+    <link rel="canonical" href={canonical} /><link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="theme-color" content="#102f2d" /><meta property="og:title" content={`${demo.title} — Kaiyu Select Demo`} />
+    <meta property="og:description" content={demo.summary} /><meta property="og:type" content="website" /><meta property="og:url" content={canonical} />
+    <meta property="og:image" content={new URL('/og.jpg', Astro.site)} />
+  </head>
+  <body class={`demo theme-${demo.theme}`}>
+    <a class="demo-skip" href="#demo-main">Skip to content</a>
+    <aside class="demo-disclosure" aria-label="Demo website information"><div>
+      <a href="/web-design/">← Back to Web Design Portfolio</a>
+      <strong>Demo Website Concept — Fictional Business</strong>
+      <a href={websiteEnquiry(demo.title)}>Request a Similar Website ↗</a>
+    </div></aside>
+    <header class="demo-header d-shell">
+      <a class="demo-brand" href="#demo-main" aria-label={`${demo.brand} demo home`}>{demo.brand}</a>
+      <nav class="demo-nav" aria-label="Demo navigation">{demo.nav.map(([label,id])=><a href={`#${id}`}>{label}</a>)}</nav>
+      <details class="demo-mobile-nav"><summary>Menu <span aria-hidden="true">＋</span></summary><nav aria-label="Demo mobile navigation">{demo.nav.map(([label,id])=><a href={`#${id}`}>{label}</a>)}</nav></details>
+    </header>
+    <main id="demo-main"><noscript><p class="d-shell demo-note">Enable JavaScript to explore filters, image views and local previews. All content here is a fictional demonstration; no bookings or purchases are available.</p></noscript><slot /></main>
+    <footer class="demo-footer"><div class="d-shell">
+      <div><p class="d-kicker">A website concept by Kaiyu Select</p><h2>{footerHeadlines[demo.theme]}</h2><p>This fictional business, its AI-generated imagery and sample content demonstrate a design direction. No products, services, appointments or properties are offered through this demo.</p></div>
+      <div class="demo-footer-links"><a class="d-button" href={websiteEnquiry(demo.title)}>Request a Similar Website ↗</a><a href="/web-design/">← Back to Web Design Portfolio</a><span>AI-generated concept imagery · Fictional people & places · Local interactions</span></div>
+      <div class="footer-signature"><strong>{demo.brand}</strong><nav aria-label="Demo footer navigation">{demo.nav.map(([label,id])=><a href={`#${id}`}>{label}</a>)}</nav></div>
+    </div></footer>
+    <script src="../../scripts/demos.ts"></script>
+  </body>
+</html>

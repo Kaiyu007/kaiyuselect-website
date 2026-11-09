@@ -1,0 +1,1679 @@
+[
+  {
+    "name": "automotive-hero",
+    "source": "assets/demo-photography/sources/automotive-hero.png",
+    "crop": null,
+    "variants": [
+      {
+        "src": "/images/web-design/photos/automotive-hero-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 16238,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/automotive-hero-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 39848,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/automotive-hero-1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 80068,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/automotive-hero-1536.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 118642,
+        "quality": 82
+      }
+    ]
+  },
+  {
+    "name": "jewellery-hero",
+    "source": "assets/demo-photography/sources/jewellery-hero.png",
+    "crop": null,
+    "variants": [
+      {
+        "src": "/images/web-design/photos/jewellery-hero-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 13950,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/jewellery-hero-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 37462,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/jewellery-hero-1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 74470,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/jewellery-hero-1536.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 110970,
+        "quality": 82
+      }
+    ]
+  },
+  {
+    "name": "fashion-hero",
+    "source": "assets/demo-photography/sources/fashion-hero.png",
+    "crop": null,
+    "variants": [
+      {
+        "src": "/images/web-design/photos/fashion-hero-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 21646,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/fashion-hero-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 55224,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/fashion-hero-1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 108216,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/fashion-hero-1536.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 158544,
+        "quality": 82
+      }
+    ]
+  },
+  {
+    "name": "cafe-hero",
+    "source": "assets/demo-photography/sources/cafe-hero.png",
+    "crop": null,
+    "variants": [
+      {
+        "src": "/images/web-design/photos/cafe-hero-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 40336,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/cafe-hero-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 93718,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/cafe-hero-1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 170188,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/cafe-hero-1536.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 242754,
+        "quality": 82
+      }
+    ]
+  },
+  {
+    "name": "fitness-hero",
+    "source": "assets/demo-photography/sources/fitness-hero.png",
+    "crop": null,
+    "variants": [
+      {
+        "src": "/images/web-design/photos/fitness-hero-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 21666,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/fitness-hero-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 50128,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/fitness-hero-1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 97144,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/fitness-hero-1536.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 143940,
+        "quality": 82
+      }
+    ]
+  },
+  {
+    "name": "dental-hero",
+    "source": "assets/demo-photography/sources/dental-hero.png",
+    "crop": null,
+    "variants": [
+      {
+        "src": "/images/web-design/photos/dental-hero-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 16412,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/dental-hero-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 38790,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/dental-hero-1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 81342,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/dental-hero-1536.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 128408,
+        "quality": 82
+      }
+    ]
+  },
+  {
+    "name": "landscape-hero",
+    "source": "assets/demo-photography/sources/landscape-hero.png",
+    "crop": null,
+    "variants": [
+      {
+        "src": "/images/web-design/photos/landscape-hero-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 53426,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/landscape-hero-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 146318,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/landscape-hero-1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 306112,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/landscape-hero-1536.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 429998,
+        "quality": 79
+      }
+    ]
+  },
+  {
+    "name": "property-hero",
+    "source": "assets/demo-photography/sources/property-hero.png",
+    "crop": null,
+    "variants": [
+      {
+        "src": "/images/web-design/photos/property-hero-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 55304,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/property-hero-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 149730,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/property-hero-1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 308994,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/property-hero-1536.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 429788,
+        "quality": 79
+      }
+    ]
+  },
+  {
+    "name": "automotive-workshop",
+    "source": "assets/demo-photography/sources/automotive-workshop.png",
+    "crop": null,
+    "variants": [
+      {
+        "src": "/images/web-design/photos/automotive-workshop-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 25336,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/automotive-workshop-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 57362,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/automotive-workshop-1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 108148,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/automotive-workshop-1536.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 157624,
+        "quality": 82
+      }
+    ]
+  },
+  {
+    "name": "automotive-detail",
+    "source": "assets/demo-photography/sources/automotive-detail.png",
+    "crop": null,
+    "variants": [
+      {
+        "src": "/images/web-design/photos/automotive-detail-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 20410,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/automotive-detail-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 44208,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/automotive-detail-1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 82592,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/automotive-detail-1536.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 120326,
+        "quality": 82
+      }
+    ]
+  },
+  {
+    "name": "automotive-finish",
+    "source": "assets/demo-photography/sources/automotive-finish.png",
+    "crop": null,
+    "variants": [
+      {
+        "src": "/images/web-design/photos/automotive-finish-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 19604,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/automotive-finish-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 41534,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/automotive-finish-1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 77244,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/automotive-finish-1536.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 115680,
+        "quality": 82
+      }
+    ]
+  },
+  {
+    "name": "jewellery-earrings",
+    "source": "assets/demo-photography/sources/jewellery-earrings.png",
+    "crop": null,
+    "variants": [
+      {
+        "src": "/images/web-design/photos/jewellery-earrings-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 23026,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/jewellery-earrings-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 63738,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/jewellery-earrings-1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 127474,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/jewellery-earrings-1536.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 188482,
+        "quality": 82
+      }
+    ]
+  },
+  {
+    "name": "jewellery-pendant",
+    "source": "assets/demo-photography/sources/jewellery-pendant.png",
+    "crop": null,
+    "variants": [
+      {
+        "src": "/images/web-design/photos/jewellery-pendant-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 32176,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/jewellery-pendant-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 110990,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/jewellery-pendant-1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 220216,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/jewellery-pendant-1536.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 313104,
+        "quality": 82
+      }
+    ]
+  },
+  {
+    "name": "jewellery-editorial",
+    "source": "assets/demo-photography/sources/jewellery-editorial.png",
+    "crop": null,
+    "variants": [
+      {
+        "src": "/images/web-design/photos/jewellery-editorial-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 19058,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/jewellery-editorial-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 45828,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/jewellery-editorial-1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 92246,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/jewellery-editorial-1536.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 142068,
+        "quality": 82
+      }
+    ]
+  },
+  {
+    "name": "fashion-coat",
+    "source": "assets/demo-photography/sources/fashion-coat.png",
+    "crop": null,
+    "variants": [
+      {
+        "src": "/images/web-design/photos/fashion-coat-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 3688,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/fashion-coat-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 8180,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/fashion-coat-1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 18074,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/fashion-coat-1536.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 29936,
+        "quality": 82
+      }
+    ]
+  },
+  {
+    "name": "fashion-overshirt",
+    "source": "assets/demo-photography/sources/fashion-overshirt.png",
+    "crop": null,
+    "variants": [
+      {
+        "src": "/images/web-design/photos/fashion-overshirt-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 6438,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/fashion-overshirt-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 14568,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/fashion-overshirt-1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 30982,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/fashion-overshirt-1536.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 46982,
+        "quality": 82
+      }
+    ]
+  },
+  {
+    "name": "fashion-shirt",
+    "source": "assets/demo-photography/sources/fashion-shirt.png",
+    "crop": null,
+    "variants": [
+      {
+        "src": "/images/web-design/photos/fashion-shirt-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 4414,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/fashion-shirt-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 9634,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/fashion-shirt-1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 19292,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/fashion-shirt-1536.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 30060,
+        "quality": 82
+      }
+    ]
+  },
+  {
+    "name": "fashion-lookbook",
+    "source": "assets/demo-photography/sources/fashion-lookbook.png",
+    "crop": null,
+    "variants": [
+      {
+        "src": "/images/web-design/photos/fashion-lookbook-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 23514,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/fashion-lookbook-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 54034,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/fashion-lookbook-1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 103228,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/fashion-lookbook-1536.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 150486,
+        "quality": 82
+      }
+    ]
+  },
+  {
+    "name": "cafe-breakfast",
+    "source": "assets/demo-photography/sources/cafe-breakfast.png",
+    "crop": null,
+    "variants": [
+      {
+        "src": "/images/web-design/photos/cafe-breakfast-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 42820,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/cafe-breakfast-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 100990,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/cafe-breakfast-1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 187358,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/cafe-breakfast-1536.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 269954,
+        "quality": 82
+      }
+    ]
+  },
+  {
+    "name": "cafe-coffee",
+    "source": "assets/demo-photography/sources/cafe-coffee.png",
+    "crop": null,
+    "variants": [
+      {
+        "src": "/images/web-design/photos/cafe-coffee-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 25110,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/cafe-coffee-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 58162,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/cafe-coffee-1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 107186,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/cafe-coffee-1536.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 152140,
+        "quality": 82
+      }
+    ]
+  },
+  {
+    "name": "cafe-pastry",
+    "source": "assets/demo-photography/sources/cafe-pastry.png",
+    "crop": null,
+    "variants": [
+      {
+        "src": "/images/web-design/photos/cafe-pastry-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 31156,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/cafe-pastry-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 71920,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/cafe-pastry-1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 133980,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/cafe-pastry-1536.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 190502,
+        "quality": 82
+      }
+    ]
+  },
+  {
+    "name": "fitness-strength",
+    "source": "assets/demo-photography/sources/fitness-strength.png",
+    "crop": null,
+    "variants": [
+      {
+        "src": "/images/web-design/photos/fitness-strength-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 36142,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/fitness-strength-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 92776,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/fitness-strength-1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 189620,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/fitness-strength-1536.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 289500,
+        "quality": 82
+      }
+    ]
+  },
+  {
+    "name": "fitness-conditioning",
+    "source": "assets/demo-photography/sources/fitness-conditioning.png",
+    "crop": null,
+    "variants": [
+      {
+        "src": "/images/web-design/photos/fitness-conditioning-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 28282,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/fitness-conditioning-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 59890,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/fitness-conditioning-1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 104002,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/fitness-conditioning-1536.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 148206,
+        "quality": 82
+      }
+    ]
+  },
+  {
+    "name": "fitness-mobility",
+    "source": "assets/demo-photography/sources/fitness-mobility.png",
+    "crop": null,
+    "variants": [
+      {
+        "src": "/images/web-design/photos/fitness-mobility-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 26416,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/fitness-mobility-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 56578,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/fitness-mobility-1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 111092,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/fitness-mobility-1536.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 163370,
+        "quality": 82
+      }
+    ]
+  },
+  {
+    "name": "dental-room",
+    "source": "assets/demo-photography/sources/dental-room.png",
+    "crop": null,
+    "variants": [
+      {
+        "src": "/images/web-design/photos/dental-room-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 17738,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/dental-room-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 36442,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/dental-room-1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 64502,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/dental-room-1536.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 92518,
+        "quality": 82
+      }
+    ]
+  },
+  {
+    "name": "landscape-water",
+    "source": "assets/demo-photography/sources/landscape-water.png",
+    "crop": null,
+    "variants": [
+      {
+        "src": "/images/web-design/photos/landscape-water-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 50138,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/landscape-water-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 133064,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/landscape-water-1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 277014,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/landscape-water-1536.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 424156,
+        "quality": 82
+      }
+    ]
+  },
+  {
+    "name": "property-verandah",
+    "source": "assets/demo-photography/sources/property-verandah.png",
+    "crop": null,
+    "variants": [
+      {
+        "src": "/images/web-design/photos/property-verandah-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 55454,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/property-verandah-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 148134,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/property-verandah-1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 306564,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/property-verandah-1536.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 424994,
+        "quality": 79
+      }
+    ]
+  },
+  {
+    "name": "landscape-planting",
+    "source": "assets/demo-photography/sources/landscape-planting.png",
+    "crop": null,
+    "variants": [
+      {
+        "src": "/images/web-design/photos/landscape-planting-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 56780,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/landscape-planting-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 145488,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/landscape-planting-1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 289000,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/landscape-planting-1536.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 425806,
+        "quality": 82
+      }
+    ]
+  },
+  {
+    "name": "property-apartment",
+    "source": "assets/demo-photography/sources/property-apartment.png",
+    "crop": null,
+    "variants": [
+      {
+        "src": "/images/web-design/photos/property-apartment-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 37134,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/property-apartment-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 102360,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/property-apartment-1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 220280,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/property-apartment-1536.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 340228,
+        "quality": 82
+      }
+    ]
+  },
+  {
+    "name": "fashion-coat-ink",
+    "source": "assets/demo-photography/sources/fashion-coat-ink.png",
+    "crop": null,
+    "variants": [
+      {
+        "src": "/images/web-design/photos/fashion-coat-ink-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 3570,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/fashion-coat-ink-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 7532,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/fashion-coat-ink-1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 15810,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/fashion-coat-ink-1536.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 27216,
+        "quality": 82
+      }
+    ]
+  },
+  {
+    "name": "fashion-shirt-ink",
+    "source": "assets/demo-photography/sources/fashion-shirt-ink.png",
+    "crop": null,
+    "variants": [
+      {
+        "src": "/images/web-design/photos/fashion-shirt-ink-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 4424,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/fashion-shirt-ink-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 9634,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/fashion-shirt-ink-1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 18636,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/fashion-shirt-ink-1536.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 28528,
+        "quality": 82
+      }
+    ]
+  },
+  {
+    "name": "fashion-overshirt-ink",
+    "source": "assets/demo-photography/sources/fashion-overshirt-ink.png",
+    "crop": null,
+    "variants": [
+      {
+        "src": "/images/web-design/photos/fashion-overshirt-ink-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 5046,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/fashion-overshirt-ink-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 11908,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/fashion-overshirt-ink-1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 25752,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/fashion-overshirt-ink-1536.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 41816,
+        "quality": 82
+      }
+    ]
+  },
+  {
+    "name": "fashion-coat-clay",
+    "source": "assets/demo-photography/sources/fashion-coat-clay.png",
+    "crop": null,
+    "variants": [
+      {
+        "src": "/images/web-design/photos/fashion-coat-clay-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 4432,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/fashion-coat-clay-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 11036,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/fashion-coat-clay-1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 27414,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/fashion-coat-clay-1536.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 48286,
+        "quality": 82
+      }
+    ]
+  },
+  {
+    "name": "fashion-shirt-clay",
+    "source": "assets/demo-photography/sources/fashion-shirt-clay.png",
+    "crop": null,
+    "variants": [
+      {
+        "src": "/images/web-design/photos/fashion-shirt-clay-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 5572,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/fashion-shirt-clay-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 13244,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/fashion-shirt-clay-1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 28566,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/fashion-shirt-clay-1536.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 49806,
+        "quality": 82
+      }
+    ]
+  },
+  {
+    "name": "fashion-overshirt-clay",
+    "source": "assets/demo-photography/sources/fashion-overshirt-clay.png",
+    "crop": null,
+    "variants": [
+      {
+        "src": "/images/web-design/photos/fashion-overshirt-clay-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 6754,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/fashion-overshirt-clay-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 17260,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/fashion-overshirt-clay-1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 39808,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/fashion-overshirt-clay-1536.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 65934,
+        "quality": 82
+      }
+    ]
+  },
+  {
+    "name": "automotive-before",
+    "source": "assets/demo-photography/sources/automotive-before.png",
+    "crop": null,
+    "variants": [
+      {
+        "src": "/images/web-design/photos/automotive-before-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 16130,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/automotive-before-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 33372,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/automotive-before-1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 65294,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/automotive-before-1536.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 100280,
+        "quality": 82
+      }
+    ]
+  },
+  {
+    "name": "landscape-before",
+    "source": "assets/demo-photography/sources/landscape-before.png",
+    "crop": null,
+    "variants": [
+      {
+        "src": "/images/web-design/photos/landscape-before-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 43146,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/landscape-before-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 120666,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/landscape-before-1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 253108,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/landscape-before-1536.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 390006,
+        "quality": 82
+      }
+    ]
+  },
+  {
+    "name": "fashion-editorial-ink",
+    "source": "assets/demo-photography/sources/fashion-editorial-ink.png",
+    "crop": null,
+    "variants": [
+      {
+        "src": "/images/web-design/photos/fashion-editorial-ink-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 11150,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/fashion-editorial-ink-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 24738,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/fashion-editorial-ink-1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 49096,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/fashion-editorial-ink-1536.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 74854,
+        "quality": 82
+      }
+    ]
+  },
+  {
+    "name": "cafe-interior",
+    "source": "assets/demo-photography/sources/cafe-interior.png",
+    "crop": null,
+    "variants": [
+      {
+        "src": "/images/web-design/photos/cafe-interior-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 31468,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/cafe-interior-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 74406,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/cafe-interior-1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 149642,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/cafe-interior-1536.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 233458,
+        "quality": 82
+      }
+    ]
+  },
+  {
+    "name": "jewellery-one-detail",
+    "source": "assets/demo-photography/sources/jewellery-hero.png",
+    "crop": [
+      0.25,
+      0.18,
+      0.85,
+      0.82
+    ],
+    "variants": [
+      {
+        "src": "/images/web-design/photos/jewellery-one-detail-480.webp",
+        "width": 480,
+        "height": 342,
+        "bytes": 18820,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/jewellery-one-detail-800.webp",
+        "width": 800,
+        "height": 569,
+        "bytes": 41400,
+        "quality": 82
+      }
+    ]
+  },
+  {
+    "name": "jewellery-one-alternate",
+    "source": "assets/demo-photography/sources/jewellery-hero.png",
+    "crop": [
+      0.05,
+      0.18,
+      0.72,
+      0.9
+    ],
+    "variants": [
+      {
+        "src": "/images/web-design/photos/jewellery-one-alternate-480.webp",
+        "width": 480,
+        "height": 344,
+        "bytes": 16698,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/jewellery-one-alternate-800.webp",
+        "width": 800,
+        "height": 574,
+        "bytes": 43454,
+        "quality": 82
+      }
+    ]
+  },
+  {
+    "name": "jewellery-two-detail",
+    "source": "assets/demo-photography/sources/jewellery-earrings.png",
+    "crop": [
+      0.25,
+      0.18,
+      0.85,
+      0.82
+    ],
+    "variants": [
+      {
+        "src": "/images/web-design/photos/jewellery-two-detail-480.webp",
+        "width": 480,
+        "height": 342,
+        "bytes": 25588,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/jewellery-two-detail-800.webp",
+        "width": 800,
+        "height": 569,
+        "bytes": 61510,
+        "quality": 82
+      }
+    ]
+  },
+  {
+    "name": "jewellery-two-alternate",
+    "source": "assets/demo-photography/sources/jewellery-earrings.png",
+    "crop": [
+      0.05,
+      0.18,
+      0.72,
+      0.9
+    ],
+    "variants": [
+      {
+        "src": "/images/web-design/photos/jewellery-two-alternate-480.webp",
+        "width": 480,
+        "height": 344,
+        "bytes": 25376,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/jewellery-two-alternate-800.webp",
+        "width": 800,
+        "height": 574,
+        "bytes": 61528,
+        "quality": 82
+      }
+    ]
+  },
+  {
+    "name": "jewellery-three-detail",
+    "source": "assets/demo-photography/sources/jewellery-pendant.png",
+    "crop": [
+      0.25,
+      0.18,
+      0.85,
+      0.82
+    ],
+    "variants": [
+      {
+        "src": "/images/web-design/photos/jewellery-three-detail-480.webp",
+        "width": 480,
+        "height": 342,
+        "bytes": 48574,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/jewellery-three-detail-800.webp",
+        "width": 800,
+        "height": 569,
+        "bytes": 116430,
+        "quality": 82
+      }
+    ]
+  },
+  {
+    "name": "jewellery-three-alternate",
+    "source": "assets/demo-photography/sources/jewellery-pendant.png",
+    "crop": [
+      0.05,
+      0.18,
+      0.72,
+      0.9
+    ],
+    "variants": [
+      {
+        "src": "/images/web-design/photos/jewellery-three-alternate-480.webp",
+        "width": 480,
+        "height": 344,
+        "bytes": 50136,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/jewellery-three-alternate-800.webp",
+        "width": 800,
+        "height": 574,
+        "bytes": 128504,
+        "quality": 82
+      }
+    ]
+  },
+  {
+    "name": "property-one-detail",
+    "source": "assets/demo-photography/sources/property-hero.png",
+    "crop": [
+      0.25,
+      0.18,
+      0.85,
+      0.82
+    ],
+    "variants": [
+      {
+        "src": "/images/web-design/photos/property-one-detail-480.webp",
+        "width": 480,
+        "height": 342,
+        "bytes": 52790,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/property-one-detail-800.webp",
+        "width": 800,
+        "height": 569,
+        "bytes": 127894,
+        "quality": 82
+      }
+    ]
+  },
+  {
+    "name": "property-one-alternate",
+    "source": "assets/demo-photography/sources/property-hero.png",
+    "crop": [
+      0.05,
+      0.18,
+      0.72,
+      0.9
+    ],
+    "variants": [
+      {
+        "src": "/images/web-design/photos/property-one-alternate-480.webp",
+        "width": 480,
+        "height": 344,
+        "bytes": 56974,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/property-one-alternate-800.webp",
+        "width": 800,
+        "height": 574,
+        "bytes": 146080,
+        "quality": 82
+      }
+    ]
+  },
+  {
+    "name": "property-two-detail",
+    "source": "assets/demo-photography/sources/property-verandah.png",
+    "crop": [
+      0.25,
+      0.18,
+      0.85,
+      0.82
+    ],
+    "variants": [
+      {
+        "src": "/images/web-design/photos/property-two-detail-480.webp",
+        "width": 480,
+        "height": 342,
+        "bytes": 49032,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/property-two-detail-800.webp",
+        "width": 800,
+        "height": 569,
+        "bytes": 117906,
+        "quality": 82
+      }
+    ]
+  },
+  {
+    "name": "property-two-alternate",
+    "source": "assets/demo-photography/sources/property-verandah.png",
+    "crop": [
+      0.05,
+      0.18,
+      0.72,
+      0.9
+    ],
+    "variants": [
+      {
+        "src": "/images/web-design/photos/property-two-alternate-480.webp",
+        "width": 480,
+        "height": 344,
+        "bytes": 54522,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/property-two-alternate-800.webp",
+        "width": 800,
+        "height": 574,
+        "bytes": 137420,
+        "quality": 82
+      }
+    ]
+  },
+  {
+    "name": "property-three-detail",
+    "source": "assets/demo-photography/sources/property-apartment.png",
+    "crop": [
+      0.25,
+      0.18,
+      0.85,
+      0.82
+    ],
+    "variants": [
+      {
+        "src": "/images/web-design/photos/property-three-detail-480.webp",
+        "width": 480,
+        "height": 342,
+        "bytes": 42534,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/property-three-detail-800.webp",
+        "width": 800,
+        "height": 569,
+        "bytes": 103338,
+        "quality": 82
+      }
+    ]
+  },
+  {
+    "name": "property-three-alternate",
+    "source": "assets/demo-photography/sources/property-apartment.png",
+    "crop": [
+      0.05,
+      0.18,
+      0.72,
+      0.9
+    ],
+    "variants": [
+      {
+        "src": "/images/web-design/photos/property-three-alternate-480.webp",
+        "width": 480,
+        "height": 344,
+        "bytes": 42122,
+        "quality": 82
+      },
+      {
+        "src": "/images/web-design/photos/property-three-alternate-800.webp",
+        "width": 800,
+        "height": 574,
+        "bytes": 110890,
+        "quality": 82
+      }
+    ]
+  }
+]

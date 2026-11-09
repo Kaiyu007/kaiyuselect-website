@@ -110,3 +110,36 @@ At the end of each website task, report:
 - local preview URL.
 
 Do not simply state that everything looks good without explaining what was tested.
+
+## Dedicated browser-use policy
+
+This policy applies to the Kaiyu Select website and all eight industry demo projects.
+
+### Browser restrictions
+
+- Use only the dedicated Codex built-in Browser for website previews, visual inspections, screenshots and interaction testing.
+- Confirm to the user that the Codex built-in Browser will be used before starting browser-based testing.
+- Do not control Safari or Google Chrome, switch between browser applications, or open a new browser application.
+- Do not interact with the user's personal browser windows or tabs, or use the user's existing signed-in browser sessions.
+- Do not use AppleScript, osascript, macOS GUI scripting or other desktop automation to control Safari or Chrome.
+
+### Dedicated session and tab
+
+- Start from the local Kaiyu Select development or preview server.
+- Reuse the existing dedicated Codex built-in Browser tab for all previews and testing. Navigate within that same tab when reviewing different pages.
+- Reuse the same tab for desktop and mobile viewport checks.
+- Do not create additional tabs or browser windows without the user's explicit approval.
+- Keep this session isolated from the user's personal browsing activity.
+
+### Browser access failures
+
+- If the designated browser is unavailable, disconnected or unable to complete a required test, do not automatically switch to Safari, Chrome or another browser.
+- Do not select another browser window or tab as a fallback.
+- Report the limitation and request explicit permission before using another browser or creating a replacement tab.
+- Continue non-browser tests where possible, and clearly identify any browser checks that could not be completed.
+
+### Existing validation workflow
+
+- Use this designated session to test all pages and relevant interactive components within the task's scope.
+- Continue the existing iterative visual review and correction process, including the required viewport checks.
+- Preserve the production build, automated tests, build verification and other project validation requirements above. These browser restrictions do not replace those checks.

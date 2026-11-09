@@ -1,0 +1,470 @@
+{
+  "automotive-hero": {
+    "src": "/images/web-design/photos/automotive-hero-800.webp",
+    "srcset": "/images/web-design/photos/automotive-hero-480.webp 480w, /images/web-design/photos/automotive-hero-800.webp 800w, /images/web-design/photos/automotive-hero-1200.webp 1200w, /images/web-design/photos/automotive-hero-1536.webp 1536w",
+    "width": 1536,
+    "height": 1024
+  },
+  "jewellery-hero": {
+    "src": "/images/web-design/photos/jewellery-hero-800.webp",
+    "srcset": "/images/web-design/photos/jewellery-hero-480.webp 480w, /images/web-design/photos/jewellery-hero-800.webp 800w, /images/web-design/photos/jewellery-hero-1200.webp 1200w, /images/web-design/photos/jewellery-hero-1536.webp 1536w",
+    "width": 1536,
+    "height": 1024
+  },
+  "fashion-hero": {
+    "src": "/images/web-design/photos/fashion-hero-800.webp",
+    "srcset": "/images/web-design/photos/fashion-hero-480.webp 480w, /images/web-design/photos/fashion-hero-800.webp 800w, /images/web-design/photos/fashion-hero-1200.webp 1200w, /images/web-design/photos/fashion-hero-1536.webp 1536w",
+    "width": 1536,
+    "height": 1024
+  },
+  "cafe-hero": {
+    "src": "/images/web-design/photos/cafe-hero-800.webp",
+    "srcset": "/images/web-design/photos/cafe-hero-480.webp 480w, /images/web-design/photos/cafe-hero-800.webp 800w, /images/web-design/photos/cafe-hero-1200.webp 1200w, /images/web-design/photos/cafe-hero-1536.webp 1536w",
+    "width": 1536,
+    "height": 1024
+  },
+  "fitness-hero": {
+    "src": "/images/web-design/photos/fitness-hero-800.webp",
+    "srcset": "/images/web-design/photos/fitness-hero-480.webp 480w, /images/web-design/photos/fitness-hero-800.webp 800w, /images/web-design/photos/fitness-hero-1200.webp 1200w, /images/web-design/photos/fitness-hero-1536.webp 1536w",
+    "width": 1536,
+    "height": 1024
+  },
+  "dental-hero": {
+    "src": "/images/web-design/photos/dental-hero-800.webp",
+    "srcset": "/images/web-design/photos/dental-hero-480.webp 480w, /images/web-design/photos/dental-hero-800.webp 800w, /images/web-design/photos/dental-hero-1200.webp 1200w, /images/web-design/photos/dental-hero-1536.webp 1536w",
+    "width": 1536,
+    "height": 1024
+  },
+  "landscape-hero": {
+    "src": "/images/web-design/photos/landscape-hero-800.webp",
+    "srcset": "/images/web-design/photos/landscape-hero-480.webp 480w, /images/web-design/photos/landscape-hero-800.webp 800w, /images/web-design/photos/landscape-hero-1200.webp 1200w, /images/web-design/photos/landscape-hero-1536.webp 1536w",
+    "width": 1536,
+    "height": 1024
+  },
+  "property-hero": {
+    "src": "/images/web-design/photos/property-hero-800.webp",
+    "srcset": "/images/web-design/photos/property-hero-480.webp 480w, /images/web-design/photos/property-hero-800.webp 800w, /images/web-design/photos/property-hero-1200.webp 1200w, /images/web-design/photos/property-hero-1536.webp 1536w",
+    "width": 1536,
+    "height": 1024
+  },
+  "automotive-workshop": {
+    "src": "/images/web-design/photos/automotive-workshop-800.webp",
+    "srcset": "/images/web-design/photos/automotive-workshop-480.webp 480w, /images/web-design/photos/automotive-workshop-800.webp 800w, /images/web-design/photos/automotive-workshop-1200.webp 1200w, /images/web-design/photos/automotive-workshop-1536.webp 1536w",
+    "width": 1536,
+    "height": 1024
+  },
+  "automotive-detail": {
+    "src": "/images/web-design/photos/automotive-detail-800.webp",
+    "srcset": "/images/web-design/photos/automotive-detail-480.webp 480w, /images/web-design/photos/automotive-detail-800.webp 800w, /images/web-design/photos/automotive-detail-1200.webp 1200w, /images/web-design/photos/automotive-detail-1536.webp 1536w",
+    "width": 1536,
+    "height": 1024
+  },
+  "automotive-finish": {
+    "src": "/images/web-design/photos/automotive-finish-800.webp",
+    "srcset": "/images/web-design/photos/automotive-finish-480.webp 480w, /images/web-design/photos/automotive-finish-800.webp 800w, /images/web-design/photos/automotive-finish-1200.webp 1200w, /images/web-design/photos/automotive-finish-1536.webp 1536w",
+    "width": 1536,
+    "height": 1024
+  },
+  "jewellery-earrings": {
+    "src": "/images/web-design/photos/jewellery-earrings-800.webp",
+    "srcset": "/images/web-design/photos/jewellery-earrings-480.webp 480w, /images/web-design/photos/jewellery-earrings-800.webp 800w, /images/web-design/photos/jewellery-earrings-1200.webp 1200w, /images/web-design/photos/jewellery-earrings-1536.webp 1536w",
+    "width": 1536,
+    "height": 1024
+  },
+  "jewellery-pendant": {
+    "src": "/images/web-design/photos/jewellery-pendant-800.webp",
+    "srcset": "/images/web-design/photos/jewellery-pendant-480.webp 480w, /images/web-design/photos/jewellery-pendant-800.webp 800w, /images/web-design/photos/jewellery-pendant-1200.webp 1200w, /images/web-design/photos/jewellery-pendant-1536.webp 1536w",
+    "width": 1536,
+    "height": 1024
+  },
+  "jewellery-editorial": {
+    "src": "/images/web-design/photos/jewellery-editorial-800.webp",
+    "srcset": "/images/web-design/photos/jewellery-editorial-480.webp 480w, /images/web-design/photos/jewellery-editorial-800.webp 800w, /images/web-design/photos/jewellery-editorial-1200.webp 1200w, /images/web-design/photos/jewellery-editorial-1536.webp 1536w",
+    "width": 1536,
+    "height": 1024
+  },
+  "fashion-coat": {
+    "src": "/images/web-design/photos/fashion-coat-800.webp",
+    "srcset": "/images/web-design/photos/fashion-coat-480.webp 480w, /images/web-design/photos/fashion-coat-800.webp 800w, /images/web-design/photos/fashion-coat-1200.webp 1200w, /images/web-design/photos/fashion-coat-1536.webp 1536w",
+    "width": 1536,
+    "height": 1024
+  },
+  "fashion-overshirt": {
+    "src": "/images/web-design/photos/fashion-overshirt-800.webp",
+    "srcset": "/images/web-design/photos/fashion-overshirt-480.webp 480w, /images/web-design/photos/fashion-overshirt-800.webp 800w, /images/web-design/photos/fashion-overshirt-1200.webp 1200w, /images/web-design/photos/fashion-overshirt-1536.webp 1536w",
+    "width": 1536,
+    "height": 1024
+  },
+  "fashion-shirt": {
+    "src": "/images/web-design/photos/fashion-shirt-800.webp",
+    "srcset": "/images/web-design/photos/fashion-shirt-480.webp 480w, /images/web-design/photos/fashion-shirt-800.webp 800w, /images/web-design/photos/fashion-shirt-1200.webp 1200w, /images/web-design/photos/fashion-shirt-1536.webp 1536w",
+    "width": 1536,
+    "height": 1024
+  },
+  "fashion-lookbook": {
+    "src": "/images/web-design/photos/fashion-lookbook-800.webp",
+    "srcset": "/images/web-design/photos/fashion-lookbook-480.webp 480w, /images/web-design/photos/fashion-lookbook-800.webp 800w, /images/web-design/photos/fashion-lookbook-1200.webp 1200w, /images/web-design/photos/fashion-lookbook-1536.webp 1536w",
+    "width": 1536,
+    "height": 1024
+  },
+  "cafe-breakfast": {
+    "src": "/images/web-design/photos/cafe-breakfast-800.webp",
+    "srcset": "/images/web-design/photos/cafe-breakfast-480.webp 480w, /images/web-design/photos/cafe-breakfast-800.webp 800w, /images/web-design/photos/cafe-breakfast-1200.webp 1200w, /images/web-design/photos/cafe-breakfast-1536.webp 1536w",
+    "width": 1536,
+    "height": 1024
+  },
+  "cafe-coffee": {
+    "src": "/images/web-design/photos/cafe-coffee-800.webp",
+    "srcset": "/images/web-design/photos/cafe-coffee-480.webp 480w, /images/web-design/photos/cafe-coffee-800.webp 800w, /images/web-design/photos/cafe-coffee-1200.webp 1200w, /images/web-design/photos/cafe-coffee-1536.webp 1536w",
+    "width": 1536,
+    "height": 1024
+  },
+  "cafe-pastry": {
+    "src": "/images/web-design/photos/cafe-pastry-800.webp",
+    "srcset": "/images/web-design/photos/cafe-pastry-480.webp 480w, /images/web-design/photos/cafe-pastry-800.webp 800w, /images/web-design/photos/cafe-pastry-1200.webp 1200w, /images/web-design/photos/cafe-pastry-1536.webp 1536w",
+    "width": 1536,
+    "height": 1024
+  },
+  "fitness-strength": {
+    "src": "/images/web-design/photos/fitness-strength-800.webp",
+    "srcset": "/images/web-design/photos/fitness-strength-480.webp 480w, /images/web-design/photos/fitness-strength-800.webp 800w, /images/web-design/photos/fitness-strength-1200.webp 1200w, /images/web-design/photos/fitness-strength-1536.webp 1536w",
+    "width": 1536,
+    "height": 1024
+  },
+  "fitness-conditioning": {
+    "src": "/images/web-design/photos/fitness-conditioning-800.webp",
+    "srcset": "/images/web-design/photos/fitness-conditioning-480.webp 480w, /images/web-design/photos/fitness-conditioning-800.webp 800w, /images/web-design/photos/fitness-conditioning-1200.webp 1200w, /images/web-design/photos/fitness-conditioning-1536.webp 1536w",
+    "width": 1536,
+    "height": 1024
+  },
+  "fitness-mobility": {
+    "src": "/images/web-design/photos/fitness-mobility-800.webp",
+    "srcset": "/images/web-design/photos/fitness-mobility-480.webp 480w, /images/web-design/photos/fitness-mobility-800.webp 800w, /images/web-design/photos/fitness-mobility-1200.webp 1200w, /images/web-design/photos/fitness-mobility-1536.webp 1536w",
+    "width": 1536,
+    "height": 1024
+  },
+  "dental-room": {
+    "src": "/images/web-design/photos/dental-room-800.webp",
+    "srcset": "/images/web-design/photos/dental-room-480.webp 480w, /images/web-design/photos/dental-room-800.webp 800w, /images/web-design/photos/dental-room-1200.webp 1200w, /images/web-design/photos/dental-room-1536.webp 1536w",
+    "width": 1536,
+    "height": 1024
+  },
+  "landscape-water": {
+    "src": "/images/web-design/photos/landscape-water-800.webp",
+    "srcset": "/images/web-design/photos/landscape-water-480.webp 480w, /images/web-design/photos/landscape-water-800.webp 800w, /images/web-design/photos/landscape-water-1200.webp 1200w, /images/web-design/photos/landscape-water-1536.webp 1536w",
+    "width": 1536,
+    "height": 1024
+  },
+  "property-verandah": {
+    "src": "/images/web-design/photos/property-verandah-800.webp",
+    "srcset": "/images/web-design/photos/property-verandah-480.webp 480w, /images/web-design/photos/property-verandah-800.webp 800w, /images/web-design/photos/property-verandah-1200.webp 1200w, /images/web-design/photos/property-verandah-1536.webp 1536w",
+    "width": 1536,
+    "height": 1024
+  },
+  "landscape-planting": {
+    "src": "/images/web-design/photos/landscape-planting-800.webp",
+    "srcset": "/images/web-design/photos/landscape-planting-480.webp 480w, /images/web-design/photos/landscape-planting-800.webp 800w, /images/web-design/photos/landscape-planting-1200.webp 1200w, /images/web-design/photos/landscape-planting-1536.webp 1536w",
+    "width": 1536,
+    "height": 1024
+  },
+  "property-apartment": {
+    "src": "/images/web-design/photos/property-apartment-800.webp",
+    "srcset": "/images/web-design/photos/property-apartment-480.webp 480w, /images/web-design/photos/property-apartment-800.webp 800w, /images/web-design/photos/property-apartment-1200.webp 1200w, /images/web-design/photos/property-apartment-1536.webp 1536w",
+    "width": 1536,
+    "height": 1024
+  },
+  "fashion-coat-ink": {
+    "src": "/images/web-design/photos/fashion-coat-ink-800.webp",
+    "srcset": "/images/web-design/photos/fashion-coat-ink-480.webp 480w, /images/web-design/photos/fashion-coat-ink-800.webp 800w, /images/web-design/photos/fashion-coat-ink-1200.webp 1200w, /images/web-design/photos/fashion-coat-ink-1536.webp 1536w",
+    "width": 1536,
+    "height": 1024
+  },
+  "fashion-shirt-ink": {
+    "src": "/images/web-design/photos/fashion-shirt-ink-800.webp",
+    "srcset": "/images/web-design/photos/fashion-shirt-ink-480.webp 480w, /images/web-design/photos/fashion-shirt-ink-800.webp 800w, /images/web-design/photos/fashion-shirt-ink-1200.webp 1200w, /images/web-design/photos/fashion-shirt-ink-1536.webp 1536w",
+    "width": 1536,
+    "height": 1024
+  },
+  "fashion-overshirt-ink": {
+    "src": "/images/web-design/photos/fashion-overshirt-ink-800.webp",
+    "srcset": "/images/web-design/photos/fashion-overshirt-ink-480.webp 480w, /images/web-design/photos/fashion-overshirt-ink-800.webp 800w, /images/web-design/photos/fashion-overshirt-ink-1200.webp 1200w, /images/web-design/photos/fashion-overshirt-ink-1536.webp 1536w",
+    "width": 1536,
+    "height": 1024
+  },
+  "fashion-coat-clay": {
+    "src": "/images/web-design/photos/fashion-coat-clay-800.webp",
+    "srcset": "/images/web-design/photos/fashion-coat-clay-480.webp 480w, /images/web-design/photos/fashion-coat-clay-800.webp 800w, /images/web-design/photos/fashion-coat-clay-1200.webp 1200w, /images/web-design/photos/fashion-coat-clay-1536.webp 1536w",
+    "width": 1536,
+    "height": 1024
+  },
+  "fashion-shirt-clay": {
+    "src": "/images/web-design/photos/fashion-shirt-clay-800.webp",
+    "srcset": "/images/web-design/photos/fashion-shirt-clay-480.webp 480w, /images/web-design/photos/fashion-shirt-clay-800.webp 800w, /images/web-design/photos/fashion-shirt-clay-1200.webp 1200w, /images/web-design/photos/fashion-shirt-clay-1536.webp 1536w",
+    "width": 1536,
+    "height": 1024
+  },
+  "fashion-overshirt-clay": {
+    "src": "/images/web-design/photos/fashion-overshirt-clay-800.webp",
+    "srcset": "/images/web-design/photos/fashion-overshirt-clay-480.webp 480w, /images/web-design/photos/fashion-overshirt-clay-800.webp 800w, /images/web-design/photos/fashion-overshirt-clay-1200.webp 1200w, /images/web-design/photos/fashion-overshirt-clay-1536.webp 1536w",
+    "width": 1536,
+    "height": 1024
+  },
+  "automotive-before": {
+    "src": "/images/web-design/photos/automotive-before-800.webp",
+    "srcset": "/images/web-design/photos/automotive-before-480.webp 480w, /images/web-design/photos/automotive-before-800.webp 800w, /images/web-design/photos/automotive-before-1200.webp 1200w, /images/web-design/photos/automotive-before-1536.webp 1536w",
+    "width": 1536,
+    "height": 1024
+  },
+  "landscape-before": {
+    "src": "/images/web-design/photos/landscape-before-800.webp",
+    "srcset": "/images/web-design/photos/landscape-before-480.webp 480w, /images/web-design/photos/landscape-before-800.webp 800w, /images/web-design/photos/landscape-before-1200.webp 1200w, /images/web-design/photos/landscape-before-1536.webp 1536w",
+    "width": 1536,
+    "height": 1024
+  },
+  "fashion-editorial-ink": {
+    "src": "/images/web-design/photos/fashion-editorial-ink-800.webp",
+    "srcset": "/images/web-design/photos/fashion-editorial-ink-480.webp 480w, /images/web-design/photos/fashion-editorial-ink-800.webp 800w, /images/web-design/photos/fashion-editorial-ink-1200.webp 1200w, /images/web-design/photos/fashion-editorial-ink-1536.webp 1536w",
+    "width": 1536,
+    "height": 1024
+  },
+  "cafe-interior": {
+    "src": "/images/web-design/photos/cafe-interior-800.webp",
+    "srcset": "/images/web-design/photos/cafe-interior-480.webp 480w, /images/web-design/photos/cafe-interior-800.webp 800w, /images/web-design/photos/cafe-interior-1200.webp 1200w, /images/web-design/photos/cafe-interior-1536.webp 1536w",
+    "width": 1536,
+    "height": 1024
+  },
+  "automotive-one": {
+    "src": "/images/web-design/photos/automotive-detail-800.webp",
+    "srcset": "/images/web-design/photos/automotive-detail-480.webp 480w, /images/web-design/photos/automotive-detail-800.webp 800w, /images/web-design/photos/automotive-detail-1200.webp 1200w, /images/web-design/photos/automotive-detail-1536.webp 1536w",
+    "width": 1536,
+    "height": 1024
+  },
+  "automotive-two": {
+    "src": "/images/web-design/photos/automotive-workshop-800.webp",
+    "srcset": "/images/web-design/photos/automotive-workshop-480.webp 480w, /images/web-design/photos/automotive-workshop-800.webp 800w, /images/web-design/photos/automotive-workshop-1200.webp 1200w, /images/web-design/photos/automotive-workshop-1536.webp 1536w",
+    "width": 1536,
+    "height": 1024
+  },
+  "automotive-three": {
+    "src": "/images/web-design/photos/automotive-finish-800.webp",
+    "srcset": "/images/web-design/photos/automotive-finish-480.webp 480w, /images/web-design/photos/automotive-finish-800.webp 800w, /images/web-design/photos/automotive-finish-1200.webp 1200w, /images/web-design/photos/automotive-finish-1536.webp 1536w",
+    "width": 1536,
+    "height": 1024
+  },
+  "automotive-four": {
+    "src": "/images/web-design/photos/automotive-before-800.webp",
+    "srcset": "/images/web-design/photos/automotive-before-480.webp 480w, /images/web-design/photos/automotive-before-800.webp 800w, /images/web-design/photos/automotive-before-1200.webp 1200w, /images/web-design/photos/automotive-before-1536.webp 1536w",
+    "width": 1536,
+    "height": 1024
+  },
+  "jewellery-one": {
+    "src": "/images/web-design/photos/jewellery-hero-800.webp",
+    "srcset": "/images/web-design/photos/jewellery-hero-480.webp 480w, /images/web-design/photos/jewellery-hero-800.webp 800w, /images/web-design/photos/jewellery-hero-1200.webp 1200w, /images/web-design/photos/jewellery-hero-1536.webp 1536w",
+    "width": 1536,
+    "height": 1024
+  },
+  "jewellery-two": {
+    "src": "/images/web-design/photos/jewellery-earrings-800.webp",
+    "srcset": "/images/web-design/photos/jewellery-earrings-480.webp 480w, /images/web-design/photos/jewellery-earrings-800.webp 800w, /images/web-design/photos/jewellery-earrings-1200.webp 1200w, /images/web-design/photos/jewellery-earrings-1536.webp 1536w",
+    "width": 1536,
+    "height": 1024
+  },
+  "jewellery-three": {
+    "src": "/images/web-design/photos/jewellery-pendant-800.webp",
+    "srcset": "/images/web-design/photos/jewellery-pendant-480.webp 480w, /images/web-design/photos/jewellery-pendant-800.webp 800w, /images/web-design/photos/jewellery-pendant-1200.webp 1200w, /images/web-design/photos/jewellery-pendant-1536.webp 1536w",
+    "width": 1536,
+    "height": 1024
+  },
+  "fashion-one": {
+    "src": "/images/web-design/photos/fashion-coat-800.webp",
+    "srcset": "/images/web-design/photos/fashion-coat-480.webp 480w, /images/web-design/photos/fashion-coat-800.webp 800w, /images/web-design/photos/fashion-coat-1200.webp 1200w, /images/web-design/photos/fashion-coat-1536.webp 1536w",
+    "width": 1536,
+    "height": 1024
+  },
+  "fashion-two": {
+    "src": "/images/web-design/photos/fashion-coat-ink-800.webp",
+    "srcset": "/images/web-design/photos/fashion-coat-ink-480.webp 480w, /images/web-design/photos/fashion-coat-ink-800.webp 800w, /images/web-design/photos/fashion-coat-ink-1200.webp 1200w, /images/web-design/photos/fashion-coat-ink-1536.webp 1536w",
+    "width": 1536,
+    "height": 1024
+  },
+  "fashion-three": {
+    "src": "/images/web-design/photos/fashion-coat-clay-800.webp",
+    "srcset": "/images/web-design/photos/fashion-coat-clay-480.webp 480w, /images/web-design/photos/fashion-coat-clay-800.webp 800w, /images/web-design/photos/fashion-coat-clay-1200.webp 1200w, /images/web-design/photos/fashion-coat-clay-1536.webp 1536w",
+    "width": 1536,
+    "height": 1024
+  },
+  "fashion-four": {
+    "src": "/images/web-design/photos/fashion-shirt-800.webp",
+    "srcset": "/images/web-design/photos/fashion-shirt-480.webp 480w, /images/web-design/photos/fashion-shirt-800.webp 800w, /images/web-design/photos/fashion-shirt-1200.webp 1200w, /images/web-design/photos/fashion-shirt-1536.webp 1536w",
+    "width": 1536,
+    "height": 1024
+  },
+  "fashion-overshirt-chalk": {
+    "src": "/images/web-design/photos/fashion-overshirt-800.webp",
+    "srcset": "/images/web-design/photos/fashion-overshirt-480.webp 480w, /images/web-design/photos/fashion-overshirt-800.webp 800w, /images/web-design/photos/fashion-overshirt-1200.webp 1200w, /images/web-design/photos/fashion-overshirt-1536.webp 1536w",
+    "width": 1536,
+    "height": 1024
+  },
+  "cafe-one": {
+    "src": "/images/web-design/photos/cafe-coffee-800.webp",
+    "srcset": "/images/web-design/photos/cafe-coffee-480.webp 480w, /images/web-design/photos/cafe-coffee-800.webp 800w, /images/web-design/photos/cafe-coffee-1200.webp 1200w, /images/web-design/photos/cafe-coffee-1536.webp 1536w",
+    "width": 1536,
+    "height": 1024
+  },
+  "cafe-two": {
+    "src": "/images/web-design/photos/cafe-hero-800.webp",
+    "srcset": "/images/web-design/photos/cafe-hero-480.webp 480w, /images/web-design/photos/cafe-hero-800.webp 800w, /images/web-design/photos/cafe-hero-1200.webp 1200w, /images/web-design/photos/cafe-hero-1536.webp 1536w",
+    "width": 1536,
+    "height": 1024
+  },
+  "cafe-three": {
+    "src": "/images/web-design/photos/cafe-breakfast-800.webp",
+    "srcset": "/images/web-design/photos/cafe-breakfast-480.webp 480w, /images/web-design/photos/cafe-breakfast-800.webp 800w, /images/web-design/photos/cafe-breakfast-1200.webp 1200w, /images/web-design/photos/cafe-breakfast-1536.webp 1536w",
+    "width": 1536,
+    "height": 1024
+  },
+  "cafe-four": {
+    "src": "/images/web-design/photos/cafe-pastry-800.webp",
+    "srcset": "/images/web-design/photos/cafe-pastry-480.webp 480w, /images/web-design/photos/cafe-pastry-800.webp 800w, /images/web-design/photos/cafe-pastry-1200.webp 1200w, /images/web-design/photos/cafe-pastry-1536.webp 1536w",
+    "width": 1536,
+    "height": 1024
+  },
+  "fitness-one": {
+    "src": "/images/web-design/photos/fitness-strength-800.webp",
+    "srcset": "/images/web-design/photos/fitness-strength-480.webp 480w, /images/web-design/photos/fitness-strength-800.webp 800w, /images/web-design/photos/fitness-strength-1200.webp 1200w, /images/web-design/photos/fitness-strength-1536.webp 1536w",
+    "width": 1536,
+    "height": 1024
+  },
+  "fitness-two": {
+    "src": "/images/web-design/photos/fitness-conditioning-800.webp",
+    "srcset": "/images/web-design/photos/fitness-conditioning-480.webp 480w, /images/web-design/photos/fitness-conditioning-800.webp 800w, /images/web-design/photos/fitness-conditioning-1200.webp 1200w, /images/web-design/photos/fitness-conditioning-1536.webp 1536w",
+    "width": 1536,
+    "height": 1024
+  },
+  "fitness-three": {
+    "src": "/images/web-design/photos/fitness-mobility-800.webp",
+    "srcset": "/images/web-design/photos/fitness-mobility-480.webp 480w, /images/web-design/photos/fitness-mobility-800.webp 800w, /images/web-design/photos/fitness-mobility-1200.webp 1200w, /images/web-design/photos/fitness-mobility-1536.webp 1536w",
+    "width": 1536,
+    "height": 1024
+  },
+  "dental-two": {
+    "src": "/images/web-design/photos/dental-room-800.webp",
+    "srcset": "/images/web-design/photos/dental-room-480.webp 480w, /images/web-design/photos/dental-room-800.webp 800w, /images/web-design/photos/dental-room-1200.webp 1200w, /images/web-design/photos/dental-room-1536.webp 1536w",
+    "width": 1536,
+    "height": 1024
+  },
+  "landscape-one": {
+    "src": "/images/web-design/photos/landscape-hero-800.webp",
+    "srcset": "/images/web-design/photos/landscape-hero-480.webp 480w, /images/web-design/photos/landscape-hero-800.webp 800w, /images/web-design/photos/landscape-hero-1200.webp 1200w, /images/web-design/photos/landscape-hero-1536.webp 1536w",
+    "width": 1536,
+    "height": 1024
+  },
+  "landscape-two": {
+    "src": "/images/web-design/photos/landscape-water-800.webp",
+    "srcset": "/images/web-design/photos/landscape-water-480.webp 480w, /images/web-design/photos/landscape-water-800.webp 800w, /images/web-design/photos/landscape-water-1200.webp 1200w, /images/web-design/photos/landscape-water-1536.webp 1536w",
+    "width": 1536,
+    "height": 1024
+  },
+  "landscape-three": {
+    "src": "/images/web-design/photos/landscape-planting-800.webp",
+    "srcset": "/images/web-design/photos/landscape-planting-480.webp 480w, /images/web-design/photos/landscape-planting-800.webp 800w, /images/web-design/photos/landscape-planting-1200.webp 1200w, /images/web-design/photos/landscape-planting-1536.webp 1536w",
+    "width": 1536,
+    "height": 1024
+  },
+  "landscape-four": {
+    "src": "/images/web-design/photos/landscape-before-800.webp",
+    "srcset": "/images/web-design/photos/landscape-before-480.webp 480w, /images/web-design/photos/landscape-before-800.webp 800w, /images/web-design/photos/landscape-before-1200.webp 1200w, /images/web-design/photos/landscape-before-1536.webp 1536w",
+    "width": 1536,
+    "height": 1024
+  },
+  "property-one": {
+    "src": "/images/web-design/photos/property-hero-800.webp",
+    "srcset": "/images/web-design/photos/property-hero-480.webp 480w, /images/web-design/photos/property-hero-800.webp 800w, /images/web-design/photos/property-hero-1200.webp 1200w, /images/web-design/photos/property-hero-1536.webp 1536w",
+    "width": 1536,
+    "height": 1024
+  },
+  "property-two": {
+    "src": "/images/web-design/photos/property-verandah-800.webp",
+    "srcset": "/images/web-design/photos/property-verandah-480.webp 480w, /images/web-design/photos/property-verandah-800.webp 800w, /images/web-design/photos/property-verandah-1200.webp 1200w, /images/web-design/photos/property-verandah-1536.webp 1536w",
+    "width": 1536,
+    "height": 1024
+  },
+  "property-three": {
+    "src": "/images/web-design/photos/property-apartment-800.webp",
+    "srcset": "/images/web-design/photos/property-apartment-480.webp 480w, /images/web-design/photos/property-apartment-800.webp 800w, /images/web-design/photos/property-apartment-1200.webp 1200w, /images/web-design/photos/property-apartment-1536.webp 1536w",
+    "width": 1536,
+    "height": 1024
+  },
+  "jewellery-one-detail": {
+    "src": "/images/web-design/photos/jewellery-one-detail-800.webp",
+    "srcset": "/images/web-design/photos/jewellery-one-detail-480.webp 480w, /images/web-design/photos/jewellery-one-detail-800.webp 800w",
+    "width": 922,
+    "height": 656
+  },
+  "jewellery-one-alternate": {
+    "src": "/images/web-design/photos/jewellery-one-alternate-800.webp",
+    "srcset": "/images/web-design/photos/jewellery-one-alternate-480.webp 480w, /images/web-design/photos/jewellery-one-alternate-800.webp 800w",
+    "width": 1029,
+    "height": 738
+  },
+  "jewellery-two-detail": {
+    "src": "/images/web-design/photos/jewellery-two-detail-800.webp",
+    "srcset": "/images/web-design/photos/jewellery-two-detail-480.webp 480w, /images/web-design/photos/jewellery-two-detail-800.webp 800w",
+    "width": 922,
+    "height": 656
+  },
+  "jewellery-two-alternate": {
+    "src": "/images/web-design/photos/jewellery-two-alternate-800.webp",
+    "srcset": "/images/web-design/photos/jewellery-two-alternate-480.webp 480w, /images/web-design/photos/jewellery-two-alternate-800.webp 800w",
+    "width": 1029,
+    "height": 738
+  },
+  "jewellery-three-detail": {
+    "src": "/images/web-design/photos/jewellery-three-detail-800.webp",
+    "srcset": "/images/web-design/photos/jewellery-three-detail-480.webp 480w, /images/web-design/photos/jewellery-three-detail-800.webp 800w",
+    "width": 922,
+    "height": 656
+  },
+  "jewellery-three-alternate": {
+    "src": "/images/web-design/photos/jewellery-three-alternate-800.webp",
+    "srcset": "/images/web-design/photos/jewellery-three-alternate-480.webp 480w, /images/web-design/photos/jewellery-three-alternate-800.webp 800w",
+    "width": 1029,
+    "height": 738
+  },
+  "property-one-detail": {
+    "src": "/images/web-design/photos/property-one-detail-800.webp",
+    "srcset": "/images/web-design/photos/property-one-detail-480.webp 480w, /images/web-design/photos/property-one-detail-800.webp 800w",
+    "width": 922,
+    "height": 656
+  },
+  "property-one-alternate": {
+    "src": "/images/web-design/photos/property-one-alternate-800.webp",
+    "srcset": "/images/web-design/photos/property-one-alternate-480.webp 480w, /images/web-design/photos/property-one-alternate-800.webp 800w",
+    "width": 1029,
+    "height": 738
+  },
+  "property-two-detail": {
+    "src": "/images/web-design/photos/property-two-detail-800.webp",
+    "srcset": "/images/web-design/photos/property-two-detail-480.webp 480w, /images/web-design/photos/property-two-detail-800.webp 800w",
+    "width": 922,
+    "height": 656
+  },
+  "property-two-alternate": {
+    "src": "/images/web-design/photos/property-two-alternate-800.webp",
+    "srcset": "/images/web-design/photos/property-two-alternate-480.webp 480w, /images/web-design/photos/property-two-alternate-800.webp 800w",
+    "width": 1029,
+    "height": 738
+  },
+  "property-three-detail": {
+    "src": "/images/web-design/photos/property-three-detail-800.webp",
+    "srcset": "/images/web-design/photos/property-three-detail-480.webp 480w, /images/web-design/photos/property-three-detail-800.webp 800w",
+    "width": 922,
+    "height": 656
+  },
+  "property-three-alternate": {
+    "src": "/images/web-design/photos/property-three-alternate-800.webp",
+    "srcset": "/images/web-design/photos/property-three-alternate-480.webp 480w, /images/web-design/photos/property-three-alternate-800.webp 800w",
+    "width": 1029,
+    "height": 738
+  }
+}

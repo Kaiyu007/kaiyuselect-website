@@ -1,0 +1,425 @@
+/* Photography-led art direction; shared mechanics remain in demos.css. */
+.demo-art { width:100%; object-fit:cover; }
+.demo-header { min-height:104px; }
+.demo-nav a { font-size:12px; letter-spacing:.04em; }
+.demo-nav a:last-child { border-bottom:1px solid var(--accent); }
+.demo-disclosure { background:var(--fg); color:var(--bg); }
+.demo-disclosure a { color:inherit; }
+.hero-media { position:relative; min-width:0; }
+.hero-copy { position:relative; z-index:1; }
+.demo-hero h1 { margin-bottom:28px; }
+.art-caption { font-size:10px; letter-spacing:.06em; margin:12px 0 0; }
+/* 01: cinematic, full-width workshop. */
+.theme-automotive { --bg:#111315; --fg:#f6f4ee; --sub:#b6b8ba; --surface:#202326; --rule:#3c3f42; --accent:#e5af59; }
+.theme-automotive .demo-header { border-bottom:0; }
+.theme-automotive .demo-brand { font-size:25px; letter-spacing:.02em; }
+.theme-automotive .demo-hero { width:100%; max-width:none; display:grid; grid-template-columns:1fr; min-height:660px; padding:0; position:relative; isolation:isolate; }
+.theme-automotive .hero-media { position:absolute; inset:0; padding:0; border:0; z-index:-1; }
+.theme-automotive .hero-media::after { content:''; position:absolute; inset:0; background:linear-gradient(90deg,rgba(9,11,13,.92),rgba(9,11,13,.25) 62%,transparent); }
+.theme-automotive .hero-media .demo-art { width:100%; height:100%; aspect-ratio:auto; object-position:65% 52%; }
+.theme-automotive .hero-copy { width:min(1240px,calc(100% - 96px)); margin:auto; padding:100px 0; }
+.theme-automotive h1 { font-size:clamp(3.5rem,6.7vw,6.5rem); font-weight:700; line-height:1; letter-spacing:-.055em; max-width:650px; }
+.theme-automotive .hero-copy .d-lead { max-width:420px; color:#d1d1cf; font-size:17px; }
+.theme-automotive .hero-media .art-caption { position:absolute; bottom:20px; right:40px; z-index:1; color:#d2d2cc; }
+.theme-automotive .workshop-band { padding-block:24px; border-top:0; }
+/* 02: ivory editorial spread with room for the object. */
+.theme-jewellery { --bg:#faf7f0; --fg:#3e352b; --sub:#75695b; --rule:#ddd2c3; --surface:#f0e9de; }
+.theme-jewellery .demo-header { padding-block:24px 22px; gap:18px; border:0; }
+.theme-jewellery .demo-brand { font-size:36px; font-weight:400; letter-spacing:.3em; }
+.theme-jewellery .demo-hero { width:100%; max-width:none; position:relative; isolation:isolate; display:grid; grid-template-columns:1fr; min-height:640px; padding:0; }
+.theme-jewellery .hero-media { position:absolute; inset:0; z-index:-1; }
+.theme-jewellery .hero-media .demo-art { height:100%; aspect-ratio:auto; object-position:60% 52%; }
+.theme-jewellery .hero-copy { width:min(1240px,calc(100% - 96px)); margin:auto; padding:90px 0; }
+.theme-jewellery .hero-copy h1 { font-size:clamp(3.5rem,5.7vw,5.8rem); max-width:600px; font-weight:400; line-height:1.06; }
+.theme-jewellery .hero-copy .d-lead { max-width:330px; }
+.theme-jewellery .hero-media .art-caption { position:absolute; bottom:16px; right:32px; }
+/* 03: a magazine cover, oversized type above an uninterrupted campaign. */
+.theme-fashion { --bg:#f9f8f4; --fg:#181818; --sub:#62605b; --surface:#e8e4dd; --rule:#c5c1ba; }
+.theme-fashion .demo-header { min-height:94px; }
+.theme-fashion .demo-brand { font-size:36px; font-weight:900; }
+.theme-fashion .demo-hero { display:block; border:0; padding:0; margin-top:30px; margin-bottom:0; }
+.theme-fashion .hero-copy { padding:0 0 28px; display:grid; grid-template-columns:1.7fr 1fr; gap:20px 40px; align-items:end; }
+.theme-fashion .fashion-season { grid-column:1/-1; margin:0; border:0; padding:0; font-size:11px; }
+.theme-fashion .hero-copy h1 { font-size:clamp(3.8rem,6.9vw,7.2rem); line-height:.93; font-weight:600; letter-spacing:-.07em; margin:0; grid-row:span 2; }
+.theme-fashion .hero-copy h1 br { display:none; }
+.theme-fashion .hero-copy .d-lead { font-size:15px; line-height:1.6; margin:0; max-width:320px; }
+.theme-fashion .hero-copy .d-button { justify-self:start; }
+.theme-fashion .hero-media .demo-art { min-height:0; width:100%; height:530px; aspect-ratio:auto; object-position:50% 46%; }
+.theme-fashion .hero-media .art-caption { color:#fff; bottom:18px; left:22px; background:#191919; padding:5px 10px; }
+/* 04: a café window and a warm, spacious invitation. */
+.theme-cafe { --bg:#f9f1e4; --fg:#382e24; --sub:#75634f; --surface:#eee2ce; --rule:#d9cbb4; --accent:#36543e; }
+.theme-cafe .demo-header { border-bottom:1px solid var(--rule); }
+.theme-cafe .demo-hero { grid-template-columns:.9fr 1.1fr; gap:70px; padding-block:64px 80px; }
+.theme-cafe h1 { font-size:clamp(3.6rem,5.7vw,6rem); line-height:1.03; font-weight:400; }
+.theme-cafe .hero-copy .d-kicker { max-width:320px; }
+.theme-cafe .hero-copy .d-lead { max-width:340px; }
+.theme-cafe .hero-media .demo-art { height:560px; aspect-ratio:auto; border-radius:240px 240px 8px 8px; object-position:57% 50%; }
+.theme-cafe .art-caption { text-align:center; }
+/* 05: training poster, hard type, generous editorial image. */
+.theme-fitness { --bg:#141715; --fg:#f7f8f1; --sub:#b8beb8; --surface:#232b24; --rule:#424a42; --accent:#c8ef5c; }
+.theme-fitness .demo-header { border:0; }
+.theme-fitness .demo-hero { grid-template-columns:.92fr 1.08fr; gap:0; padding:0 0 52px; align-items:stretch; }
+.theme-fitness .hero-copy { padding:52px 36px 24px 0; }
+.theme-fitness h1 { font-family:Impact,'Arial Narrow',sans-serif; font-size:clamp(4rem,7.8vw,7.5rem); line-height:.98; letter-spacing:-.015em; }
+.theme-fitness .hero-copy .d-lead { max-width:350px; font-size:16px; }
+.theme-fitness .hero-media .demo-art { height:100%; min-height:640px; aspect-ratio:auto; object-position:62% 50%; }
+.theme-fitness .hero-media .art-caption { position:absolute; bottom:16px; left:20px; color:#fff; background:#141715; padding:5px 10px; }
+.fitness-marquee { font-size:22px; padding-block:20px; }
+/* 06: calm information first, bright reception photograph. */
+.theme-dental { --bg:#f8fbfb; --fg:#234c53; --sub:#587077; --surface:#e8f1f2; --rule:#c8dadc; --accent:#24757a; }
+.theme-dental .demo-header { border:0; }
+.theme-dental .demo-nav a:last-child { background:var(--accent); color:white; border-radius:5px; padding:12px 18px; }
+.theme-dental .demo-hero { grid-template-columns:1fr 1.15fr; gap:56px; padding-block:48px 76px; }
+.theme-dental h1 { font-size:clamp(3rem,4.9vw,4.6rem); line-height:1.08; font-weight:500; }
+.theme-dental .hero-copy .d-lead { font-size:18px; }
+.theme-dental .hero-media .demo-art { height:560px; aspect-ratio:auto; border-radius:10px 100px 10px 10px; object-position:51% 50%; }
+/* 07: landscape journal with a wide panoramic garden. */
+.theme-landscape { --bg:#f4f3eb; --fg:#243c2d; --sub:#65705e; --surface:#e4e7da; --rule:#cbd0bf; --accent:#36543c; }
+.theme-landscape .demo-header { min-height:96px; }
+.theme-landscape .demo-hero { padding-top:48px; }
+.theme-landscape .hero-copy { grid-template-columns:1.5fr 1fr; gap:72px; margin-bottom:42px; }
+.theme-landscape .hero-copy h1 { font-size:clamp(3.8rem,6vw,6rem); line-height:1; }
+.theme-landscape .hero-copy .d-lead { font-size:17px; max-width:360px; }
+.theme-landscape .hero-media .demo-art { aspect-ratio:2.35; object-position:50% 60%; }
+/* 08: a broad architectural photograph and a restrained inset title panel. */
+.theme-property { --bg:#faf8f3; --fg:#343631; --sub:#6c6c61; --surface:#ede8df; --rule:#d3cec1; --accent:#806e4b; }
+.theme-property .demo-header { border:0; min-height:104px; }
+.theme-property .demo-hero { width:100%; max-width:none; min-height:660px; display:flex; align-items:flex-end; padding:50px max(48px,calc((100vw - 1240px)/2)); position:relative; isolation:isolate; }
+.theme-property .hero-media { position:absolute; inset:0; z-index:-1; }
+.theme-property .hero-media .demo-art { height:100%; aspect-ratio:auto; border:0; object-position:60% 50%; }
+.theme-property .hero-copy { max-width:500px; padding:38px 42px; background:var(--bg); }
+.theme-property h1 { font-size:clamp(3rem,4.1vw,4.2rem); margin-bottom:22px; }
+.theme-property .hero-copy .d-lead { font-size:16px; }
+.theme-property .hero-media .art-caption { position:absolute; right:28px; bottom:20px; color:#fff; background:#343631; padding:5px 10px; }
+@media(max-width:1100px) {
+ .theme-automotive .hero-copy,.theme-jewellery .hero-copy { width:calc(100% - 64px); }
+ .theme-automotive .demo-hero,.theme-jewellery .demo-hero { min-height:590px; }
+ .theme-jewellery .hero-copy h1 { max-width:480px; }
+ .theme-cafe .demo-hero,.theme-dental .demo-hero { gap:36px; }
+ .theme-fitness .hero-media .demo-art { min-height:570px; }
+ .theme-property .demo-hero { padding:40px 32px; }
+}
+@media(max-width:800px) {
+ .demo-header { min-height:82px; }
+ .theme-jewellery .demo-header { flex-direction:row; padding-block:14px; }
+ .theme-jewellery .demo-brand { font-size:25px; }
+ .theme-automotive .hero-copy,.theme-jewellery .hero-copy { width:calc(100% - 48px); }
+ .theme-automotive .hero-copy h1 { max-width:480px; }
+ .theme-jewellery .hero-copy h1 { max-width:390px; font-size:3.7rem; }
+ .theme-fashion .hero-copy { grid-template-columns:1.3fr 1fr; gap:18px 24px; }
+ .theme-fashion .hero-copy h1 { font-size:3.8rem; }
+ .theme-fashion .hero-media .demo-art { height:420px; }
+ .theme-cafe .hero-media .demo-art,.theme-dental .hero-media .demo-art { height:470px; }
+ .theme-cafe h1 { font-size:3.3rem; }
+ .theme-dental h1 { font-size:3rem; }
+ .theme-fitness h1 { font-size:4.4rem; }
+ .theme-fitness .hero-copy { padding-right:22px; }
+ .theme-fitness .hero-media .demo-art { min-height:560px; }
+ .theme-landscape .hero-copy { gap:32px; }
+ .theme-landscape .hero-copy h1 { font-size:3.6rem; }
+ .theme-property .hero-copy { max-width:420px; padding:30px; }
+}
+@media(max-width:600px) {
+ .demo-header,.theme-fashion .demo-header,.theme-property .demo-header,.theme-landscape .demo-header { min-height:76px; }
+ .demo-hero .hero-copy .d-lead { font-size:16px; }
+ .theme-automotive .demo-hero { min-height:690px; display:block; padding:0; }
+ .theme-automotive .hero-copy { width:calc(100% - 36px); padding:36px 0 320px; }
+ .theme-automotive .hero-copy h1 { font-size:3.25rem; max-width:350px; }
+ .theme-automotive .hero-media .demo-art { height:100%; aspect-ratio:auto; object-position:66% 50%; }
+ .theme-automotive .hero-media::after { background:linear-gradient(#101214 0%,rgba(16,18,20,.97) 36%,rgba(16,18,20,.05) 70%); }
+ .theme-automotive .hero-media .art-caption { bottom:14px; right:18px; left:18px; font-size:9px; }
+ .theme-jewellery .demo-hero { display:block; min-height:650px; padding:0; }
+ .theme-jewellery .hero-copy { width:calc(100% - 36px); padding:36px 0 330px; text-align:center; }
+ .theme-jewellery .hero-copy h1 { max-width:none; font-size:3.1rem; }
+ .theme-jewellery .hero-copy .d-lead { max-width:280px; margin-inline:auto; }
+ .theme-jewellery .hero-media { top:auto; height:340px; }
+ .theme-jewellery .hero-media .demo-art { height:100%; aspect-ratio:auto; object-position:75% 50%; }
+ .theme-jewellery .hero-media .art-caption { right:12px; bottom:8px; font-size:9px; }
+ .theme-fashion .demo-hero { margin-top:20px; margin-bottom:0; display:block; }
+ .theme-fashion .hero-copy { padding:0 0 24px; display:block; }
+ .theme-fashion .fashion-season { margin-bottom:24px; }
+ .theme-fashion .hero-copy h1 { font-size:3.6rem; margin-bottom:20px; }
+ .theme-fashion .hero-copy .d-lead { margin-bottom:18px; }
+ .theme-fashion .hero-media .demo-art { height:400px; min-height:0; aspect-ratio:auto; object-position:48% 50%; }
+ .theme-fashion .hero-media .art-caption { left:12px; bottom:10px; font-size:9px; }
+ .theme-cafe .demo-hero,.theme-dental .demo-hero { grid-template-columns:1fr; gap:32px; padding-block:32px 48px; }
+ .theme-cafe h1 { font-size:3.65rem; }
+ .theme-cafe .hero-media .demo-art { height:390px; aspect-ratio:auto; border-radius:180px 180px 8px 8px; }
+ .theme-fitness .demo-hero { grid-template-columns:1fr; gap:24px; padding:12px 0 32px; }
+ .theme-fitness .hero-copy { padding:24px 0 0; }
+ .theme-fitness h1 { font-size:clamp(3.4rem,15vw,4.5rem); }
+ .theme-fitness .hero-media .demo-art { height:390px; min-height:0; aspect-ratio:auto; object-position:60% 40%; }
+ .theme-fitness .hero-media .art-caption { font-size:9px; left:10px; }
+ .fitness-marquee { font-size:16px; padding:17px 10px; }
+ .theme-dental h1 { font-size:3rem; }
+ .theme-dental .hero-media .demo-art { height:330px; aspect-ratio:auto; border-radius:8px 65px 8px 8px; }
+ .theme-landscape .demo-hero { padding-top:30px; }
+ .theme-landscape .hero-copy { grid-template-columns:1fr; gap:22px; margin-bottom:28px; }
+ .theme-landscape .hero-copy h1 { font-size:3.6rem; }
+ .theme-landscape .hero-media .demo-art { aspect-ratio:1.05; object-position:50% 50%; }
+ .theme-property .demo-hero { min-height:0; display:flex; flex-direction:column-reverse; align-items:stretch; gap:0; padding:0; }
+ .theme-property .hero-media { position:relative; height:330px; z-index:0; }
+ .theme-property .hero-media .demo-art { height:100%; aspect-ratio:auto; border:0; object-position:60% 50%; }
+ .theme-property .hero-media .art-caption { font-size:8px; left:12px; right:auto; bottom:12px; }
+ .theme-property .hero-copy { margin:-30px 18px 0; padding:28px 22px; max-width:none; }
+ .theme-property h1 { font-size:3rem; }
+}
+/* Pass 2: complete-page editorial rhythm and industry-specific components. */
+.demo-hero .hero-copy h1 { overflow-wrap:normal; }
+.theme-fashion .hero-media .demo-art { height:auto; aspect-ratio:1.9; object-position:50% 8%; }
+.d-section { padding-block:100px; }
+.d-section-head { margin-bottom:44px; gap:60px; }
+.d-section-head>p { font-size:15px; line-height:1.8; }
+.d-section h2 { margin-bottom:.6em; }
+.d-section-head h2 { margin:0; }
+.d-section :is(.d-grid-2,.d-grid-3,.catalog-grid,.catalog-detail)>* { min-width:0; }
+.catalog-grid .demo-art { aspect-ratio:1; object-fit:cover; }
+.catalog-grid article { display:flex; flex-direction:column; }
+.catalog-card-copy { flex:1; display:flex; flex-direction:column; align-items:flex-start; }
+.catalog-card-copy .d-text-button { margin-top:auto; }
+.catalog-card-copy h3 { margin-bottom:14px; }
+.catalog-card-copy p:not(.d-kicker) { font-size:12px; line-height:1.65; }
+.catalog-detail { margin-top:70px; align-items:center; }
+.catalog-detail [data-detail-image] { width:100%; height:430px; object-fit:contain; }
+.catalog-detail h3 { font-size:clamp(2rem,3.2vw,3.3rem); }
+.catalog-detail [data-detail-facts] { padding-block:18px; border-block:1px solid var(--rule); font-size:13px; }
+.view-buttons { margin-top:18px; gap:10px; }
+.view-buttons button { min-height:44px; }
+.filter-buttons button { min-height:44px; }
+.gallery-cards figure { margin:0; }
+.gallery-cards figcaption { display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; padding-top:18px; font-size:18px; }
+.gallery-cards figcaption span { font:11px/1.6 Arial,sans-serif; color:var(--sub); }
+.comparison-images { aspect-ratio:1.5; }
+.comparison-images img { width:100%; height:100%; object-fit:cover; }
+.d-faq { max-width:none; }
+.d-faq details { padding-block:8px; }
+.d-faq summary { min-height:58px; align-content:center; padding-right:40px; }
+.d-faq details p { max-width:75ch; padding-bottom:12px; }
+.local-enquiry { padding:48px; gap:64px; align-items:start; }
+.local-enquiry h2 { font-size:clamp(2.4rem,4vw,3.6rem); }
+.local-enquiry fieldset { display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+.local-enquiry legend { padding-bottom:18px; }
+.local-enquiry label { margin:0; min-width:0; }
+.local-enquiry label:has(textarea),.local-enquiry label:has(input[type=date]) { grid-column:1/-1; }
+.local-enquiry input,.local-enquiry select,.local-enquiry textarea { font-size:16px; min-height:48px; }
+.local-enquiry [data-preview-request] { margin-top:22px; }
+.demo-result:not(:empty) { margin:22px 0 0; padding:18px; border:1px solid var(--accent); }
+.demo-footer { padding:80px 0 28px; }
+.demo-footer>.d-shell { align-items:start; }
+.demo-footer h2 { font-size:clamp(2.5rem,4.2vw,4.2rem); line-height:1.1; max-width:650px; }
+.demo-footer p { max-width:55ch; font-size:13px; }
+.footer-signature { grid-column:1/-1; border-top:1px solid var(--rule); padding-top:28px; display:flex; justify-content:space-between; align-items:center; gap:24px; }
+.footer-signature strong { font:400 28px var(--head); letter-spacing:.03em; }
+.footer-signature nav { display:flex; gap:22px; flex-wrap:wrap; font-size:12px; }
+.footer-signature a { text-decoration:none; }
+/* Mechanical service index and workshop journal. */
+.theme-automotive #services .d-grid-3 { grid-template-columns:1fr; gap:0; }
+.theme-automotive #services .d-card { display:grid; grid-template-columns:72px .85fr 1fr; gap:32px; background:none; padding:32px 0; border:0; border-top:1px solid var(--rule); align-items:start; }
+.theme-automotive #services .d-index { font:28px/1 Arial,sans-serif; margin:4px 0 0; }
+.theme-automotive #services .d-card h3 { font-size:26px; margin:0; }
+.theme-automotive #services .d-card p { margin:0; font-size:14px; }
+.theme-automotive .gallery-cards { grid-template-columns:1.3fr 1fr; gap:32px; }
+.theme-automotive .gallery-cards figure:first-child { grid-row:span 2; }
+.theme-automotive .gallery-cards figure:first-child .demo-art { aspect-ratio:.9; }
+.theme-automotive .gallery-cards figure:not(:first-child) .demo-art { aspect-ratio:2.15; }
+.theme-automotive .local-enquiry { border-top:3px solid var(--accent); background:#1d2023; }
+.theme-automotive .d-steps li:before { font:44px/1 Arial,sans-serif; color:var(--accent); }
+.theme-automotive .demo-footer { background:#090b0c; }
+/* Jewellery: gallery-like collection, portrait story and quiet detail panel. */
+.theme-jewellery .jewel-statement { margin-bottom:48px; }
+.theme-jewellery .catalog-tools { justify-content:center; border-block:1px solid var(--rule); padding:18px 0; }
+.theme-jewellery .catalog-tools .filter-count { margin-left:24px; }
+.theme-jewellery .catalog-card-copy { align-items:center; text-align:center; padding:26px 10px; }
+.theme-jewellery .catalog-grid .demo-art { aspect-ratio:.9; object-position:65% 50%; }
+.theme-jewellery .catalog-grid article { border:0; }
+.theme-jewellery .catalog-detail { background:#f1eadd; padding:34px; gap:54px; }
+.theme-jewellery .catalog-detail [data-detail-image] { height:440px; }
+.theme-jewellery .d-story { grid-template-columns:1fr .85fr; gap:110px; }
+.theme-jewellery .d-story .demo-art { aspect-ratio:.84; object-position:50% 50%; border-radius:0; }
+.theme-jewellery .local-enquiry { background:none; border:1px solid var(--rule); }
+.theme-jewellery .d-faq { max-width:900px; margin-inline:auto; }
+.theme-jewellery .demo-footer { background:#eee6d9; }
+/* Fashion: tightly edited product grid, oversize numbered lookbook. */
+.theme-fashion .catalog-grid { gap:2px; background:var(--rule); }
+.theme-fashion .catalog-grid article { background:var(--bg); border:0; }
+.theme-fashion .catalog-grid .demo-art { aspect-ratio:.82; object-position:50% 50%; }
+.theme-fashion .catalog-card-copy { padding:24px; }
+.theme-fashion .catalog-card-copy h3 { font-size:24px; letter-spacing:-.04em; }
+.theme-fashion .catalog-detail { padding:36px; border-color:var(--fg); }
+.theme-fashion .catalog-detail [data-detail-image] { height:470px; }
+.theme-fashion .view-buttons button { min-width:80px; }
+.theme-fashion .lookbook-slide { grid-template-columns:1.5fr 1fr; gap:72px; }
+.theme-fashion .lookbook-slide .demo-art { aspect-ratio:1.2; object-position:50% 25%; }
+.theme-fashion .lookbook-slide h3 { font-size:clamp(2.5rem,4.6vw,4.7rem); }
+.theme-fashion .demo-footer { --fg:#f7f5ed; --sub:#bbb9b2; --bg:#191919; --accent:#f7f5ed; --accent-text:#191919; --rule:#575651; background:var(--bg); color:var(--fg); }
+/* Café: a printed menu, rounded food photography, forest-green visit panel. */
+.theme-cafe #menu { border:0; }
+.theme-cafe .cafe-menu { background:#eee1cc; border:1px solid #d7c4a7; padding:50px; gap:60px; grid-template-columns:.8fr 1.2fr; }
+.theme-cafe .menu-items { grid-template-columns:1fr; }
+.theme-cafe .menu-item { display:grid; grid-template-columns:.9fr 1.1fr; column-gap:22px; padding-block:24px; }
+.theme-cafe .menu-item h3 { font-size:25px; grid-row:span 2; }
+.theme-cafe .menu-item p { font-size:13px; }
+.theme-cafe .menu-item span { font-size:9px; }
+.theme-cafe .cafe-feature .demo-art { aspect-ratio:.96; border-radius:150px 150px 5px 5px; object-fit:cover; }
+.theme-cafe .cafe-feature:nth-child(2) { padding-top:52px; }
+.theme-cafe .cafe-feature h3 { font-size:30px; }
+.theme-cafe .d-story { grid-template-columns:.8fr 1.2fr; gap:80px; }
+.theme-cafe .d-story .demo-art { aspect-ratio:1.2; border-radius:6px; }
+.theme-cafe .local-enquiry { --fg:#faf3e4; --sub:#d0d8ca; --accent:#f5e6c8; --accent-text:#294735; --rule:#78917b; background:#2c4b37; color:var(--fg); border-radius:8px; }
+.theme-cafe .local-enquiry input,.theme-cafe .local-enquiry select,.theme-cafe .local-enquiry textarea { color:#352e24; background:#faf5e8; }
+.theme-cafe .demo-footer { background:#e9ddc6; }
+/* Fitness: white schedule, strong plan hierarchy, squared local enquiry. */
+.theme-fitness #programs .d-grid-3 { gap:20px; }
+.theme-fitness #programs .demo-art { aspect-ratio:1.05; }
+.theme-fitness #programs .d-card { border:0; border-top:3px solid var(--accent); padding:26px 0; background:none; }
+.theme-fitness #programs h3 { font-size:36px; text-transform:uppercase; }
+.theme-fitness #timetable { --fg:#1d251e; --sub:#586052; --accent:#38532a; --accent-text:#fff; --rule:#c8cfbf; color:var(--fg); background:#f0f3e8; padding:56px; border:0; }
+.theme-fitness .timetable-row { padding-block:24px; }
+.theme-fitness .timetable-row>span { font-size:19px; font-weight:bold; font-variant-numeric:tabular-nums; }
+.theme-fitness .plan-picker .d-card { border:1px solid var(--rule); padding:30px; }
+.theme-fitness .plan-picker [data-panel=overview]>.d-card:nth-child(2) { border-top:4px solid var(--accent); }
+.theme-fitness .local-enquiry { background:#202820; border:1px solid var(--rule); border-top:4px solid var(--accent); }
+.theme-fitness .demo-footer { background:#090d0a; }
+/* Dental: uncluttered service rail and reassuring information cards. */
+.theme-dental .dental-services { padding:42px; border-radius:12px; gap:64px; grid-template-columns:.8fr 1.2fr; }
+.theme-dental .dental-services .filter-buttons button { padding:20px; font-size:15px; border:0; background:#f8fbfb; }
+.theme-dental .dental-services .filter-buttons button[aria-pressed=true] { background:var(--accent); color:#fff; }
+.theme-dental .dental-services h3 { font-size:34px; }
+.theme-dental .d-steps { gap:20px; }
+.theme-dental .d-steps li { background:#eaf1f1; border:0; border-radius:8px; padding:26px 22px; }
+.theme-dental .d-steps li:before { background:var(--accent); color:#fff; border-radius:50%; width:38px; height:38px; display:grid; place-items:center; font:14px Arial,sans-serif; }
+.theme-dental .d-steps h3 { font-size:22px; }
+.theme-dental .d-story .demo-art { border-radius:12px; aspect-ratio:1.1; }
+.theme-dental .dental-team article { background:#edf4f3; border:0; border-radius:8px; }
+.theme-dental .local-enquiry { background:#e8f1f2; border:0; padding:52px; }
+.theme-dental .local-enquiry [data-demo-enquiry] { background:#fff; padding:28px; border-radius:8px; }
+.theme-dental .d-faq { max-width:960px; margin-inline:auto; }
+.theme-dental .demo-footer { background:#234c53; --fg:#f5faf9; --sub:#c9d9d7; --accent:#e5f3ef; --accent-text:#234c53; --rule:#65858a; color:var(--fg); }
+/* Landscape: a photographic journal and generous typographic service rows. */
+.theme-landscape .gallery-cards { gap:46px; }
+.theme-landscape .gallery-cards figcaption { font-family:Georgia,serif; font-size:24px; }
+.theme-landscape .gallery-cards figure:first-child .demo-art { aspect-ratio:.87; }
+.theme-landscape .gallery-cards figure:not(:first-child) .demo-art { aspect-ratio:1.85; }
+.theme-landscape .landscape-service { padding-block:36px; grid-template-columns:80px 1.1fr 1fr; gap:40px; }
+.theme-landscape .landscape-service .d-index { font:40px/1 Georgia,serif; }
+.theme-landscape .landscape-service h3 { font-size:34px; }
+.theme-landscape .d-steps { gap:36px; }
+.theme-landscape .local-enquiry { --fg:#f4f3e9; --sub:#d1d9c8; --rule:#82947a; --accent:#e5ebd4; --accent-text:#2e4533; background:#2e4533; color:var(--fg); }
+.theme-landscape .local-enquiry input,.theme-landscape .local-enquiry select,.theme-landscape .local-enquiry textarea { color:#263c2d; background:#f7f5ec; }
+.theme-landscape .demo-footer { background:#e3e7d8; }
+/* Property: search strip, architectural cards and restrained listing data. */
+.theme-property .catalog-tools { background:#eee9df; border:0; padding:24px 30px; }
+.theme-property .catalog-grid { gap:30px; }
+.theme-property .catalog-grid .demo-art { aspect-ratio:1.3; object-fit:cover; }
+.theme-property .catalog-card-copy { padding:26px 0; border:0; border-bottom:1px solid var(--rule); }
+.theme-property .catalog-card-copy h3 { font-size:30px; }
+.theme-property .catalog-detail { background:#ede8df; padding:40px; gap:50px; }
+.theme-property .catalog-detail [data-detail-image] { height:410px; object-fit:contain; }
+.theme-property .neighbourhood { padding-block:28px; }
+.theme-property #people .d-card { border:0; border-top:1px solid var(--accent); padding:30px 0; }
+.theme-property .local-enquiry { background:#eae5da; border:0; }
+.theme-property .demo-footer { background:#333831; --fg:#f4f1e8; --sub:#d1d0c6; --accent:#e7dfcc; --accent-text:#333831; --rule:#777a6c; color:var(--fg); }
+@media(max-width:1100px) {
+ .d-section { padding-block:76px; }
+ .theme-jewellery .d-story,.theme-cafe .d-story { gap:48px; }
+ .local-enquiry { padding:32px; gap:36px; }
+ .local-enquiry fieldset { grid-template-columns:1fr; }
+ .theme-cafe .cafe-menu { padding:32px; gap:36px; }
+ .theme-fitness #timetable { padding:40px; }
+ .theme-dental .dental-services { gap:36px; padding:30px; }
+ .theme-dental .local-enquiry { padding:32px; }
+ .theme-dental .local-enquiry [data-demo-enquiry] { padding:22px; }
+ .theme-property .catalog-grid { gap:20px; }
+ .theme-property .catalog-card-copy h3 { font-size:26px; }
+ .theme-landscape .landscape-service { grid-template-columns:52px 1fr 1fr; gap:28px; }
+}
+@media(max-width:800px) {
+ .d-section-head { gap:32px; }
+ .theme-cafe .cafe-menu { grid-template-columns:1fr; }
+ .theme-jewellery .catalog-detail,.theme-property .catalog-detail { padding:24px; gap:28px; }
+ .catalog-detail [data-detail-image],.theme-jewellery .catalog-detail [data-detail-image],.theme-property .catalog-detail [data-detail-image] { height:330px; }
+ .theme-fashion .catalog-card-copy { padding:20px 14px; }
+ .theme-fashion .lookbook-slide { gap:36px; }
+ .theme-automotive #services .d-card { grid-template-columns:44px 1fr 1.2fr; gap:22px; }
+ .theme-automotive #services .d-card h3 { font-size:23px; }
+ .theme-dental .dental-services { grid-template-columns:.8fr 1.2fr; gap:24px; }
+ .theme-dental .local-enquiry { grid-template-columns:1fr; }
+ .theme-landscape .gallery-cards { gap:24px; }
+ .footer-signature { align-items:start; flex-direction:column; }
+}
+@media(max-width:600px) {
+ .d-section { padding-block:56px; }
+ .d-section-head { margin-bottom:30px; }
+ .d-section-head h2 { font-size:2.45rem; }
+ .theme-fashion .hero-copy h1 { font-size:3.5rem; }
+ .theme-fashion .hero-copy h1 br { display:block; }
+ .theme-fashion .hero-media .demo-art { height:400px; aspect-ratio:auto; object-position:48% 50%; }
+ .theme-automotive #services .d-card { grid-template-columns:35px 1fr; padding-block:26px; gap:12px 18px; }
+ .theme-automotive #services .d-card p { grid-column:2; }
+ .theme-automotive #services .d-card h3 { font-size:24px; }
+ .theme-automotive .gallery-cards,.theme-landscape .gallery-cards { grid-template-columns:1fr; gap:30px; }
+ .theme-automotive .gallery-cards figure:first-child,.theme-landscape .gallery-cards figure:first-child { grid-row:auto; }
+ .theme-automotive .gallery-cards figure .demo-art,.theme-landscape .gallery-cards figure .demo-art { aspect-ratio:1.3; }
+ .gallery-cards figcaption { font-size:19px; padding-top:14px; }
+ .theme-jewellery .catalog-tools { justify-content:flex-start; }
+ .theme-jewellery .catalog-tools .filter-count { margin-left:0; }
+ .catalog-detail,.theme-jewellery .catalog-detail,.theme-property .catalog-detail,.theme-fashion .catalog-detail { margin-top:38px; padding:20px; gap:28px; }
+ .catalog-detail [data-detail-image],.theme-jewellery .catalog-detail [data-detail-image],.theme-property .catalog-detail [data-detail-image],.theme-fashion .catalog-detail [data-detail-image] { height:280px; }
+ .theme-jewellery .catalog-grid .demo-art { aspect-ratio:1.1; }
+ .theme-jewellery .d-story,.theme-cafe .d-story,.theme-fashion .lookbook-slide { grid-template-columns:1fr; gap:30px; }
+ .theme-jewellery .d-story .demo-art { aspect-ratio:1; }
+ .theme-fashion .catalog-grid { grid-template-columns:1fr; gap:24px; background:none; }
+ .theme-fashion .catalog-grid .demo-art { aspect-ratio:.95; }
+ .theme-fashion .catalog-card-copy { padding:22px 0; }
+ .theme-fashion .lookbook-slide .demo-art { aspect-ratio:1; }
+ .theme-cafe .cafe-menu { padding:26px 20px; gap:26px; }
+ .theme-cafe .menu-item { grid-template-columns:1fr; padding-block:22px; }
+ .theme-cafe .menu-item h3 { grid-row:auto; margin-bottom:12px; }
+ .theme-cafe .cafe-feature:nth-child(2) { padding-top:0; }
+ .theme-cafe .cafe-feature .demo-art { aspect-ratio:1.15; border-radius:120px 120px 5px 5px; }
+ .theme-fitness #timetable { padding:32px 20px; }
+ .theme-fitness .timetable-row>span { font-size:15px; }
+ .theme-fitness .plan-picker .d-card { padding:28px; }
+ .theme-dental .dental-services { grid-template-columns:1fr; gap:24px; padding:22px; }
+ .theme-dental .dental-services h3 { font-size:29px; }
+ .theme-dental .d-steps { grid-template-columns:1fr; gap:16px; }
+ .theme-dental .d-steps li { padding:24px; }
+ .theme-dental .local-enquiry { padding:24px 18px; }
+ .theme-dental .local-enquiry [data-demo-enquiry] { padding:20px 16px; }
+ .theme-landscape .landscape-service { grid-template-columns:32px 1fr; gap:14px 20px; padding-block:28px; }
+ .theme-landscape .landscape-service .d-index { font-size:28px; }
+ .theme-landscape .landscape-service h3 { font-size:28px; }
+ .theme-landscape .landscape-service p { grid-column:2; }
+ .theme-property .catalog-tools { padding:22px; }
+ .theme-property .catalog-grid .demo-art { aspect-ratio:1.3; }
+ .theme-property .catalog-card-copy { padding:22px 0; }
+ .local-enquiry { grid-template-columns:1fr; padding:28px 22px; gap:28px; }
+ .local-enquiry h2 { font-size:2.4rem; }
+ .local-enquiry legend { font-size:12px; }
+ .local-enquiry [data-preview-request] { width:100%; }
+ .demo-footer { padding:52px 0 28px; }
+ .demo-footer h2 { font-size:2.5rem; }
+ .footer-signature { gap:22px; padding-top:24px; }
+ .footer-signature strong { font-size:24px; }
+ .footer-signature nav { gap:8px 24px; }
+ .footer-signature nav a { min-height:44px; display:flex; align-items:center; }
+}
+/* Pass 3: readable placeholders and stable minimum sizes on compact controls. */
+.local-enquiry input::placeholder,.local-enquiry textarea::placeholder { color:var(--sub); opacity:1; }
+.theme-cafe .local-enquiry input::placeholder,.theme-cafe .local-enquiry textarea::placeholder,
+.theme-landscape .local-enquiry input::placeholder,.theme-landscape .local-enquiry textarea::placeholder { color:#66705e; }
+@media(max-width:600px) {
+ .theme-automotive .hero-copy { padding-bottom:300px; }
+ .theme-jewellery .hero-copy { padding-bottom:350px; }
+ .theme-fashion .hero-copy h1 { font-size:clamp(2.95rem,14vw,3.5rem); }
+ .theme-fitness .hero-copy .d-lead { margin-bottom:22px; }
+ .theme-dental .local-enquiry input,.theme-dental .local-enquiry select { padding-inline:10px; }
+}
+/* Pass 4: correct measured tablet text clipping without changing desktop scale. */
+@media(min-width:601px) and (max-width:900px) {
+ .theme-fitness .hero-copy h1 { font-size:3.65rem; }
+ .theme-fitness .plan-picker .d-card h3 { font-size:28px; }
+}
+/* Native date/select indicators need a light treatment on dark form surfaces. */
+.theme-automotive .local-enquiry :is(input,select,textarea),
+.theme-fitness .local-enquiry :is(input,select,textarea) { color-scheme:dark; }

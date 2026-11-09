@@ -1,0 +1,14 @@
+---
+import Art from './Art.astro';
+const {id,before,after,beforeAlt,afterAlt} = Astro.props;
+---
+<div class="comparison" data-comparison>
+  <div class="comparison-images" style="--reveal:50%">
+    <Art name={before} alt={beforeAlt} />
+    <Art class="comparison-after" name={after} alt={afterAlt} />
+    <div class="comparison-line" aria-hidden="true"><span>↔</span></div>
+    <span class="comparison-label label-before">Before · concept</span><span class="comparison-label label-after">After · concept</span>
+  </div>
+  <label for={id}>Compare the two generated concepts <output data-comparison-output>50% after</output></label>
+  <input id={id} type="range" min="0" max="100" value="50" aria-label="Amount of after concept shown" aria-valuetext="50% after" />
+</div>

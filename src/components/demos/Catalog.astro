@@ -1,0 +1,26 @@
+---
+import Art from './Art.astro';
+import images from '../../data/demo-images.json';
+interface Item { id:string; title:string; category:string; description:string; art:string; views?:string[]; facts?:string; beds?:number; }
+interface Props { id:string; items:Item[]; categories:string[]; property?:boolean; colours?:boolean; }
+const {id,items,categories,property=false,colours=false} = Astro.props;
+const imageFor = (name:string) => (images as Record<string, {src:string;srcset:string;width:number;height:number}>)[name];
+const interactiveItems = items.map(item=>({...item, photos:[item.art,...(item.views||[])].map(imageFor)}));
+const first=items[0];
+---
+<div class="catalog" data-catalog data-items={JSON.stringify(interactiveItems)}>
+  <div class="catalog-tools">
+    <div class="filter-buttons" role="group" aria-label="Filter by category"><button type="button" data-filter="all" aria-pressed="true">All</button>{categories.map(c=><button type="button" data-filter={c} aria-pressed="false">{c}</button>)}</div>
+    {property && <div class="bed-filter"><label for={`${id}-bedrooms`}>Bedrooms</label><select id={`${id}-bedrooms`} data-bed-filter><option value="0">Any number</option><option value="2">2 or more</option><option value="3">3 or more</option><option value="4">4 or more</option></select></div>}
+    <p class="filter-count" role="status" data-filter-count>{items.length} concepts</p>
+  </div>
+  <div class="catalog-grid">{items.map(item=><article data-catalog-card data-category={item.category} data-beds={item.beds || 0}>
+    <Art name={item.art} alt={`AI-generated fictional concept: ${item.title}`} />
+    <div class="catalog-card-copy"><p class="d-kicker">{item.category}</p><h3>{item.title}</h3><p>{item.facts || 'Design concept · Not offered for sale'}</p><button class="d-text-button" type="button" data-select-item={item.id} aria-controls={`${id}-detail`}>Explore concept <span aria-hidden="true">↗</span></button></div>
+  </article>)}</div>
+  <p data-filter-empty hidden>No concepts match these filters. Try another category or bedroom count.</p>
+  <section class="catalog-detail" id={`${id}-detail`} aria-label="Selected concept details" tabindex="-1">
+    <div><img data-detail-image {...imageFor(first.art)} sizes="(max-width: 600px) calc(100vw - 80px), 50vw" alt={`AI-generated fictional concept: ${first.title}`} loading="lazy" /><div class="view-buttons" role="group" aria-label={colours?'Choose a concept colour':'Choose concept image crop'}>{[first.art,...(first.views||[])].map((art,i)=><button data-image-view={i} type="button" aria-pressed={i===0?'true':'false'}>{colours?['Chalk','Ink','Clay'][i]:['Full view','Detail crop','Context crop'][i]}</button>)}</div></div>
+    <div><p class="d-kicker">{property?'Fictional listing detail':'Design details'}</p><h3 data-detail-title>{first.title}</h3><p data-detail-description>{first.description}</p><p data-detail-facts>{first.facts || 'Concept only. Materials and production details would be agreed with a real business.'}</p><p class="demo-note">AI-generated concept imagery, not an available {property?'property':'product'}. This demo does not accept purchases or reservations.</p><slot /></div>
+  </section>
+</div>

@@ -1,0 +1,8 @@
+---
+import images from '../../data/demo-images.json';
+interface Props { name: string; alt: string; eager?: boolean; class?: string; sizes?: string; }
+const {name, alt, eager = false, class: className = '', sizes = '(max-width: 600px) calc(100vw - 36px), (max-width: 1100px) 48vw, 620px'} = Astro.props;
+const photo = (images as Record<string, {src:string;srcset:string;width:number;height:number}>)[name];
+if (!photo) throw new Error(`Missing demo photograph: ${name}`);
+---
+<img class:list={['demo-art',className]} {...photo} sizes={sizes} alt={alt} loading={eager ? 'eager' : 'lazy'} fetchpriority={eager ? 'high' : 'auto'} decoding="async" />

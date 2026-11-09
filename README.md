@@ -2,7 +2,7 @@
 
 Kaiyu Select is a founder-led small business operating in Townsville, Queensland, with engineering design services and selected phone accessories. The owner has confirmed local phone-case market sales in Townsville. Inventory, compatibility, prices, delivery areas and founder qualifications must not be inferred.
 
-Astro generates nine static public pages. The existing CSS logo, palette, typography and four small original SVG service illustrations are retained. There is no checkout, payment integration or client-side framework.
+Astro generates nine core public pages, a Web Design overview and eight independent fictional demo pages. The existing CSS logo, palette, typography and four small original SVG service illustrations are retained. There is no checkout, payment integration or client-side framework.
 
 ## Develop and verify
 
@@ -40,7 +40,7 @@ The site needs no Astro Cloudflare adapter. The optional `functions/api/enquiry.
 - `CaseStudySection.astro`: reusable narrative/technical-figure section, used by Electric Postie Bike. See `docs/case-study-template.md` for the eight-section editorial structure and evidence requirements. Drafts do not belong under `src/pages`.
 - `src/styles/global.css`: shared tokens, layout and responsive rules. No remote font dependency.
 - `public/favicon.svg`: vector derivative of the existing geometric logo.
-- `public/sitemap.xml`: all nine public pages, including the case study. Update when routes change. Canonical URLs exclude query strings and use the existing no-trailing-slash convention.
+- `public/sitemap.xml`: all 18 public pages, including the case study and Web Design concepts. Update when routes change. Canonical URLs exclude query strings and use the existing no-trailing-slash convention.
 
 ## Authentic images
 
@@ -70,3 +70,7 @@ The optional direct-submission implementation is disabled; delivery tests are mo
 - Context, permissions, individual contributions and outcomes for gallery entries without published case studies.
 
 No ABN, testimonials, credentials or delivery promises are added without evidence. Preliminary FEA is not formal engineering verification. Academic group work is clearly distinguished from individual contribution.
+
+## Web Design concepts
+
+`/web-design/` introduces the website design service and links to eight original interactive fictional business concepts. Demo bookings and enquiries are local previews only; they do not use the real enquiry API. Architecture, routes, artwork provenance, interaction checks and the local-only submission boundary are documented in [docs/web-design-demos.md](docs/web-design-demos.md).
