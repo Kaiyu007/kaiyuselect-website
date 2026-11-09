@@ -26,7 +26,7 @@ pnpm preview
 - Domain: https://kaiyuselect.com.au/
 - Static output: `dist/`; build command `pnpm run build` (confirmed by the owner in the existing Pages settings on 6 November 2026).
 - The existing Git integration automatically deployed the approved `7a9d1b4` commit successfully. No new Pages project or domain setup is needed.
-- Build system: Version 3, confirmed by the owner; no `NODE_VERSION` override was visible in the settings. V3 supports `.node-version`. Confirm Node 24.22.1 in the first approved release build log. Local frozen installs and both build modes also pass with the documented V3 default pnpm 10.11.1.
+- Build system: Version 3. The successful production deployment `4f9f8c24-ba8d-4c89-b868-de90522414ba` confirms Node 24.22.1, pnpm 10.11.1 and Astro 7.4.7 in its build log. Preserve the existing build configuration and `.node-version` file.
 - Production online enquiries are enabled following the separately approved Phase 2 activation. Preserve both production feature flags as true. Historical Phase 1 instructions in `docs/contact-integration.md` describe the earlier disabled release; use `docs/business-integration-release.md` for this release's enabled rollback baseline. Any real-email test still needs separate approval.
 
 The site needs no Astro Cloudflare adapter. The optional `functions/api/enquiry.js` is a native Pages Function separate from Astro's static output. It fails closed by default. Astro preview does not emulate Functions.
