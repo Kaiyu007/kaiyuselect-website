@@ -12,3 +12,7 @@ Thumbs.db
 .dev.vars
 .dev.vars.*
 .wrangler/
+
+# Owner-only commercial assessments; retain locally, never commit or publish
+/docs/website-package-delivery-assessment.md
+/docs/website-package-ai-assisted-assessment.md
